@@ -24,6 +24,18 @@ Thumbs.db
 
 # Claude local settings
 .claude/settings.local.json
+.claude/
+
+# Diário de bordo (notas internas de trabalho)
+WORKLOG.md
+
+# Segredos / ambiente
+.env
+.env.*
+*.pem
+*.key
+secrets.toml
+credentials.json
 
 # Logs
 logs/
