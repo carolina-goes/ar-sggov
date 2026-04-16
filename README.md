@@ -1,6 +1,6 @@
 # AR-SGGOV — Plataforma de consulta da Assembleia da República
 
-**App online**: <https://ar-sggov-pvo4eqn2dkfkdsxgsyhrxo.streamlit.app>
+**App online**: <https://ar-sg-gov-dssd-upe-v01.streamlit.app>
 
 Plataforma de consulta aberta sobre os dados oficiais da **Assembleia da República Portuguesa** (`app.parlamento.pt`), cobrindo **17 legislaturas** (I a XVII) e 16 categorias temáticas.
 
