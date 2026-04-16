@@ -21,6 +21,37 @@ import streamlit as st
 
 ROOT = Path(__file__).resolve().parent.parent
 DB = ROOT / "db" / "ar.duckdb"
+NORM = ROOT / "data" / "normalized"
+
+
+def _build_duckdb_if_missing() -> None:
+    """Reconstrói a DuckDB a partir dos parquet particionados, se o ficheiro
+    não existir (cenário típico: container fresco no Streamlit Cloud).
+    Corre em ~10s para o volume actual. Chamado uma vez por ciclo de vida
+    do container, via `@st.cache_resource` em get_con()."""
+    if DB.exists():
+        return
+    if not NORM.exists() or not any(NORM.iterdir()):
+        raise RuntimeError(
+            f"Não foi encontrada nem a BD ({DB}) nem os parquet em {NORM}. "
+            "Correr `scripts/04_load_to_db.py` localmente primeiro."
+        )
+    DB.parent.mkdir(parents=True, exist_ok=True)
+    con = duckdb.connect(str(DB))
+    try:
+        tables = sorted(
+            p.name for p in NORM.iterdir()
+            if p.is_dir() and any(p.rglob("*.parquet"))
+        )
+        for name in tables:
+            glob = (NORM / name / "**" / "*.parquet").as_posix()
+            con.execute(
+                f'CREATE OR REPLACE TABLE "{name}" AS '
+                f"SELECT * FROM read_parquet(?, hive_partitioning=1, union_by_name=true)",
+                [glob],
+            )
+    finally:
+        con.close()
 
 st.set_page_config(page_title="AR-SGGOV", layout="wide", initial_sidebar_state="expanded")
 
@@ -64,6 +95,7 @@ GP_COLORS = {
 # --- DuckDB -------------------------------------------------------------
 @st.cache_resource
 def get_con():
+    _build_duckdb_if_missing()
     return duckdb.connect(str(DB), read_only=True)
 
 
