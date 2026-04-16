@@ -1,0 +1,10 @@
+# Dependencias Python do projeto AR-SGGOV.
+# Instalar com:  pip install -r requirements.txt
+# Versionado livremente nas minor — fixar versoes exactas se for usado em CI/Docker.
+
+requests>=2.31
+pandas>=2.2
+pyarrow>=18.0
+duckdb>=1.3
+streamlit>=1.50
+plotly>=6.0

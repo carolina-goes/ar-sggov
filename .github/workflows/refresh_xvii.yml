@@ -1,0 +1,67 @@
+name: Refresh legislatura XVII
+
+on:
+  schedule:
+    - cron: "0 5 * * *"   # 05:00 UTC diario
+  workflow_dispatch: {}    # permite accionamento manual via UI
+
+concurrency:
+  group: refresh-xvii
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install --upgrade pip && pip install -r requirements.txt
+
+      - name: Download raws legislatura XVII (force refresh)
+        run: python scripts/01_download.py --legislaturas 17 --force
+
+      - name: Normalize legislatura XVII
+        run: |
+          set -euo pipefail
+          for s in scripts/03_normalize_intervencoes.py \
+                   scripts/03_normalize_iniciativas.py \
+                   scripts/03_normalize_atividade_dos_deputados.py \
+                   scripts/03_normalize_perguntas_e_requerimentos.py \
+                   scripts/03_normalize_diplomas_aprovados.py \
+                   scripts/03_normalize_peticoes.py \
+                   scripts/03_normalize_agenda_parlamentar.py \
+                   scripts/03_normalize_delegacoes_e_grupos.py \
+                   scripts/03_normalize_informacao_base.py \
+                   scripts/03_normalize_orcamento_do_estado.py \
+                   scripts/03_normalize_atividades.py \
+                   scripts/03_normalize_composicao_de_orgaos.py; do
+            echo "=== $s ==="
+            python "$s" --legislaturas 17
+          done
+
+      - name: Rebuild dim_calendario
+        run: python scripts/05_build_dim_calendario.py
+
+      - name: Commit parquet updates
+        run: |
+          git config user.name "ar-sggov-bot"
+          git config user.email "noreply@github.com"
+          git add data/normalized/**/_legislatura=17/part.parquet data/normalized/dim_calendario/part.parquet data/normalized/_manifest.json
+          if git diff --cached --quiet; then
+            echo "Sem alteracoes no parquet."
+          else
+            git commit -m "chore(data): refresh legislatura XVII ($(date -u +'%Y-%m-%d %H:%M UTC'))"
+            git push
+          fi

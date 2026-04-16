@@ -1,0 +1,853 @@
+{
+    "fields": [
+        {
+            "key": "0",
+            "name": "json",
+            "tag": {
+                "type": "string"
+            }
+        },
+        {
+            "key": "1",
+            "name": "filename",
+            "tag": {
+                "type": "string"
+            }
+        }
+    ],
+    "rows": [
+
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=nN98cLHZhF9oPzXFNYzENpHzjeMUx1UM9uCNjA0PcRw3K2IA%2fA9f0UmJWTJR49rJMYWDCfkCAcEu4sjeNlJeStqQxzFiX4rcw3FVdUxcD8YVDnLt5NBUL51xZ%2fQkno1BmCkPMs%2f438E%2b0B3DmbwTXxHHklpOCLlEa%2b0KrYc8X5e1B8Dp8swtIembmrZcciYDtJTiDu%2fg7IJCAafqRuQMA%2fhzR3INeivZhf1HePq7xKBUGTvrh%2fD03vFMLe2g6d4i8gF7QkSuLRFWxlNOztBYRRO36RZIN5kAdQjyip7J4rfB%2fi9grNCNuWT6cDKjj8lmioUGTOLK1Si0NKeQB%2fmgJWBSgHMvHWSNYL3MJnaDl9KAo1FnEryuUnyRCmlo0eMGM78FsL7pCtaI4MDugoMGaA%3d%3d&fich=AtividadeDeputadoIA_json.txt&Inline=true",
+            "filename": "01_atividade_dos_deputados"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=47oZum5vTovH8sop%2bHTA2IZk4V7G1c%2bh6thDq9NcHGkBI34GEM62dGCHKRFLt1rpAFNa5CZ%2bUwVMW6uUttd9pKbfBF9M87t6ggF0a0PTvqODwKfeQ1VM1v8eBIGC25Xu35aF5KFnMWZId7V0Uk8er2vwmYLa8pZfNo2Hu0XUtfmKaMuewkjMVKdMzdz29iK8pyQDzJ38sbiDGel5dFaPPclLjFEeggEwevGuDMl5yj%2bZssem3yKPFOleqgWrl5m3kDvL1dkYMOu3td8IpNeXBz96ZoCqz7NebycV8y5oLjioqBZVdQUEDK9D2GY7mLd5cCJMRmV2OflnBWsXIM3DRy%2bpU1CSVPJZ5jqQD8QpbMPb86NAaNr675T7wNRoU4cUGxcEdZBJcZUjqb%2bst6Vnpg%3d%3d&fich=AtividadeDeputadoII_json.txt&Inline=true",
+            "filename": "02_atividade_dos_deputados"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=3PzJWvpJKgIDD9QcawCTLy2Gb3VaidWKktobX628jNi8deQ%2bPSnXo5IP8rppeEEOwjMlxvQjmBsik6Wti1azPeNqlQ05vIPzu8KRrA69Qo%2bRq7i0QuyV%2fiWe6DkIHjv2PO6W4WPHhoJXfC%2byCm%2fMqntr1PqX2yC0Q%2bj6dMedG8KyKrLzBifw5vslJx4k4IDxioC6fxhqyUNIRUlehvnTM4vwkDMu4AggWE0G0woTXEfEx2jdT8%2fJhN97lpoaM%2bsMTarFAYXSFbQJ0VMaA2Ei7BAlTySJQGGdZ%2f%2bcwm9jPKq81NfdmU%2bypRFxuIVJkkfKoEaH7EO%2b%2f9fUErqA%2fsLsJIT5H9WVPgkRC6NYWt6jVWe99JnuTeBpQCOPpCMtYHaz&fich=DiplomasII_json.txt&Inline=true",
+            "filename": "02_diplomas_aprovados"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=fLtO35ogkJfQl2UFH6kr5MF%2bb3u208FWfLJR4a7hE4eIhv1ZaeariIZsO6jiqhEB6ZOXFJGCRuOVzRrqTdN8ZDKMfb7zKvv%2fRQN%2b0FcYeasGMnI%2fSinF3tcnhBpiToghC5EgXPx%2f6hga2BPZ%2bmYFckhKE33Vvi%2b9awIhNR288fy47mN4GanRhfHGxUVJXXcmlGqSwBIK0oVs9qZefl4ICswywUmMfuWbPaVDV1vYgV%2fhJykOiBNwkt8PaPkoj2q%2fhmnl%2fxNVIAgSsknHA%2fNT%2bhP1mSVZf3889COnToXC4Z8g10EBXNAyGDG5l%2bEbRv9uSZQKTK3KuwPYuLPhZJ5w2nueSdWKEcsupBP8vViiU5k%3d&fich=IniciativasII_json.txt&Inline=true",
+            "filename": "02_iniciativas"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=oHc9yO%2fVeCEg6j2i80c3yyYc%2f3lfyyUf7odqHL2DIyNXJIvMwigSaMuG%2bsCU3JjfdxXXkycrq76jqSD0qMqtLq3lHWc9jqrrJQj%2fPFI8MHL2J19Z7peJvq6Dp60qJAafkWv%2f6%2bZFbSJT6hRTJgT%2bPA1jaFgdlLTs1J0do04twCWChpVrtoy89MMHaSL0hC87ffSJtAbwh7dJlEC1rgquXhPqbZPPm92tp8RR4mAvVaAIqSH3MOu9BRVkB3Uck5qFP3ov1N%2bkW9UK9qJ%2fN3sp8iPp8zWibXKj9YtuR8fMmqQRor3GGGmyoEZJ5gElwTKqBLBCDQS43kL7Y1c2ODtkbxhGnMMETyGUj4JIC2AaSbI%3d&fich=IntervencoesII_json.txt&Inline=true",
+            "filename": "02_intervencoes"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=7%2fEQWh6yjnEkO9jcuRJ%2bSvhQ8mBvg7Cb%2fn9%2b3A5%2fokBVRejxt%2blB7UerVGolkIlrbZqN%2fXedOkEQrz32D4IFRklwVbcVi4qcwbOAjNVQU1131C%2bSTC5cgFL%2bdJKvN4evvE1LdV62gpWUIUOR9YtbLqyjk78JDuc1GiyUMMCXmeWiQle3x3Hq0VGkFDtYzyGPH9Am4YnCVFRd410iWlEmGJEZwCuv3oEpMbnHoQtrdawxv5WXaGG5RzYhl9aht7JfuQaJBFJPjQCMC95BaT4Tk73CpwwYdn4r5d3ad%2fA7wwLVuk6L5HU%2fVa0rjjPvX4htNDSqEaREbA0DSWA4sSybd0ueN0KqmAKUiIQx2frmAPXOxnFBN3mXZM%2bQ4eZt1%2bdvTrE9zs1koT0gU4DCFjJFrQ%3d%3d&fich=AtividadeDeputadoIII_json.txt&Inline=true",
+            "filename": "03_atividade_dos_deputados"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=s%2fqcxmg7jz86USQVLh8oDHUDWlc0lF%2f2L9AJb0Z%2fxZsgOGdQ96saK25sj9On%2bGec6f3DZuqACuHLqqq9BN0jVfgqTKvwS%2b0ebB6mYrBO447LyU6o1qSZFE5U3IJz%2f0Lj6nX%2bSGkTLCtfpgq94VUMWUURNx6pa1tGdLuEb5%2focpVDIFwC9Nm%2fnhvDi3Rb9aLTLODYt2rXA9TdCuFAjt3HVxTo1612f2KP39xKCit5VpYUd8ELtEAVs6J9EfiGSR1PYHA70LHQrvBKWDsp5WibhGm5KSYoDfYKrsYvFX8vb5wDGMVdvh172O3a1xf3U0WbWlgE9171BHynPPwjwwv6gSh337Fc%2bpv0zfmZY74j0Ho%3d&fich=DiplomasIII_json.txt&Inline=true",
+            "filename": "03_diplomas_aprovados"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=8HzDhqzroHd27uYgiJxr4Bm5hKSnVtbiQKxVcGoegk7nmv204BYhAeRd7Qr9VcNXDnm1OHAyBUD8VMYOZuYPdrW6kuLXDq49RkGh4QI1c1gU%2fepKW4uHbQ6dfYrej0dM7Dxif8IdtLUIHOdA1oua5OGd0qQZyVBMN%2f4JXMJSNXGxrq5ku46MgYzWYIz%2fFMNIC95vmmQmMLMqgUCMIQ8nrFq9GqQcqcNs7Ya%2fP53Mmd1H4Nhjbdxher3rc5kfVJn43m1XI9Oftf%2br0JVEqunES5ARsQs6rONCld4CGoxINwsZOqG%2bg4kDCJA9TtCmQ9Rpa%2fCvwH5gXZkm23egVhhUrQPPkrtIs5lD8JfcXW6LEHmf9IalVX6NAsPHNSAw9gk%2f&fich=IniciativasIII_json.txt&Inline=true",
+            "filename": "03_iniciativas"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=yDTLL5%2fgyqA0txpHVg3zWUBibpikY0wKF2aDUHeE5Nrll%2fHLRp4hlCtvIL6TVzxMwONLGSsYTNl37JJStEe1noelGjEWvoKXiezX1s%2bkcRJIz8%2ft%2b0g04d57G7a9g1GOOf%2bU8hyHGGUWc%2bvA3IDZjFoHXFqS%2bBPSKc9gnR5jyAw75JwFL0q3XGawEM0FH6VEebXvxJ0Vm4PbcFe7D8nF39ZAn7j7W9gpcXzap3jTxaT27arLKjZ%2bWGKZ0mIzXI6cpr8wshGJKW0Gzhd1Nu88bsgBuPeb3rm1KT166zO4fnBjmBgJsMjtQ4eOwN5QNF8tByQ0qb9vj%2fv4gFtRgl%2bWi3Qj7n6IU4Libz67V7nvZC8ovUY8VkHyJ6HV6TukZ9sG%2fUlTsFZ47Ylq1jNvPXTG1oxBlB307m68QXNn4xM8dK4%3d&fich=AtividadeDeputadoIV_json.txt&Inline=true",
+            "filename": "04_atividade_dos_deputados"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=uHFEn%2fRffGosBEGZivpdie1RuVVrO6TpFK8DfwO%2f1f18JhPZOTyGiCWnjiVD1BO8AUSe6ZE%2flGJLvf5yFtWYTK2o9Tbi8vBswiNPog4lUT2zhvQ7oc%2bcpqD05MqBxrSRBMQ5x5N2rFjeV9k4SJayAaOgqIFNuR7L8CQWLyvokF%2f181xS4n2sL1Q8qUh4yDfJMZHle0655Jn1AVomQIADB3MMM0Gi0mcxHINHe%2f4ZPEhL0botxXhm8AeBQhD027bs9I617xyIBQma4KWZMVNLagdu%2bleUTym83CQrqxn%2fCld39RWVFJDaciZ432p2dSDox72QGOJ0lw6FUh6oFLdu9egzBWVOSQ8aaDB0vXJUmBs%3d&fich=DiplomasIV_json.txt&Inline=true",
+            "filename": "04_diplomas_aprovados"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=3gbQFzsJxHG71ALR6DiJx%2bcTh6l35AJ%2bndJe9lCpOccMNGAQ5J1XGmuELetJTIkNhPKsjM3oB2xfDQwmVDR%2bI4EIXvbMQKGC4JZLbO14IZNthYh0ZNeLG0ojmnT71RhS7e80mgS2IprEQwpecpsPtxnHjmnH0jTzhGTH2qEYYEYkvjbfNgUVZC%2bi7lZgGZW4JjIp7GJiybKOT5GuPjkG3k2FHgLEGznk2t6ZOP%2fySkzKI7n4Hj5nvGs9sXBZ%2f2ug%2fAMRJxr2MlmTKX0MqKqMRe7tVlJ%2fEMpTWdNiDoMfeZSROfCZ6vXyU827Uj32pWK%2fNBanIgNADE5eNszxeQ9Iqm%2b1r%2bv2UrluKQmUFKqhySY%3d&fich=IniciativasIV_json.txt&Inline=true",
+            "filename": "04_iniciativas"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=1MMdZ0HJTTukgs5pV6ibeQzfwxPIvVjMXp7aNrUGIiIEWY2pPpWVk3mkbibwtF8fKFLjbCLjciO0OF%2f%2fuK4mMdOgyFVRjO3InQ8DHchZMhbD6NeneRghHqLB7XMmWB4FehLvie3tD9uhlGtGHq3a35rupnZc%2be6hNi9uETU%2bkbLOHkAR56X5vNACp2wLBobvM8zfsOWjKu5M5weVtWE2MZG6Jby0tcMR%2fgmnq0%2bEJwaK97AuYOZ8tQT2Z5VG9cPMCSgBQRP67N2PG13sHa5AnzujPTxuHRsOS6Uyb%2fIUlgTR5lZuTN1h0afmYfQLLYEQNiO%2fckpoiI09McH1hy10%2fRBxkebdG19cEjU%2fvdVOzaE%3d&fich=IntervencoesIV_json.txt&Inline=true",
+            "filename": "04_intervencoes"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=To3XkvJjufykfdQ4cDa6OkF5pZQkUuwLV6k30heRSKPPxrvexGQwUu4pkvbogQ7waIlafgorsk1ZZYhKuch1hl9%2bQ6fW0c0wsu31ZJ4YixzFs%2f0ON6KKErwAcYLb1apZYjbu%2fHBMD8P3jjJlD2RLeYMIfDvF3zHo4hAhfowzyny4kHuR1DVrebxr87xJTdwTPTKQUBkJLzuPnwEKevhAQkEtFaU%2bGS%2b3uVz6vcjIMzgBYrV2CI091Zsy0rXT5f6EDDQ0KaJnsl%2fEAF4VyWKIYC5%2f3I4UWNbxC5LRGzkahnH3DD0PHrL8accxaZu8IbE9c8pRKL%2f8XJFopX%2bG5mKYiQGT5PCcQZ5hSxM1cUJiQ9vNG5FS0PZsMxGeV832Jh66xiUb79HmSCl8%2bkuE1HIuUw%3d%3d&fich=AtividadeDeputadoV_json.txt&Inline=true",
+            "filename": "05_atividade_dos_deputados"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=kOL0nPtj84zgKQmgUamglwy4CpIlN5VYfr7PsuLVAofHPOqMRNBBz14jqSiyQ2WSyxKgru6QfmK8tj8mJwYlL6As6M3oMd6AwBp9df63vJLUF3RfoVvQ5afW%2b73wS8Jt7CcOJWYpMjk9mLCY9Dsgyum%2b%2bMdT0%2b7djNM0iFZIx2kafhVvd0swxATHeMYIIzuurYjkMA0mXz9CCsc6dzXYmysdVx0j5GXCbRN2umdzcT44Mqh%2fDlvGJzS9hIje1IrlVa6qz4V0tOxtgDjLYTN7QBIflJvN7LUbtBnrlDESzv6uZxU02dzkJzWkqOrOk1VA0fJI7siSrl19KSjvxEV%2fcHuRvcyWqbeRfWNhBfJsY0m4gfY%2fGkBnMupOZJceJskp&fich=OrgaoComposicaoV_json.txt&Inline=true",
+            "filename": "05_composicao_de_orgaos"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=2%2fQ6XxRBKCXz6t8EXM2WHmhQJ%2fXGEq3oulS2WpRrNeE4%2bBtHWOmSSdJWxu8nyYWHVlg92LxsXUeYaCox7yL%2fZZXy%2f5hetmzvXIXH8jxS9qOzcI%2bX3wIbEnCXQh6Tvwn6FQEIgUkeY53%2ft5pH8e33ssAxSC5VLE7VaSOGKsFColt5gkO36vEzmjwWCGgBbj0cq72MXF6YGGKxxFfNtuofaT%2bnX6wSvJhs6JqiQXU9jpK62FPSeQ%2faMHbjZarfRzz%2bLQWhgDh%2bivEdCh5B49eyJb3Z%2fYfD15j3g8Yed8wN9hMQmdzEqzU0a9%2b7RTQQACht8lL6tbPr67pcJpefQEZMJtP6BEoR5RT4w1cKzti1cZHFCcUlAKkvwnIAcQAFMUye&fich=DiplomasV_json.txt&Inline=true",
+            "filename": "05_diplomas_aprovados"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=cngLZNAYFFAnkTcK0eWmSRe%2bFp6FuJID30tO8GoDJBLKgMRIhGz%2fRrZ2BFGByUaRW4EY%2femEsZdUstn%2bG%2bPaO1qJqB3Gog%2foC1wjPJQFsIUy28Ilf0l9IJETb4bXRw9jQNT4qi9i%2fAeDKaO1KvB%2fFaVEGLjPRdRlIwm%2fYUCeIxoeoPq7YNYdrN2Wj0dGYfrR9NCcJQpDYhQk2JijLWXCIQu1%2fIYWX0x0i%2bFnBSmaMu%2bJSFlJ2CHQNC0wQ4edd9%2b1iI8nmyzclESNbtFvfc%2fQZF3OeutZ0oXbBYORh8QuqNlnc0EYDEbGktP0vtIdsCuUHdYF4iuoQAysto0HHTqfQSBOaNe0Z%2bQNRYaKGnbRtNG7Qyz6NkdZKVCxZyjGzw%2fP3Eq1Ad5z37w3LIJEKSS4Xkp3%2fTKkOqLhQkCgZ9LskqE%3d&fich=GrupoDeAmizadeV_json.txt&Inline=true",
+            "filename": "05_grupos_parlamentares_de_amizade"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=wL35XwYxcvvJ3Dvy04kkdFpHeLYDajqNJtaUel5DQxewmim%2bWB13WdYjBRk53a4%2fViiwEm580LsRscQXkvVD7Owx46jxcwtvkxQ9oL0nJ1W7cLctenll6S1xpoKMJ7eSRLqIpN4bfv4LMYpyhFOY8OnVMng0HLJBIYdcASwrzZmys26o%2bGTK0h%2famWhRwzJxhQjgy6PwkeybedS6%2bF4k2KEeSuE8c60mZjZmraWtGQCPBzRUzSwOaNDYDLXIrS%2bmpeuEvxH6Z0gLuIRq3%2baRfe6U0eVBClSL7lb7q1l8Dg4R0f97qGvpuc5c%2bAeB2QAU6yfWph6v1gQyF7bO1JDMXf1vi7tntKg3Cxxb2EBDcUw%3d&fich=InformacaoBaseV_json.txt&Inline=true",
+            "filename": "05_informacao_base"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=80qqcOmW8%2fPL3o%2ffoGGOBXstJqSPr9m94ESiLpos3PCQTh9qgAcXP35tuZqwgbIjNqXth8TzuXxtbfXXDYENT2UOjRBJF2sRcaMJqrp7JqaR2OX3O1kUjrO8p7Ztb9USW%2f0Vabjb95YgcR6x5DKm8PXmNekxLNzlTkxUOK1WTvA0yKaFeac5JpPGF7QIKD8stRBkJYxFEn7HlYO6jSZlnJL%2fBj3BbBMs%2b8FzHdzeeK9eJxovdYBqasXZO2bgIcocfb65ABBdLdBYppLVODmuHWm3Znt3avN74r34bJZWsx1MdnfOuGY%2fudcmhsco2wEIhW7HY6vxOE%2fKBREL8hhTOzCRlH7zh3uswekB1MwEERh29wuS6taDjDyqi2pHl%2fsp&fich=IniciativasV_json.txt&Inline=true",
+            "filename": "05_iniciativas"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=pOYA7Crtswz6iUEfBqsVHdEMRZInUF1k3XyN6VlGG8ZqtUbPRCJ0lVklsnzhS0IKxQIejwotyDfg24itA7wGslzBL%2bqkY3anz94Eb%2btjxpy3QdXWurx9z43K%2fSMLGfzDLE6jAffBTfSwQMn5f1i7OyVYMJgalXSVD7LQBAfx6M5Nds%2fBuEwKs5IWmA7qFbt3OBnu4pa%2fhNmxPU007oWHseotLHcrX1p7i9W9UiV2cAWbgpE6ZmmvQMz%2fZNurj4KkEmEXwR1tXdfOZ9XIXSA7UWSiWCokLpkjs8hYVV8DktfzqhXjLPIU8MpNt7m6D5IFQ07Qw06v1hR61pHkkEQ2mmWKWo3DlUCCSIkPUFfENemjtzF48QVSUhBeVPblrTGM&fich=IntervencoesV_json.txt&Inline=true",
+            "filename": "05_intervencoes"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=CSuR7x8a%2fl18RaANjqSRw9pUcb8is9bGqEwCO90%2fjYe9ZZOpJ4iDKsil6vUkhIimcvAPcx3MKJda9Qgzv5LmvoQJUGhvtYVCfieNEap7JFOZNdC2zYO38f9qfjM4uPdmgUkjVI%2ftYKO2mOK3CZPn8V3Ufkd4mBeiiMUYVHc2nyDuxr2mvwmrAm7j7kvdHx4gz3JYggQHdqC%2fwpWSrMnWYdE%2b8Y7Sz2NIo56J%2b7Y1acYX0Od%2fDVBOcb%2bXMuj0nZD03cIW6J79kJ1rx0aSZDzq9rraXE3gnbws%2b6S%2faPdy24JB4q5wgjVA6%2fazkUhhnneqLj2H8IDSaKFDJqVrftATgfWYoTI8RwOZfb9HoWVmUFyS0MIQ%2fFPQ2ur%2bCX%2bXFFSDUu%2f85CPqrZiU3bDIcXkb3J3mr4crO%2fLW41pqyVk73ic%3d&fich=AtividadeDeputadoVI_json.txt&Inline=true",
+            "filename": "06_atividade_dos_deputados"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=jZiKL4VH4pX4O29WcJ3OAB4mdeWkRDMePUCXM41n5i36fdlFPZdXFbQ6bO3qIr18VLTjrQWxaJ7F6lsFVxJkRUfUgrm6rgw7vdda%2fZnw0v7B6nszNuWVxZv9FuVW%2bIUK3KEZbCAA8OkwD05OijeA3mGE%2bhSwR6Kerwiwb9huDnG7eVZkjF0Zi3PVQ6Hv44%2bGdKWITS8zs%2fodjf9KamFB4f8FDGBUZFmBJv3PU8Y2VasiMnJsxC61AEY5m%2bzgsuViZeL6TskC12mxFrBZZVovwsDUspIutlGWC2NKlNa1WGMxFVEqnewyAfrDZu3qiMVGs3vIfQ7U9B6xzMxDEul0D1DvBSPh30CQ1rAG5XFU4tA%3d&fich=AtividadesVI_json.txt&Inline=true",
+            "filename": "06_atividades"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=%2bYKQEA6ddGyvo3c99V9yoX74InvwZ6e6tSchYnhvxpoE9kogRnM1YZ2rfaSDoZ%2baKBthHD96n4hBnjMRo6J%2bJufIz2y8aagrpMMEvTciKe5uxvgZ6fe1VXmVjWwTNWv4kpU7QkUFjaxNlUGXMgMvmUOx1QhPfxyLPgH74iIboy5DTcz1soyi2m2HBbdn4Y%2f6PDEQ2mzKSB3rMAzuA7hkP3DceWuz0Sbk44ExAO7ZTHYpYhIPIYdKG7OaAbeihVtkbzrps9JzBD1AI%2fWfBtO8QUv%2bM4bOU%2f3Johmrlgc0WUYNWlvp8fDA%2bDptVKuYgcv5TIOCvkkMqfPPbC3EMNCSach2OTjFWP%2feRoD5umcsa5rMZpp7iTqdetgNsbZoX4SUb0f5MGKdoSaxAYNltseIZw%3d%3d&fich=OrgaoComposicaoVI_json.txt&Inline=true",
+            "filename": "06_composicao_de_orgaos"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=xvyBo7v8UCkkNWOkq7z%2fski5rpZ7Shij1lV6gRYmUBe20m6cqTmWjiB5VXeFqokMGzKG%2bxntu6hBZaX2GC3eb5JlJfoSA9crX%2b02Wm0tV2%2b4XADXPOC4uRYfgy9lm3yIKZ9Yl8QHbZMQ4a11gxmLQcZm5t5wTuuoSBtIPPyLqH4QPX%2fCKDTLb9JZ1W8BVAwqodU3u77CU3kSpHToAo5jXI42ycfnfJr7%2bhvOuPc94M5ZaMvpxvLj73hODLyqAtNwXCnud7YTXI6PyTjMccepmsGCQkLcTF1TkNudYBxe2PUw594PNil1GAsM5V0UN2k9flZaSr5StSaL2gGEyXsTjmRG8jkJj5Nu4buxcB%2biCShr%2bFzIJKGsroPs2oZ6IULZWkia2AxvX8rXdFAvxf%2bKhw%3d%3d&fich=CooperacaoVI_json.txt&Inline=true",
+            "filename": "06_cooperacao_parlamentar"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=wtuILTb9uMBqKsOiMjWvwIBaL8v4g22RaBFDf1kidZtTc83Me9AttWWSNfrJO9ocdokJFKyGqA4e3awlT88n9M1tA6BSFPX9SWsPrxt1xZrzgSFFiX%2f%2fppOW0CtCS%2fR6VfUVRcb%2byOS6ERLh5eJQDxwGkDWYMA2Ve8s6bfhjY%2bJwNV7PxhwBmv5FYBK1gbuO%2bbUwFjsFNavD7hEzo9p%2bAiCEl7%2bfZlWssXu9JuKMUvFYwQjZ9KQJ9HYiplsoFi29QLa5V0olvtpUIkYSX4a04MgiiFFo14Xz4%2b07Xz%2b1ulat%2fER3W4DvefSNpKdvurkBKuW%2b4LfCD%2fVm0a13pGh0XCFJDdpMm3oXKPfNwdpO%2b10jU%2bGoND9b779JUcfPosRy&fich=DiplomasVI_json.txt&Inline=true",
+            "filename": "06_diplomas_aprovados"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=QULBAQpeVmZRJtsJCMJbQgc2P1QOovoplHY5w%2bL11vPZo85VoPM4KyWvfXL4YG77Lkl1MsCwvlvpjxMrY0M%2fDwI4hxcvyOtrhFiD8fd5VvXlcw5SbqbwCHQKDXmgZxTuxbJyoBuPf8nWU%2ffllFNNyBuO2%2fnAd2gZpFnmHMDfV678QVhAtJID5f25ZLN4cM%2bK6umbwKdcW60KvN6NzoYHkLqo16xQtzu%2bkwigcmb%2fICZSUK57dQk1rOTPP5qd5GuibPa%2fl15Khu%2fE7nDQ2K1PK4NO15YMWaxjzkcyL6Rjg4Jzun3q3WfbkLygxgH9UoZcbD2sSp85s6GMK6kVF1MNu0rx581b7Nb0YVspzf9ucgtpXJ9r0mK%2fcezGW4WH3wj1O7kSbQ5%2f537kxuQLa1I9kkdnafoUF0GTGuNyyNIk7zh8HtgUpzsakvbA0p1%2bRHro&fich=GrupoDeAmizadeVI_json.txt&Inline=true",
+            "filename": "06_grupos_parlamentares_de_amizade"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=OoiqgGkCrTjoWiFJKOV5gNRSvUDbnNDsSYmCvWgtw6n2Kgvjk6bgs%2bN%2bpJ8C66DeKOfqoLRN1CT9MucrPxHceDXmpMJG4Y4JYsOUwO2T4e5McgZB0ZS2F14ILQTEzwF78knSIy5v6boXzoMI%2fIK1UtJ2wJ0Au709zGXdxsHl029yDPqKFENSGykAFxBVa0RlUcWTai0hAzHhkluvNas%2fKEpDnEIHh%2bTA9gMYA9CVS9JvecllPtv5cDX2uqpuc69L3E3LnNIlY7Dy76UIvtGB9fhCVICYrsJ%2bvrD%2fTgK3tFLs4ABoQi6I%2fA107rH%2boNYu0z23DR4buSlpIZJGR0gVzLYIaCRViMMuhWf0uhgtioWCLTHNwQeWJ7b64%2f%2fHtaaFllTG%2bVWPnht%2bUFtejfz3nDvcjjzShPj7b2IB%2bTBak0Q%3d&fich=InformacaoBaseVI_json.txt&Inline=true",
+            "filename": "06_informacao_base"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=X46PqIKSYzbpRmMowe0WhMwc82mQ%2bPBrY2CpCbbVJJUGa0QdGj2HMyENeFDkMwt47Zvn9q7KyMJP0EFVTvebpIfEAvJC9sMOiMhV9WJoNM1FNGXvR7Lc7NX1J%2fPQCmAPENeIWnFc71iewRbpMVTnsGgBFUWasc9vlDPau77WUX3h%2bnAasIHeZlErZE2TW3p7dOozESLhRUg1le5psb1S3ybKALADusWATgs3qC9%2fWk3U0aEpTwJqtkwk5ADgOywoR0ZSYZy7U4SJxGDzZnrSkQNJ%2fIzXYYJ41KzFBsSB2DGnim5DTpNz7gGL6JHi3vxEYcYe%2fAdPgIqHbuqFjhCW4IcgnqYQrzaiC078z2HyE2g%3d&fich=IniciativasVI_json.txt&Inline=true",
+            "filename": "06_iniciativas"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=g9nt5tAtFWtjRxOVQ%2fzr0iBJ4hU1JCuZVlHLD%2fvNi2e%2bfWH6U2H%2fag4CAvNXquCv9P8M5K3RvPOICPYOaKHUNevVat3GlTeLBS9Kgb6Pgfxjrtb8zGA477PZR2qHm9RDLTjnPVh%2b9%2fIcnfnomFOr8WErrVC3cOdvWpbWgH9lb%2fBXaZiirdcHCy1Zts%2b06cCf6EvBBmHBF24ROfm2J%2ftqPGfAqdjkr529Gc3HNX5DGEpmQ1WJ%2fi8haFTwxVF8PWAwPobNUjL3I1YaB7G4bVofC6tFqn2QSw3ZPudhR%2fksMH24nOQnKYeghIirJu5vOtuawsL9Kylb4MJ8r65TjejcjwupJ7Wdmh0YHbH0xM%2b2F7I%3d&fich=IntervencoesVI_json.txt&Inline=true",
+            "filename": "06_intervencoes"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=44eQTe3kbLKlwV2nLk6Z%2bbMHYW%2fBxMlfohPkKywe4mLG0kfOiOYWzOLWGsQJ%2bhDOBvdQ6O08VZm69k5vwZpk7jU2YsCgH0zWqE5sUaiBCquVO1uOUqWwGrsntOUV1J8oRssrGzdE8%2bi5tbE0Q1DQvwNqCco61EPaWJU%2b9TFcB8dJJ%2b64ArwzoIl5KHVcqyrAHjWTZ%2bwX4dZ78pDMsHRlNpRwuyypSRbmEQ5DAgitiCJ5njvP6VOxrp3iTxZrj%2fPydRedivZxKnm9U%2bF8NDqNrb4vWkEpSCcTw%2bEUUlsrHOySjEULgUH%2bFl1ExbbUeCG%2fVERfFNdaFHqETK8UheVa4FcL0Qio7QPiQDdqu23EB8uo2Huuh6MfZf%2bpd1IFZqN5iJIIsUp5hna%2b2%2fzA27t2dg%3d%3d&fich=RequerimentosVI_json.txt&Inline=true",
+            "filename": "06_perguntas_e_requerimentos"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=J6klvlJakO7MrbCxBOGkC5NIrFPnCtpqAf33tJD9n403dSoNZ9WHuiia9DShIVVSkihIgyGxArZqDsDfY6r%2fPOHmQmiGch3zLLZVEwf3TP%2b3J61%2bY68uo0yOi6yhWVj9rMEQjYf2ka8DPh7LkHxFcjgjGGzX2SCPsW8BOO9lDJYxqXuXj7IhpzfuQrrLIp7MNmp98Hf1xypiVM0ThQJ7JviTS%2fDLx42S81tmQHSclpPHdP87lh5qXlrAIi%2fUZ4yPgCg%2fHBoYZsOCHMBZD0fZeKG%2bZOgG3d%2fH4E7oZDjh9CCVcmyV6XaeGPVjBVX4WrjqAXXSZ8VXJg2iIPmxz%2fexZJIcXRbW7L92IT%2bHxyGRCGQ%3d&fich=PeticoesVI_json.txt&Inline=true",
+            "filename": "06_peticoes"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=apTiJKOdwdil1qJ72nC8Pl%2fLa%2fB%2feeq7MIsiYbeWvXBPJT86XIYGEz45%2fbr%2fGohcyf6UQL%2flvzqRHiwledbdaR%2bwFSlwu3R4Cb%2bVFw1J64uemgxj%2buDn4IvnwpFZMrvGKHPG6iodJwpJQZzM%2fWx4efwTb4QvayV96mUBL%2fjU43xBFdwHnLiDf64i%2b7bp2SPWSbHxMqzxzJWPl6VSXEhgCyq0xptbssM366cwvkEzsKxL4UpEosO27eWPDY%2bHhL8H%2b8DBV7tUzz03yOp%2ftVVg4YPb0ovHJa2ME0OOFTYcSnCLihWo3UlMrnWhHHSIlJkWXTekIICjt2gghPmSLDDd3P9H8u9%2fKf%2fBQFrZf5Egoa6jyxheKvDGa%2b%2f0PDwD%2fS4bqGGokfyj%2fqEyhwEtyPtLAQ%3d%3d&fich=AtividadeDeputadoVII_json.txt&Inline=true",
+            "filename": "07_atividade_dos_deputados"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=kBtArImVRZpWLh9Sm9Mclgi5s7%2f%2btwuHr7teyWl%2bvgdMl6PXkjior3LjbtvBtGOfX%2fnPkk6rcpFFhl0Fh9bkTzPo1ntKlarF4bmxzjV5zq8NV5ITfqSKKlqgNUjX4LMUVh94Ks3if9AZbQFIJREoz7fdr06e2rWsZZuvwz2ICe%2bkZLnpZl0dca8G%2bN7DfcKPDL7Y%2bwrF%2f7yJpqt9qhR6hdsMcOezYV9CXThG7UJw7mP018bTL0CsgPli0VRh7o5bqjmDvqyxRrA1%2fVd4CnPgAoXqYev%2fEoJPb%2fZCoe%2b2mUGVoMOpxQbhZ1577x8KzcArsJ992x3GysApEuMQ8glk1%2bkO92z%2bYLYTdvF9CwrbKW8%3d&fich=AtividadesVII_json.txt&Inline=true",
+            "filename": "07_atividades"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=0IWu1LmFoW2KpUXPzW5lqu4Gt4dSB6orzp0zG4gqEXY4BHVwudJpKoGQx238%2bvLFuAKM%2fPkt%2fAUQ8bsNIPVQhG6zFm7Ar3ZxO0jicUJYJGYBcDg4mEuUJwZ4iepoh9Ql%2f2YiRh3WpDLLW2gW5tmwtpdDya9RoWFt%2bMHwOvbYVsM7UomM%2fWzmOBdOFgvdARf%2bl7eKYkX4CU%2fbRCKnJmCSL%2fTt%2fSYHEf0lHSldavzENPdnGGbgO48ZUYc6Sp6apEhNimoArp%2b4OxRj%2fdp%2fQxJYuQNnOegYsC92n6KE0G8prrl%2f12%2bmTb4uv9%2fvw6frMefrTVdHie16UBEr06%2bd%2bV42aW7sxuDIIRH8dRaHLnmQhE1CydHHnzvJZxj3XtHfRbCBE0qaPD%2fIAoEqvGmkfLtJdw%3d%3d&fich=OrgaoComposicaoVII_json.txt&Inline=true",
+            "filename": "07_composicao_de_orgaos"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=IN6ag2Tl6P79GluB%2bRYHP0ob8w322vyDMIjFzvQ08vwzi33CNNAa2pkLnbd1hAr980UkljVKXsFGNIGm8nuKo1RZ%2f9NaDOBUZ1o2cn4wYR4qocuTSW1m9xUSlNxNIWiG7bX%2fLVS%2fPHWOqZSwV3vCLDhmg09P9jOx7sbmExi%2bfdHLDj9mAuf54JQ%2bCzdCKbA6fhnNZUX1kXJoRzEquWM2vEQYAWf9Wpz5V9Ouc6oAHzEJEqaMECow2pp3ai3l2OYtyGyg%2foZqtv7N1m%2bo6pKTHPZi%2bb8X2qNFlI3TbqZx9p0%2bea%2b19ZWxvZI2HVkkaag6tpIjufdzOvlgPksGMfAqfmXyFG7fHDczweaSjIM3iEKLRcD%2fMlJB1yyVM0MII3z1X7GLpkNJMEs%2fDjmMRtubv8wYrKgV91mIywvs5F%2fK8QU%3d&fich=CooperacaoVII_json.txt&Inline=true",
+            "filename": "07_cooperacao_parlamentar"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=wVJz%2bP0d6TELid%2fsWCcyxXRmwDPny380awl37V3ioPPkRgxRydHskBpNXGlP%2f57RwXXF1BCT5ZPsgYEEJQlYEZ5QLFUIJGDLouy3299nLYEBhRKKszMFiGiA0SEKs03Lgt6fHlZVcVH14%2fGSOtZHdyy0NVzwx%2f%2bodqZkOyQ7NdyFiJ%2fUmdYvnATAqLqFpIFEcHSStPIPI5OFZZOc%2fojnZm7DrI%2bHvB%2fGZ0WSxlcSx1VpBEp3D9U0oHVwd5Ep3GZ3QmtV8CtcC99U%2b3QIHj4vfooYnW7cilBmMIXprHJy3zIsY90c5s%2fAo3a%2b%2buMg7FxadozwNHkMxf%2f42BYjIUFdNg%3d%3d&fich=DiplomasVII_json.txt&Inline=true",
+            "filename": "07_diplomas_aprovados"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=uzga%2ffVPiWfU4Bt%2bAcogPntpVcTIEH2nPB0Wv0HGsUFRkmxCNk2N0ghtDTQL2LIHjE38OCrjUUHtOD4mmcMXYijoDI2C3vOtKD33rPzdfjzaLpVY0SvLrw3Sfwyix%2bEu47xl9sHwLAONWoSyQcKCa0kkMkOPOMqu0swtvxD4BCgdjwBgSoKcN9s7DLbPM68BlloodNL4rJAhbq7nGYcff9G0AwHEpduntbQcOKVTT9K7eHN5mvzVrcNAqCJBCGmr0DOYL519HVwMzJhghXKKT9Mk2xRRi5uoTYpS9KPDGYQnrZbY5gb%2f7rN7xs5WmH34ZDp0tS7fKSzvj0hd7iD7aRTpjqhnpUJefLPxqSefQQXI%2b%2bA3GPK3DdsBgoiZimeBIHXPfQJ7BYEhZLXEzex1L%2f5nGbQiqsyWq6epV%2b0N1jU%3d&fich=GrupoDeAmizadeVII_json.txt&Inline=true",
+            "filename": "07_grupos_parlamentares_de_amizade"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=mrWtjofId7doW9Sb1XMVjm5hDKVnzzZpkPK7aUPvzJyqGBD1wW3xBQmLjqyFoA4Da8KrwxkCfw0I4MlA7JqN5OQzcCbP8%2bjP3uFBurYpV4Gl%2bhNqU9ZeVCMb2RjsxFf9B7sGX%2bMgPJr3iPWjZlLPCMa227WBfOyqtadNbawv4RAG3ESwsfSjv3fNUozomldh8UYALP0rjFXhgyiAUxlkb863h7KP0%2fGIY34lh1y7xsUSa3Ysz7%2fNTjrvg1Rh3nNOgLO9P9qHmS7FKc9l4foN5LGjwGmYwRastXdA8frKkl3SdDreEmAsqgZexcUYynBeJmN2YGS8sy2yuw4pm77zfc4g1a0C3pYGyI6riVneV%2f7fIkKYBQC7W6qT3WE%2bRAOMs%2frA9OHNsdgDQhxVOIQN%2bw%3d%3d&fich=InformacaoBaseVII_json.txt&Inline=true",
+            "filename": "07_informacao_base"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=eEOcdafOTnmpZ9pbBtwgjrMhEIl7VCd9Jg8ZZbtj5OrWWcJiQfWCXNf%2ftiiHFJoUZkg57%2bXgXsijfoYbqr6c%2b9NTR76kzaQJE02F01GrEbCcpQYkOXW42vH2j1PDL%2bAcmsA02hTlBR329r7fYg%2fP6zUiXsjzbB1ecKihWa0o%2bg23xSGLcPDiB8gIwRGPp0kgV%2fXao%2bCfQh5fnGvEyE3%2fyJPk%2fePN9oU3szBvVfPUL1kELhv%2fV%2bUNJ42N%2bTrwl%2fz8FL7flQlaPX1U1X4TuFF%2b8GK39FGgaYzL3h%2bIzNHSkXMU%2bMTndFek06QgdF7BTAJWWr92AJ5Dbgb2G1S0dIQtodgWv1ApKnDZHFUjme9a3T4%3d&fich=IniciativasVII_json.txt&Inline=true",
+            "filename": "07_iniciativas"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=xPJIYqYNaUajuaEH7EcFSOlbXnhXSMXDrZRcqkrRPg4H23kvrpS1UnJEfu3YV4S3fBGxlkPiTGzLn3IFvk83DFg%2fuwImX5cLZE6w1MTKYNQNFckbBwWybz5%2fcFqsKD%2fJVMXuI8VnXyJrJ1RU8FLIgY%2bL%2bKHIw3MVsY8p%2fzk3GNdt7t85SXP7XX5wQsQIYp%2flQI5kc4IZUQCFKCxHnYcrcFNpE8%2foHgsL5Jg0AqcQidVV15ANpg6wjqv9CaPOeyl3G%2fDI9XQSmNEbcfzV8w4UNNlLCAYqV10LPiw05Naz9eeXFFiNzzJFNjCzzZ6JFC3OXj2JUUZJRtfIEmCUdN34ajO1%2b%2fPjuDcNdsUqfdL3%2fwBiO%2b%2bEo%2bqERHKoCII9%2bA1u&fich=IntervencoesVII_json.txt&Inline=true",
+            "filename": "07_intervencoes"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=UgxTP4p4KcXRiQOP5KVzNsICQ6Dez4LGYqn2PZYGY5qh9B2BXitRzQvByYWC3vmvSWwapwtIDmOGidduJXICXmkGfOVubZiuYGgg49P27CkyraYOaY1GUgZvxcq8RnZMxpARF3kq3wd0RQuKb7z6%2fa3dgVBLhJnX4LfMDbYZuZWjE8JMqwcDVftWiNN6VilDQIYt3ZJHtIaO%2bqspNCG%2fBNYhLgwZXQ3xnmij9WwzLgX5Vov3WAqbg%2bRPh9jOtPFUc7cXE1itDfgSm7dCwyfi6%2baKZmogDjINWzF9Haw5jZ9qc2PhryHiBYwSSjPEKjCnvxNYcKWRjCjBpX3hfeyW8ZSmVADl9bHOgNnpEMrXDcyYJzNjKmEp3%2bxKWkZrkJFAmriwWGZ7gazpxo0mgJH4pw%3d%3d&fich=RequerimentosVII_json.txt&Inline=true",
+            "filename": "07_perguntas_e_requerimentos"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=b4RPcWPlF5Q%2fjH5V1%2fpUsYq%2bWkpSM%2fhq4SZ44YRVEZCtqxeNhbVQFW3H7fVPP%2f9qI8FClfdjHJ694yMSfpWJ%2bgOJdo36eoTQqV1cC%2bctwN9cfmBWMvX2ENO5mGyTBY3o5c5MjotzbEkZkm%2bQkdmyzH%2fTNW7xfpEXTa4lCVV8ahwN7MICbahisy5xwz9qtAC76%2bKqw45AqjBV2JkrXt%2fWwYPC%2bBc7wgUqO%2fgF1I2KTAu1ELX5qoQlxB7rjDrK8TQsMmFhmGzAJ%2fkJiybzBQ2ID9vnect3Tz2yPgfLsNswpQHVIW%2b7NZ%2fjsCNb5RuuHS2Fgvc1IC5T3JK%2fNp8MNXT1PWHqUtRaiDJp4S4ajyxb2ZI%3d&fich=PeticoesVII_json.txt&Inline=true",
+            "filename": "07_peticoes"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=VwrZ%2bIZATcy8SB6Ip89RnXeen1BCpguthKWTedkCcCuMaheSJUv0QNCrlLFntEdNqaWSLvogB9dD7mYxZCyfACxLSJ%2fPl%2bZlh4R9JrUFLTH1ZXvvLJTde4sNjklleYyJGmJujIQQ6rmm9f47MXqBjkofMu187chMv0KQ09sYF0xvhh56cHsx%2fJRjH289iQc28jk0gBxjGlGU0BhFeLn46WwIerHn7DFl5A2gF%2bwbwb1kBkum5RYfCCqc4EDiQlSQLUvgQMzxU0S8ayt%2bc8jIoIgcdbcF26ygrsVrfnvVVLRiWsLD1ylL37RYyyCby4aS6qbFSN3FpIkz1t2L2LK03Nz4opnvOl7w5XRH0X0P6wByUGALlG4U6x1%2fgPaPjOTyL84iurKHF1XCn40Qek0frpghXqrP9qNF2u2x5XLf0fU%2fMomTjaUyNHGpHl2RGl9v&fich=AtividadeDeputadoVIII_json.txt&Inline=true",
+            "filename": "08_atividade_dos_deputados"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=Z9u1gcCzBwm333HzSqJoPbzS%2bkrMRpD%2faCK6zhmdiQBAZvoWNo9t7Osw7TldOQSBBWY%2fhdSm%2bKbkSwD1z8obPVT3UtickBHhfM2lDxFujRP%2fxg9o2KK9uu3Xumhww3R4URoJzrI5IuDF8lpw%2fx9zAyKVqPVefo9yl8qm7mtiXBO2uhQIpAqFH3sTeVP6aGl%2bMPtxod5hO2jLR%2fOMQQPN9tioA1YK3yZGmIJr3DcuKrRogEb41gw6eBFE%2b%2bgVrpyI6R2c0g0s2bkJVE6gOKK7w2jPPK4FbTo6%2fsOFAYQUp93mN0w4AaaOF5lQn0XvyrSav6ovxS1nwQqi0g0J1y7rsA%3d%3d&fich=AtividadesVIII_json.txt&Inline=true",
+            "filename": "08_atividades"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=XcjjCFUKXN1ZF1b9Zam38eYEiJygivjhMBY3YI0fd6icGtSsMV1dzeL9yRpSVbY%2bInMs3LRNHnw5lgbEfHX3QwCne8aatPRJIbW%2bloSjyLZomhpX1qqgEWZROx1a77C4uOzn953YdAQXh%2bC7UE%2bQctceZmvfUQZhhVAiYFgD4QHBlubGhU52CtO%2bdwnA2WemL8cAEXc67uxOF3eTplMmUUFFvdinifDZpXoXgHd2T0MVmUGxNHiD%2blU8yT44Ro8zrXLQsaT7ELnDTt839OQJnPOvrNYNuZAgmNJGz3LgX%2bavVa6j6Winpugh3VJIQRVCfX2RFWIEpjAaASqx6rTSebMaXPy7OThiY6l1n7wO9HynHOjdYDQ1fQrNt1E7ZalIN8Yr5W0IujzlQVmvimGXnxDABieotjg1V3gY820EiMY%3d&fich=OrgaoComposicaoVIII_json.txt&Inline=true",
+            "filename": "08_composicao_de_orgaos"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=%2fnIIOFvtTHXhqN6kSbQJOAkrHHFdz2xcBdiF1JbQPg%2friNVYh006FSxDIRvDUMqhLCVEJqbHsEEzw50W5j6vzs4VQmeSS0%2fqjNNDil5y2lnAl%2f8pMBz4NMZRqez0rjpjd7avrbe4Hdx04ImLHjAHhDkxMopkRSAotsD6ss9PrHH%2bgtCbZ9j7vfosGa591lxaPxGvq0KBopI345c%2bIooZ1%2fV99VqNgltQ86u6H90GJiJ95kLbsJEyRlvVW56UrWxeJP%2bqmBFjC8e2l08vZk2ZrcC03mnSA7uA4NNPoLi883Utbb2IzeWOEtjtP1nAeeBOxs4UpsZuMbvqt%2f9L6xxlOFrTrj5jHoJRG9XbwuUTGlsE6o3PBCn50aT6jIPem%2bEkH2Y8RzHbnapD7iEHb3XLIA%3d%3d&fich=CooperacaoVIII_json.txt&Inline=true",
+            "filename": "08_cooperacao_parlamentar"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=YM5OLX0Bo7vo1W5zyv%2fzpfmvllTLhdoz4S5MBq5PdOE%2bEffTU3KrmCs3w%2fFRrTaLXWApjerO1HwCrb70VIs%2bQv1Vc60cTUvKZdAQBDtIona5iXxbPPb2QyGCXqE8Shc%2fBNlJg3TORxsTfQm%2fu1FxorUav8hmYypSzVBZILpGFBFZMzZPqI%2buNv9NOriCepAUHtf8sNLrdmUzqI3RdnxlWgHO%2fCZvKSa%2fU1P5XoCfNei%2fNQhJ1dJP8Z2lsNymldJlYvNHYO49bCEPltLUr%2fnV23Hwi4gxLXdYHFTar9eRGgCb%2fDu4YUDmawYW9rhuWBYX7zLN%2fkjADgNfLzUZo9omIkVdLypEJpPrLaB%2f0s%2fRCCDuVyhQk%2f8ui3p8VsAiY3xwct%2fiS3LDH3LxUqotfArYyRR3bzAjP%2b1CSTEuA0fG3c8I2rqhL2rjD7%2fWMm5RML98&fich=DiplomasVIII_json.txt&Inline=true",
+            "filename": "08_diplomas_aprovados"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=vvvYFwspp1aVOLz%2blQaLaKOZU7Ho76hiIKsfjRS9Bpm0ltxAqqWbSt1ZpdbJNLEGlxhy9SvDGZ4GNyPGekcRC8e0pZ%2fNJdPuTcRHj5TpA6rnPqJ14MlINvMDp6nJ2sUu5vu6WVr%2fa%2fED6tgVV0zOFpA9p7ii5KkSz%2bCgKMfoerbc%2fY8pWtkn7%2beHdAiMFm0vHrRUWpLT%2bFJDL%2bVJ0H4x3TEoDGcsTVVowQQLa%2b%2bu%2bhpyWu8sXMB4GxelJR17YiFqavDDzNZ4xEooCPzkIIG6suFDqjH3ifBHuaju%2bxeDjYjmbKNkLS3mWkjv0HfSxL3z7%2fOvjkROTjb6l5GJGbFT1Eg6pRQ3f3vPrqZjr8%2bOnCJZYy8RDVcakg6lHF%2bGUU6ag5PlcyQgBff38vFiWkWsVsvZ29oA5qk6OKie8Gc16dq%2fgggJTFw2q2PZioc0o3J6&fich=GrupoDeAmizadeVIII_json.txt&Inline=true",
+            "filename": "08_grupos_parlamentares_de_amizade"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=WEKY26wsQ7FfPP5cu5nHy5BPfutMweysuu5vbHDzRp0JpPSZb2FH%2bms9ajydA11oPtj9m46TGaxqXupk0zqUwuvubWw6%2b3ar6B%2f2nyV55rKtZWAg%2bz%2bKg5M2erNA%2bnczKy6kCbZTUUSxoIYq3Z%2fv5BdzbWWi2qXpJucFz5FrGjoVxn9TVjr4BRDlKA%2bEMMbpkhaLg3Qi2WO0umCmVFabWAeHDWn7Ufub0C0tAbF0ZKaHUkRlvEMHYUfvVRySzYdUkvssAV8QBtAolUV5HrqBfrN8tPYY8UBl08%2byhIqYzmvDEBqtlbcju0tmenmVIbyy75HPXputsmOi9ZV5wfQF2ZDkTRJ0FJiwat1PrIDu69FT1N5noaPP11%2bg6Wk4ykD4IRoBWuqBiXgh67TsXFPQRQ%3d%3d&fich=InformacaoBaseVIII_json.txt&Inline=true",
+            "filename": "08_informacao_base"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=XVQ6w3HuiAtefXJe5X3FLx8c1xP04Fk%2biW7myk1DG0JFdZQ8tGuYgE6ttpwvPuVrBOTJzq2LA2HFnXFmLsQEdcrQzvRTZ3UDWKE%2fnCZaei7v2cDfAf7tawb113dyw%2fYwIko8BNk9u8PwZXEXPGUKk4qvwjHoe7IpfXaKqGB8P6tYTVi5DyIT%2fZt1gyfJ396hma7%2f%2f4%2fy6uGcwyMDDnSmgEOaesMYYTMIf3M8zJ92tjtWPbuBWGyEE0QCcWQT9%2b6Yvbf3YQVjb3MFXkqywyaZpMOD8ZfqiU2TLn%2fzAtfoQxdt9FDZZmz3M%2f4WMd%2bqr%2b05HvkEkC7XCNklBGTaOaQcMUsBDm2bsJcruFhwXS32IhA%3d&fich=IniciativasVIII_json.txt&Inline=true",
+            "filename": "08_iniciativas"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=CHC8RD2i0Kkbbf96uULK5ia2EXSdSKL6oY98FctlCNVjKaO4KTH38J%2bRFIFAa6e10o3PLoIpbmOmVW0SA6tnRsRgeXhVIkret1sBTKACfu7%2bo666I6odRSiqysH1nFDClZoSFaezLHyiKKYm2ZNwiWyvl2xrYoOrRfUfSiaA6wdagD2fOoCT36mB4RWHlsrtSDAEOAQIukAU%2fTjKfkGCVuVmq5BAU4kidaMIt4M0tCcjvPmuOUQJ5D37n9F7mOsct4%2f0p5wR3bFx%2fujS3I2O3TFsCD2tQqUBcTL9wcH7sHDRAsxb6TgMPr0xZKItBlAXMzckrUsd3YO4RZull%2fNTao%2f2Xucrn0LqAZ4O8LMcZIQ%3d&fich=IntervencoesVIII_json.txt&Inline=true",
+            "filename": "08_intervencoes"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=%2bbbkuQS%2fwBovKq7irDStRwppVLEyY0dM3SJCSnt%2bhVRFQO4OExk4gWetqrbXbOvf0ldTiZZrLkOVmzluhCZFxv%2bc3ZCVtcy%2b3T2fkQu%2fQ4i1iUGFyGxnYlUYtgGtEgpLsSB8nWaREvN2nMVLSMsJht0Fo8rMPWd11OmUrKB9f%2fJti5l9J9lswQUtjcYm%2blHdoprA2HA7yci0QfbhDodV28V0IZcymrg7mJo1a8N8qZ4gQfIiVi2MrX78dPUSirsCf5oVbMNwzGpA1QgucRT8EywEdeSrig%2bJbXo0H7Ky7tfxCNLK0VibNnXaOnyY1wUhtvLQt3v%2fnu%2fY%2fkJaPMpBoSVK3bNokm%2baIHz5iA1RnEs22ud%2bHHhGkWlupMM9Z1KjRFjfHRJ5rRFJ1xfmtZD%2bAizOSbhbiT5J%2bN5ji61uboQ%3d&fich=RequerimentosVIII_json.txt&Inline=true",
+            "filename": "08_perguntas_e_requerimentos"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=n4c2r17l692BQbGczPnocu059NYJ71MwPOBKk9lslmDdHjLE7frSNtbVp640zQiw1XkKLGc95mcz7KAdnntbaAdjH7D75ufdSG4neap3hpuh2ZhojsP1aVKy65YzBoICG8oUZVFrhTnkc9Vj198YmBXLrMZau06eFfcjWLTkU1lYtXLkj2Vbndh6egqkTC3fpBNucg2TTsO1PiWrAooo1JqyAHhB5vLboUt%2f2rcIuLeQjCAuv%2f2CRJE%2f8ektTvMRjZ4FlEDMi%2fXjECt%2fciRlGYyC%2fTR0gXNTYNlDV4%2bJQfaCc4Iswud8Vq3z7x8hBS3mBNJURk7fxM9hdKCCXCrMiT24hJkk%2bDCxxkrUiazFPHk%3d&fich=PeticoesVIII_json.txt&Inline=true",
+            "filename": "08_peticoes"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=jc4GlU17tkIR007i8Aqt8OiHVH4qmGzGRWpPyPoR%2fDMvEXc4NB0EuwZY8krVpXbVHREkj7wI4kWtp8i4As%2fXB9NZEruXimesk6SbtdUnAT7xnH9W%2bzfAAfVDXDBExKnPF8Cd%2fAsKmJJwNPz6AoVFQodzBAnb3nxbIaNg7t1Fd28l9l25aGyScFe9CugFG5RYHey50fPz3IvyPd%2bTvzWsIAOIOE8HyEXVMpqcef2dhRezf6yrYwLahnqBn1POJL1iFus%2bhGlXvU9luLvDPlW4Xq9RCbVjpZhb00Gmz2f8u5BrQ6zUukDRIQYQH6OtRWnq9xKafly7odUotojiRa9vWAdvXnPejM5zA3fY%2fSMycLRSjdSTxaNI1bsye7Di0T%2bf&fich=AtividadeDeputadoIX_json.txt&Inline=true",
+            "filename": "09_atividade_dos_deputados"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=1m7BFdRuYh9uoKMegmbSf%2fFagqhvs3FPntyFG8mbSVxBkw%2b29dZ0Xu7PU1k%2bkXN%2fsLRbTYB3Nvf18uNuICx%2bt68kH%2bOLpshta2yvnTAV7SfWhoCrqaVcm2QGCLcrGNp1XsTe8LI7ovt0uvVzVczBNRYXI3XZ%2bNB6K78p8GDsnQu3ARTGvP%2b5YtIcGe%2f0Lr9vlFkU5RGk8r7TGIHnQr5X9U%2fcn679zLENsbdEIMmZNvnrwzlFX8BD9ZbZ24JwHkoLD2ECupGWXfbQW2ZrkTVpT9mMsBV6QpTFiFTwkrPTX9Ekd5NdGDetSQ%2bHaogEwGsEoQUn5mKOK8IN6G1rcsxuiyM0OHSZyAVPWCrMvpgRTrbyX0C1OtZqwcgyUoT49Mxw&fich=AtividadesIX_json.txt&Inline=true",
+            "filename": "09_atividades"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=FKwaGz6Z9pZn%2fsoRkuCa7std55D3k2QX%2bXbDlq11x0Kj9DIvVyBzp6d9SMNS9WNjHw7jX9SxyL3376jxY0b2itj%2fcEssv%2bWyObFrkcMLH1%2bdghD7o5O1ySI3JWHhD8l9ow6Y8RFzdUwV%2bZf72lHeN0I%2bSdhaMrJ%2bhNP6FrEg4TUGJrN3RWfSXkTli3cRWeytNMM4cDhPZzMRAs%2fbO4SrzgbjUPNgCjMr9PBuTUmonsrhxczEnutGsViRGp94SrnoVqDxa%2f0JcR0UwU0PM3lvOA5IbwECjR4Qvy%2b%2fo%2bHWcYz6VHxY8UQs7%2bkx9YegiO7NON2BsYAuB6tVg2jc9h46N1T1VU2k5Pu7DoeP%2fKFgzvHUSpUFzDo6gaMoEPIA6AwSVYeHwr6CKm0KjsXEyTLaiQ%3d%3d&fich=OrgaoComposicaoIX_json.txt&Inline=true",
+            "filename": "09_composicao_de_orgaos"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=MhicxGcbPHa0za7XjG%2fIgRJmwG%2b32j3yNO4BbH3bW9aox7Etuo8zYcqOEiwniSiROf%2fufIqcl9sbF%2bCA1QIs%2fcA5NwktpZztsH5FU%2bH5p8Ux5KlAKTkLFn%2b3V7NCTVnoj3C8MBGF7jFEv7njZienWKyq77%2bcx39QbIAMQ7dNk3EM1BFBBX%2fAHrgYEnydmax1riU9gEsnwyrz%2bguEzsFvLoPp9Bnb5t3p7FrmUHAtdmDAUvMTx0mjfWTLVK6ZkdnOxiGsxiaPY2qslAdOyd5Ro6DEzWr2zPffJ9ij0560VclC%2bzEWfZeOaa7WZVuTAxVjKEKpXe12rOkvJ1VEdUOC4Plj91mf2QguUBywIhsu%2faNzV9Pz54M78IvYCNW9sYH%2fBoFcECluXgM0DloO0TUvoQ%3d%3d&fich=CooperacaoIX_json.txt&Inline=true",
+            "filename": "09_cooperacao_parlamentar"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=HmOBayaVqLshv5kyDzf45jkDTmRB%2fBnb7dOw0KJmfaL0SFF0w%2fdTF179aU1w0qe1wcMazUisNiSuu5fzfBbbIAv4LIUIZ40c3BskZksjwDskq9QIySHNaVFTKVtnWmEMETGavx4Y2nI3kVZFDDPok9YWts6VHiBzI4RNm%2fYMUjF4DNjZp8kcQ5IsP8cBG7BDlvH%2fea%2f8Jpj1mbLE4klIXpbg%2fwtlUpiMpUXTMJbzLpUA2o36V7FPQpYayNP%2fHyD%2fBoseeqcIf3Z%2f6btH54%2baaF2n%2f%2b5f5FrwKGS6p674SygxJvJa6YYcyKKQKGV6W7yJbyJTS4C8hb0ysQs34lYe2IbJ40BzMD8QeU%2fmcFlW2eQKyHLuxV8dthPVUqaM1EeS&fich=DelegacaoEventualIX_json.txt&Inline=true",
+            "filename": "09_delegacoes_eventuais"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=9J16lPAMcUVrrKWXrHPhGWlTFDJAh6ivNMIu6q7HAA3TzLokdze3Gn9K9xM5O7hf%2fHBHewlwj9Iz3%2fqb7UBdSkTR%2bQu1aY0FLWzqbTbPlpnfyesuY%2b3t%2fyEu3TssIddgNfLXZUPjKP21jGpsyoftp0oQuWfNiZqrLtXzZWi5fgzg3y1TtziSd7KjNUXaLfCyi4YsMWN9qCJIQZf%2bL0jHRBnAJTWXa8k7lPUDlLks4%2bk5mDUnvszx9cYOJ%2bSCc8tWu4ebWFKuh%2fuTE%2fM%2bLLS42PPOqmd0QZedwr8J2xPNLUjCMozjxXpyMSOUvLVderdLNMvx%2feCMLKiatguW0tXGwpDLrmv4eUGXHqawC2gvpWhNTVx8WvSM%2fFQUiNOpEJ29STcos7KI0%2b27%2fVH2M%2b328w%3d%3d&fich=DelegacaoPermanenteIX_json.txt&Inline=true",
+            "filename": "09_delegacoes_permanentes"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=mhImfiss9OEmPf1KFIz9YoIgpueokyzLGhfO75ldb3PTFNbGOWpr9NWvWjvIY3ZOtbn60cthNFP%2fQ1TR4XO9w1MzK35X5WJDMU9DLrTq%2b%2fgUMS94tTi8PuVPM%2f6Xv3idPtcn0PI6Reoc2wT7TTQ3YVyEjGSID2421FfsDPGKLZcwENl%2bqibscRDtJA77vrC5ybyGEcZsYbY%2fHxN7zxZbeRtj7bbj7jOqz%2f4q4kEeof5csLScR9SjAGcr6g7pOl4ypT41g1It26Yd3ItGE7hp6U%2fVSOHI75huoDotNf%2f2veIZQ6mcy54s%2fETtSqSR649rrl5jj7lhWdwKpKIRswcVrPZDE6gxnMAxutXqhQW4vVImBKXW%2bSmYw0Wmo7Yx4B%2bJ&fich=DiplomasIX_json.txt&Inline=true",
+            "filename": "09_diplomas_aprovados"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=OWYDIWMAosUmVwbJP%2fOUSJtTWUD7Za9rKKMKx8ppQEqUfTGwIz99WRGMh%2bvfH6EH0wADokVh0bydwInx3YR5u78GiMKlynZsBPJh6Wr5j4eBrr010cTrW4ajAmOBvMfR%2bmkZjVQvVT1YjOUwjYqE0rHrMb%2fL8l6%2b%2f7dbdUw0vWZPz%2fHzwsLsotX3s1VfTMY2gKXRKkSl14FlrXwCQM%2b9pEoWlJ7gNzJseab0vgrDBzuSYJ2g5fIzTbw7fmVuPm2QF4Pr7%2b3uZYlejc9RJBctpOutMXOR0rd1L7qdC7te1sQcVNxSH%2b0pZ0RT1ESQsp2t4n4gOYHYF4kJgo10IyQAW%2fBLudbAtl3An0MkxZ%2bMDq%2fFaknvzlBMAiDUNmVbDDFb%2bhBrFOvZp3%2fM%2fUJcPk3B6%2bxvowGBYYp3MQ5I8sOfAlL1sGWA8NNTzVVztyUSHStR&fich=GrupoDeAmizadeIX_json.txt&Inline=true",
+            "filename": "09_grupos_parlamentares_de_amizade"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=uqo5%2fLUGYeH9iONYGkuHP%2fBPh2qBih52MoDJTvnVk%2fd8s1swk4bAFgVFzPzexX7XJ3R%2f0tX46VD1Fpn8l5%2bVzYS87T2SkhaiBDX5qw6YBPbSf%2bXEtdORzHgvqD97JQEpqY05PIofJAnkrjbXWMN78VByLWs8rtfRvj9eePJeODJSICGOH%2b1JAzjdyRJ1F6%2ffkuGe5nQDEbgH5REb11sXpGjCR%2bOQYndBlGgs9vq%2fGml%2bCFPwwgYYtWl5oXJzrfupJDczOwpGAR54wrgbOdNIXyeZI2WSm7JO82BDHxeo9HkcDWcJnBr9NvkM5ZuHHgwrG%2b%2bmFNQru9tBlOaNwIX1BUdyTKVji9YWZJv8W3Xt4GTmP8PTRsjiAp3rEForeRPJT%2fzCfWB3F6W36nuB5IrWdA%3d%3d&fich=InformacaoBaseIX_json.txt&Inline=true",
+            "filename": "09_informacao_base"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=QL7nxn2FlPYqCeU0%2fDZrQThOOfb3zwNM4KHAgsbwqei8%2f%2fvMAC1jHHTtS05gVwZ45lWkNM22fvyn3%2feMQQbYmXRThOLIV9n6jx4kLuCGpBAtQnQnws6%2bONpIc%2b0T7yc9Z5Pz2iK7LnwhveD%2f1kK2XnA9ZDTZs8QBuoSytSF4wBDkkn4uAp9wTEPg0rEns%2fX6V3D4rUM0KzCysNTSFb3DeBiSGoieHzuz%2bDz3ctuwZuG29ahH5%2fxaMPcaeDCXZ6VfTbUh6MOIjqW%2fTfkFknHKUFrijJh3aV6BmUnqARLsPnOdCb6swzuYwy%2fC%2fuAezG5pvc19AQbjFXpkL9GsRyGeiu8%2fbpAxC%2feY5W0xmIsHthg%3d&fich=IniciativasIX_json.txt&Inline=true",
+            "filename": "09_iniciativas"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=8%2faD84iP1Ev4Ef3OKbP1wuF%2ffN9o2ykCLK09AdMe%2bsIsZstGm3wFThT%2bhjg3PBQ%2fk8%2bpEQG7tj2oKhlJ5zMVSsMNuKQhjeCCwLOQJuVrGPfGQFP6zMsG4TEtnY2aT5D5MEXvX%2fVjJMJk35uGbHLpUgG%2b5hjJlpfT%2bzAlPmrQ6mBePpTrC1enThBSRPqeWujtGe8CVQHoF7gbyjDokVgh95jxK8vBGpbPv%2bxAkuiUZkZ3KTmvz%2b096wkLlFuNBQKWJrY610YXcNAPJghgUNOjCfYOjlmlVr9oEe13jrmFAUMvO0QbwYQqG1q74m1NLV%2bpyQQ0P%2bohaFWeIw0kv4qFS8lRrvdaQrRmjeXEo7dg8%2b4%3d&fich=IntervencoesIX_json.txt&Inline=true",
+            "filename": "09_intervencoes"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=oEu2ZH94Hcor7ZY7dfOfV1myKOmTwB3GCCOcV04xUV8QmIKaXFkspHrCNrd2%2bNZ1uEvgp0nm7GcppoHAxcIC%2fZOmE7fUGqOaRFEuctz5Gm3gjm5SXLkvpbpSfW3BIBaUs7fWy%2bKvKHHqb7bqYFkRzC3uPr6g1C%2fN86SAjfYxaDFu76hZwbN%2bgQNuzjIAUZgtbm4NJYrlkLP%2fJnlyt9UIF2m2k5PSknWSdK3lxeI%2bEI%2brT4WAojwkBFbfoTF7h%2bJ9w6sMtFSPNxghmYS4gzfK9EXCsP%2fo67MSdkBj5OaENugksD%2f8tDD7%2bqhjuOtLt4GAM7IIap3Ujnya%2bK5UQZktMvzwyVoy10nEJM%2fllLU0m1CwWXDw2lj8rox8gGarIE3K5Hmfzb7Uj3gXiU8iCsIHYw%3d%3d&fich=RequerimentosIX_json.txt&Inline=true",
+            "filename": "09_perguntas_e_requerimentos"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=8TWBnTjBg5laUiGQ68zf0hHdLDKDNFrjBlxKimAMafrwVS311NDOmFlL%2bdiRdWetb80scHz0dBR8CP2T7dRrM2v7enxO%2fbDCNUJHE0v1Buk%2bt0QmeiY5GFP9j14CMbGfMl7Nx%2fYCtflmiarIXOosoVPqUEtxj6xl9WviAJnpFzZgxjtc45tg2Bv3Re9CJ4lM7Wept8BetL0CjtwdWMznLdM45KJMAxKCI69o9ThMq6ak2T1F7mZRXhKL9nY%2bcX%2bkfhbWwn9Op5QkZJybjSRqaTNxPNc%2fOIcaTu9%2fgo8y2DvdYde9Z1H7w911UXU0hV91MJg4x7rqmxf2vh42Q6CdmwyGn1O0c4FYkFx4MyG1lgo%3d&fich=PeticoesIX_json.txt&Inline=true",
+            "filename": "09_peticoes"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=wdbmQob%2bDP7nUxw3TFvK4%2bDEwkXW5NLSU4qPjy3w5OA76RswQ8IyDLEoW1%2bN6tWmWaXPUSo8Ed9gGKw6Zl24KuzDEyryuV%2bXub4n5o%2b4peAoI3bK6BSwDq2jKuLAs6tQ1Arn38IZUY43Ten0%2b4zW7PnpUHk0w7ApI96sCnb8oIIZltr8vaYSDByeXNPoDfj70ROYHyvxFQbWi%2fGxUOOhh5oHJDyauP6mDnLw9z9psm1ZHootLsbFUFLDy11sF4fB8NMYVJgjzkOZ2KO2GTpDsjTZhMOOdG4yuAxk2Ddu95UYVzJFx%2bJQ32lNCvjfrTmWovNSZJh08IvqrmpfcXGPKCPHjZhuIeNovJeu%2f8ULsthVZFBxXP465xXwb4O5GKbhNMb856oe0sC8IxWkBob71wffzj8dwUVIsfXLBlKO%2bQE%3d&fich=ReunioesVisitasIX_json.txt&Inline=true",
+            "filename": "09_reunioes_e_visitas"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=TSp5o8XasBLhhQwO7KlWrRuQyW0wSv0y7Q%2fBA03IFwQIA3u3sPUNjiaTGM7gx1bT8sronRKHo8m9f82HhU%2b%2fguvVR%2b1%2fla%2bI9KImh697gKs3EVxse65zDCxe6%2bwKc%2fB5a0yh90MSG7%2f%2bsb7g6D3v8%2flPuemYcZzuatu%2bTcKeY4C7S2m%2fq0IJHV9f1C1pw8%2bfg759cov85PPUYogbtgGWNrXv5QyvRqHbVcJahazKMouEcgJE71ETPwHqs3ARlQU8Yk66zdyD9WkGxpZydyMJomHoGLsJNqZfZ8zHQCF5sQ%2bqJSs9XXVe1v8rSkPIQTOFmOmMmo0rWx%2bf9A7bek5iksASaFlqSfRz%2fXxEp3HYbYu5tEPrgiZ1y08pA5c%2fG3hVOOhIE1ra%2bWrItrAdr2XPzA%3d%3d&fich=AtividadeDeputadoX_json.txt&Inline=true",
+            "filename": "10_atividade_dos_deputados"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=JpbCDyGOJShBXoWtEcy4liCwUclqt84HKNqoXHKl5ImDHTcBcit4YoVw%2btS5uOSgYiehaOi1EEdERzZc5NX5Eaa0rCsIlIwHBqe32wMtxJOrUr9SIgQeOzofOc9OvQ2eGO4XcGX%2f8MPN4oHFqCgiOv7cSk1S97MUtFK9aApEv7R%2bc2tcnN8OJcjBAzuXF2qLfDj6PxCYfhmK53rQw5Ev1IgPzczcmssTdDWb9sdJ%2b3VOBSmDo4qPLMXQw8b2eiXgxS98fDTBhOc9MtR6UfMZShc0p2ZqChA%2fChRMro86x9jJFpkr0RmtCJPCcyg9e%2fsZASQoo6xHianC0zrT0Oro5Xmf9%2faCYUFcWT591MB5MRQ%3d&fich=AtividadesX_json.txt&Inline=true",
+            "filename": "10_atividades"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=Gx9xZtoQe4kkvRdcAJYgG3JWNPq%2fnhm19sen9yfNp%2fZAQ2QlrBEnkvmIT%2fYxIij3gv7aBH7%2fN2MDMs8JAY3yVNv%2balW9xvDALQXJ%2bkMD%2bixE0CNkdnvdhUVoJe1jY20lNDVF8VlS2a21K018SEt9CIb%2bOOtv1%2b9O7tpmDo%2f337NICkmxrES8gbnxIPJCgImmNWTGZXry3%2fbLI%2biz80SS8186rEeZxAge3LC2%2fVsH%2b3reybdB5jlyJNByOkCamZfcjNcKrIJCJbl07yNZqbompBc20MfnEO4trWr2OG5gfyanQznF9GttREWYAq5%2b801vrZCb1V53Vjx38MpCCh1Nfu92aUK8r9gINwal3VWQ7R9Bo5tAlrvjN11dHqi1ATX4bWWkYpjnQl3Dcr%2fBz5C9NQ%3d%3d&fich=OrgaoComposicaoX_json.txt&Inline=true",
+            "filename": "10_composicao_de_orgaos"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=zsGrjW4MdKQksy6WrKt6aeyxAhwBrH%2b6G%2fRvtzIfpZqqOBXU5eYL%2bUDo3ib3XmayZPTQNAIifkF0zoZvzEdp7NgzbaleQFbKCIvUDB0Glcwkzc3Bi82Dr30aDD9b3TUeuvCoS4tLDR9pfizIPMrQp6oLFunZ96nU8Kj8WXChUCinXx9EZjQfzylLQOoLbjINX7%2bA4JZljfO%2bIN3hfYnsvISOaIO2%2fhjBpYTt0uau%2bUURSi4ckvTmSlbAxQGVpsQ%2bfIw2lf%2bjX0QVDrTslsC0PUArJpQskSb8eVS1ncYdWIRaHRJd07yzF0wYe7UEFhhEN%2btZXbl4JL3nEk4mE6gMRWcW8tHrtV6urnx8SGAmRLL8kiKfOmkPN3%2bKVhTC6RyV%2fJFhAjQKFl%2fLKFjfqfUlFQ%3d%3d&fich=CooperacaoX_json.txt&Inline=true",
+            "filename": "10_cooperacao_parlamentar"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=tItvj3ivK3Tx864z%2f%2bEGaQmVNNUKmkRw%2bOBoEsUKnU%2fmYKDB7QJwSlyidGpPXRmKfz2fSVMhg8NwizurHwJLT5OtWuieBFA7TG8huvT3F8ajpparBOwk4XSyd1oRj9L5cO2Dswp2UPUhzlSs70PNJlEjPUXmEJ0RnMLFEeE%2fannW1ciWuBEP5kq%2fl788uPFLjFnm3kuoedzuMl9BMfNBJFN%2f21Gy2BS6Ne6BEOZHqdbYtpn%2b1VSoJV5ooQd%2bHyA%2f%2bydcgXSsf4JpHNYPrQRhoaVShRmTw%2fsJIGadKnZcaOPnQWEhX6pZK7zktvoNIrLDxo5W0gWuoJD3zxStO9V4x8MCH7Xsi3BnuewsFEOTkPK3PjvuYmV40vJcqd4EzJua&fich=DelegacaoEventualX_json.txt&Inline=true",
+            "filename": "10_delegacoes_eventuais"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=AppTgxyNssVu6LTOlvupCtsqTY22KwtrPISCYdaQ7oj19DQ%2bT5CX6ZegMpyAFhJs9SOzc1XwWnZRWzjtiljf15AbLYOIuNbKxAYLXe5XR4MKoei9%2fO%2b79svhn4V9OS3AIAHsQsgmewblB%2bPeS1jZL5PzSPTmmabO%2f5%2bApB%2fs96Kv0VcWYZdVsK97vBeClQWy9oD3CgTl0euLMBaWOjaLNeMVa9gAgz9SdieI%2f9sfM46qB3FFPP4aeQ4jXVxiJur1Buc%2b8G5NFF5ihaixlp4Xiix9ASp7GO9mSFLNVWEdwsIr2Ou8owwb7V3Gr7qO2OEpJav5vY2B9fx4OwH0SGm6hANEq1MybUhQT5%2bqCh4QDRPkzSd1GFrpPFBy0nPEbmTLlF1owo2hIJ04AuQySYZm9mFlG%2fZTMJQichQCr1TlIHE%3d&fich=DelegacaoPermanenteX_json.txt&Inline=true",
+            "filename": "10_delegacoes_permanentes"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=IS1MTJbFoVTexqCgV62RnmgljP8YQr9lR1c6%2b%2bF%2fJAxnY5GHPfSt0PuCUvQLf4%2bzsCu7j5KH4A5PGhnmrvLWKbx9B0jgTK0CZvnI2zZms%2bsrLlTzke7bYnpC4upEzVPFcCYq%2fqxnqqw3xSc93ZgNuBSIgQpjfufDK4WjO60wAiqL3c9mbLLS36FfEpvilPdUsZOXHdxZ4f2slDsaVe7N2dt8UHrfptDYPCzQOMMFrJctWV7hSfU4E1%2fDrQuX23gAUDwx7ebEu4RxL3PKNvOJT%2fZLHvxnE1tRj1dOda%2fQ2JZPmQEQhvE%2fYWIIQ93bBT%2fwZ8U%2fDcqfQOf6x7dZ8l8ZXXBWLVxAgi7bFTsltZzAMty7aRAAcWdjowxmNZOftCU8&fich=DiplomasX_json.txt&Inline=true",
+            "filename": "10_diplomas_aprovados"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=r%2fKqJqGhe12WISEsxU6jPLkz6TLOlT3cXMYa3gYqueKxlKX2cGhthv3g4tVfijZ6r7EdSS319SUYPcK%2fNyVnjyFTmDffXabXWMoisa3h5YEW5qXd9B%2fXkUS9k%2fvsQiiMJNl0uL4P5XwQbm8LXn%2fEO1YQyts9NKn6CqxJSfBmRaf3%2fJGeq5U%2bWF996lmTJrf2FOypWOYU3iaha2ZnA2yNHV%2f3E9Um2nnupSj4BygNWTvtbKhh5Bnds2xrguq2KS0l4xKrQyyonNDijzHBdOspxH%2bUfokE1wVuE6jNhioFkCd1qaU5Inzo%2fgtbsdG%2fNvE%2fuYf711d9zoamacRvPFU5jvZp9oCHyu%2f%2bNgedLUrWq9V%2fq%2fgu9p%2fz6nilFUUp0ORKH2CL9gZOsDcP6ks7J6g%2fLqOtO2wZjRNx2DGDVSjwvqaoSCZJjfJAg2XEpcEEuqg8&fich=GrupoDeAmizadeX_json.txt&Inline=true",
+            "filename": "10_grupos_parlamentares_de_amizade"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=%2bnTQWUj09a2qF16GBYIdjJZo2ntHy1oH0jkUvgjcAz4zw3c%2b4kxQU87Z0u0vZjXdSWrWwQjdV6dnkLlx06iaKKytdxQz1SCxBuI8QZU%2bdJz3g7bIaWBbgxhyckQ5BQ67A%2bmqPTGEwIOS5kx1WvmoGua5XzoHS7CJOwrlhalFaallF%2fe%2bfVkbc70eNsnID8Za3DrmhI4pO0LTcUPXk%2f4jlinGS0kbC4fyB75X4f5g8RRKfZcUs%2beUR8jQBmur7S8TEcL8rIyf73RyO3TuwDA9OUlG3CkVMWL13IOTKXuwHKXrtnINDNHfjjaGMUkjOsGP4CiDJ2n2Zjoj7ocX9fvT3NcKCFvCYs7weKfKBWuEjFI%3d&fich=InformacaoBaseX_json.txt&Inline=true",
+            "filename": "10_informacao_base"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=Zsx2lYHLvoMO5c7qCV%2fQwq73Kh2IBNGERpSDBxAJailApsenStLFYPe2CqClTkSCqY0riFcjQEZbyB6uwcqB7hOr7LbgftRLSmeczEEb8eFLoEp12vdv3sspxtmJV6wbW5Esa1QBIfJiGn9pQOEsy3n5motRS63JU564cAD9f0js%2bUXWdBY37wEx2EYnxvxyqX6kWBoqUKOAb27ABjvBWXufH7yLtI%2beHMpc0aMDmiTJAXv7QD8UhL5ruv27IR5CRhTA7NKH4hBtWMmr5sn%2fkIxwfJc6hSBq9v5ZYpeNLnQdzo0bqfCb2Q4kTS06oGmrXvHhkBoFPLi3zNKJXJswpuZfGjzZuMEvgb27lZ2iO8wcriCQ5Tup4Oln9plHsRdF&fich=IniciativasX_json.txt&Inline=true",
+            "filename": "10_iniciativas"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=acCGQFc4YmObybq53rESh4N8EoKOrVVx%2byrvyb2%2fFO9zkGmmTgMXFbw36WWy2mgbg0MstHlQym6yk2%2bw99qpWJ%2fTPYyixJ%2beQFglsBqPmL6YX7YNl2VxFIW0z3MxLD6TL5BsPiOhg2ynT4eeYq1dAXDCeMp%2biU5LXhzFyMISYC%2fnSwY%2bR3rpe6w%2fHtQF8J9ERZ21Hedbi0IbTyX12GsNCf%2fI%2bWkC%2bJf%2f2o4ahLhxkf7KZHUwG04LKCj2Fd5XBhfVelwQtHyJaiVF717Cn1i4HQZiHIsslyYZMCZakwd7F3nRCATTHsgJY0uYQjttRfY5BkDmSL20n8FUsfPQr1i4XB7%2fzdfgCY8bhVzoJpBA7gMx5jCSPotftquNSNFjqphJ&fich=IntervencoesX_json.txt&Inline=true",
+            "filename": "10_intervencoes"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=pp2yPfsFXN9NHG2ErifqzJoXWfvrcDvN9mnZprgmpUZzlIcazYNteObC70U7acxCSvCfXC5gzlZsjCS%2fySlTwBMRyHBY5B9J40%2f2oX3KfJyU%2bhQ3Ap8nK%2bhcIWn6%2fW4e8S%2fZEQIhYUNSAEPvtc0GpXXoukSyoAqa7GLUPW70mBgfiKFR7tp881oye%2bWw42UIk5lgl%2fXAtPTT8NxxzJE5xzkqXshYoiCGhv2AH%2fKQY%2biLE%2bfn0A05ItB7XPpO6RpT%2fSFpRu84OsRtFmU1CrQsPZoF0A1uCBTVelRqNVDoFUhbLqfDeIej8m4g6eibtPcs%2bj7MXZif2uSKc%2b31pQ3D6jrALnPOdZ1ryj5My8pmAa268y208gVuiAEEptuxv84bCiu0mQZM6se2DcQVwujCAw%3d%3d&fich=OEPropostasAlteracao2004Or_json.txt&Inline=true",
+            "filename": "10_orcamento_do_estado"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=%2bJ9h%2faQBO75ZbXC5j%2bINO6N919r%2fZ04opPovOlF5bOI2hgZVEGGZ849ckAJyJCNGZd9m52uW4qoMlGanzZN0A0vHlg%2f1FDEXIkbNwzRiOey9wl0bnIcrV2f0VplIBZRuwe2g48989F6%2fLwx2coDGdDhFzhqVLJJKEmWhFqzkpmMJ3iXV4ryaMIu3%2fI1bMUZW0Tu%2bfjPSnfz8EWyE8W%2bb0W0usJHpWjr9BAmrtx25vkH3DQ5JM0DsLxUItX8PDl%2f%2b6ddZfZmC%2f4PjxD%2fQ6ahD4mgpT0llCLtjjQxGV%2bNsLCgsH7%2fZIpohSS1%2b9MgomQa%2fyS1149IEO5QkGycYsZw1wFV3eVaHxberEHUl5GRJjBoNtnQ3fSzsBTubrOyAb%2fB46AUrsowQWRbt90CnWrgS%2bg%3d%3d&fich=OEPropostasAlteracao2006Or_json.txt&Inline=true",
+            "filename": "10_orcamento_do_estado"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=9RRcum9oq0O420X3GxhZmahubSrS9wcQIR7jXvkFwbOlF29m3BjwJqH6iJycB3ftxHzKZJ2qRza1YW5v7Z89ZSGdFHLXRPFbsYK%2bIpvhUneo4kmLt9DJ%2bsWdREe59IkXOOS5ejieoplriwWZU36iRPz9k8z53Efntfpm2JHZc6arethVwKe%2bJtGnTZxmC9W83%2b%2ffUZz1xCsZIJMpiL4QNJYVfu87PF8iNAug2%2bctd%2byiMVJGIDnEkjH43Nm9NYNswp0OkZmfHKjrcfBCpE%2fpYP5WxzawWJE8K2BGUecrV5Y5GaXDn8XTsg8oU%2bc9YlE1QHN%2bkjoUfYR%2b8jGiLuR%2fXaObmy%2bpdEvYeJM2wlFWjckW0uQRlBSa5%2fby8doBkw97&fich=OEPropostasAlteracao2006Ap_json.txt&Inline=true",
+            "filename": "10_orcamento_do_estado"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=keEUGlAzODZJAXOyapvcBAivxLsepGYYzZJPti81DU0ufgNoAILf%2frVLvhxojpQVH7YyJ93s1nwI%2fzPGE0ZO8jGRc1eWfrCvQ1r45kDy0ObUFgCApF%2fqaYO%2bUReyCmcrjn0j9AIcj5HsDp3cfM77kdcNOgwoDWsuX%2bQLtVOQI5NjRTAwunLutfKnF9anZLWv4uMrYOP1Ap4IVrwbtHELnlSaNI8ch09JDwiVqTGuo%2fqHmVjvnrmziWx2E02bSa%2bgvYB40gYDA04NNcjjGUjYMlkD7CNTwzZyAef2jnGBKJuVm1vVQ1iV4j9uCPQTYi45ezUF4UJfd3a4V5ltBBDBAtFGWUPu1VY4RvcHjt3m%2f16vb8Gevy4f6VnY13vUucKSa7mYc62%2fldL8NvPC0Jyphw%3d%3d&fich=OEPropostasAlteracao2007Or_json.txt&Inline=true",
+            "filename": "10_orcamento_do_estado"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=o25KfYKqjnvx5rZgbzdG4OkdCorgyEpf351VfUfZ25dhT9pneKu%2bLkWP0stqxU6%2fW9T4j%2boPEuaeYA0b%2flurDv2AykQkqic1eWEDzcydWe3dex51WWEDxOs%2fTsCMWvc2H1DOuz%2f6plyOBdE7M0eEMLPmL6siF3IA8JKMpz1%2fe792ZV9TXC%2fyUKI2GO2%2f8ybn8Ibp8sPKalAjut4SqwiZqMq42DpxsIO0GOk41g0n8y5IXisZShGC%2foepbim50N%2bidNjNgSswxLqqR9KRSKdRgVighFz%2fOn%2bmQFbbylg%2byn3Cw3qmhhr7eBjCdYKnv70uXPqj0PsECihk1CSF2jsnonAXFE0AIosy83jmcRzWQ0Q0Yrmlp3K211FrVvWzO5TlFWm9PIJ5K7HlqM4xwzTDxA%3d%3d&fich=OEPropostasAlteracao2008Or_json.txt&Inline=true",
+            "filename": "10_orcamento_do_estado"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=YBREvfDa%2bufb5LNoQfyArAXSwOgZPYAQEsqn4g4qTPghQMet1ecTjJSRbo4hLe4T%2fVbgqotuWFu2m7yF%2f5QvWxNZICDmW2hb4XWOT%2bl2jWnHoVRDxS51iBDL9PhmuMdsyS04IPKhkCUMT47Fkq1GNsrUerlJ4P9BCgmhwgt0yGnm%2bbJioJsp%2fvwVOJhKlmu827RR9Jh6ABMyIMq87H%2fk2YB5LXobLjvYkpbmVYEOgnnf6gZvbqlsXu1YhE6fq9mp%2fKo2nFvXSYs4I4O2j7wJMPKiz5SwNY6bp%2f4Xg22r02HnRDntKVxUA0cwAgG76VJhzLE%2fyMaSBGNbK%2fGX%2bJpZw%2f0V3jiVAGDGBL8KrVMaczKRvI8xferCFpmORQkdfO%2fJNu78oBCuOyjmf76MdvlFTw%3d%3d&fich=OEPropostasAlteracao2009Al_json.txt&Inline=true",
+            "filename": "10_orcamento_do_estado"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=RWNqgh2qWL8B41dwEcKRKeFKvlDBR9i5LxrGZPVuNwyjEoEtst3ygpn1m8ITYjgWJ6%2fOmetj7rQwzkHbiQFOUmAeuqevMHfAtCu4jdZpBOKJAoVZwr7ZaYexhJU6IttNUc3oTNmPploDpHsqO4YEOLU%2b1%2bD%2buSuWrNMRfO%2bwP1md83nPDF5JF0HXatLU1ZuKV9etla09hoc0aUhkSBMXDA9WPOKw7U8PMzHBr%2bu8aRH4ZFM3wRDCc93LummjweMN2bp4PRXqowyboAD1pWQqdbDsDGfleDXMHGuefn%2fHzaVYQ1Kgrg4vy84GPMe4TV%2bYUReFqLmznNzzRCWH%2bm8S%2fxIY90uRZRbOZLKQbyUHT0JyNsHLwlmDg%2bv%2fmSW%2f8VTnD5MDWH7yDu4fEMExkZszKg%3d%3d&fich=RequerimentosX_json.txt&Inline=true",
+            "filename": "10_perguntas_e_requerimentos"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=FzmgpGury7%2f7qx6AA%2b5C%2bDOT6wPahNcLDmIMsnrPwqMYyiGoZIuhX62yFhcfgEePqHveFqteu5Y8NUQsh8vcwG86F1BvVpakLq5rLER7JCa2bCIcyChoWfJbKzrmE9cSGljnIFbofQUo47JGurPkAb%2bxOHqJSOcTaOmypR3eH4MyhGrY0iQCFa6ZY33gSuX5QPWjqDoEOo7z%2fJkgV8jFGbBiDC%2fGvImBur3xBGymd6G%2bdz39BNOgsop7bKg0ULSXvABdW98PWTsJSgDC2Z2s9MKUJ3t6p%2biuVntHy00zOpmhqOuJFBS1BHlCmOhuI9KmpLdbu1rcwJk8BLy5aQqVuAvUy4i4EBuTj8OAPQg%2fUzM%3d&fich=PeticoesX_json.txt&Inline=true",
+            "filename": "10_peticoes"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=PF6x4fT%2fpdI63xsI%2fZmg7WzzNPaO1ejN5755OCnuoOxHayejC7ASNGnmEIKWFz6seuCxAK0VnHrhRNoKQO1CChYqiCJO9NaXz60JjKLy%2fyFw4CA%2fp04ExQjg3rvdde66m%2fd660VROsYx%2f0EUo64up3RX7UYWZzUGY9qqHsi9GzP7F3qKRwMZjVMjGSux8X2pnmkrfQOv9l3vtxvhWqTwESBDhIKuOw8gL%2bUm8jEJszK5UA0FAw5K4h5VRlwX%2bn3%2bmbWFAUyBUf3s50t2SlWQ64DQ%2fLDuxd5dCviFeUp1yVhiPKrTZSaETKj2qt9VZYegnsNMb5Qa%2b7frG7Gl2w4PWataRAf4bEBpDwA2zbd3IfEFUhnSRJUdvWWODqCP2IL1jzS8m%2fNO%2bI4XgYyR20%2bDSw%3d%3d&fich=ReunioesVisitasX_json.txt&Inline=true",
+            "filename": "10_reunioes_e_visitas"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=Ngw%2f8kwfYOEsBMsk8M9F%2bxbdECOBSfvRNtLrldsJskuRtHTlJ2AZM%2fpNep%2bcjh8YMaBKNgmqdEZELlWccnWhyPzoyNRYjXaGyhC3TOpOvAvg9DJlT1aVZUHbYTk08TGdhID%2fm1Qy%2fSoHL8NJ42x50wMZAIVyxw6tHbLsNOFlf%2fgGElWlbRwyBMSSaAq6udJVyc5%2bhS3lvKLX61zr%2fsffS6DMF3DxUDiff61%2fl9AUuAUeODrkV5rcXsJWu1UDFZm4vtnk0FOv3L%2bTdUY6O6vzuVrQIvqcD7%2fk6KeQf8hzs4ayn7uHCV1M%2bu1wQoQZagEroI93mLCPsLGnQc3fC%2fig6o7r3OIYtXnY%2f3xr3CL7NPQtJGMbrVy%2be2v0dFbO6wdFMD2LU5%2fVGGHbe2Mt%2b5NYDA%3d%3d&fich=AtividadeDeputadoXI_json.txt&Inline=true",
+            "filename": "11_atividade_dos_deputados"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=DSFvwJSdVt16tpiLin4MH9Fbh3kJ%2f1Oz33rvsEBxaGF%2flrjxdrjCxoeI04Awppg7RI3T3P%2fnxKe9gO6Ig8UZeIW2eJpcl%2f0VGTm95CNvAtVhsCoCB6%2bHh5U59IpLfLtzqIPhyLgEm4F9Ste3VOsiGBvH6hdbiGw%2fu0FIR3YtcYjEKLXJBtW5m%2bkm5m5K0L%2bBpW6lt0wzCP4MI%2bLW1QpgD9Rwr3qGDHuy1L6wYrPkks7%2fxIHS7U8538x8e6LCJqIZSSvCVjqG9kyR8GvRS0c48RRidyNa2gt34BVo%2bJGr3h4rfXmwosztI%2fr4PYsOpWoUPzbVPuOYCXmyibu2Xrldzg%3d%3d&fich=AtividadesXI_json.txt&Inline=true",
+            "filename": "11_atividades"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=ztHq4sTf5iWvJg873%2fBV5VcSrsKCDWla%2bRzV8Nj6O05qnC7sTXNKeFOGic3ygrLbqogUomWIcgKGM1NBacdcq%2fMHV0rXW2VadaG7%2bKJ8YOog4UEbog1C0NjCvVfSr%2fx7eJZQuXV3coRmTtB9oAvG%2ft7Pq2MoTEd0uHwMJhdwRf1eufsA5e%2bnao%2bIWhJpROeiqsqw3TohW1VoOiINCRPAakJAZbtGJv0Iv55dGt0igcFBiLt5F7OUVHi8Uc2OKiXxf996dQuj8hgjmFXRTDwdD9OlOJRdpQw6A%2fmgvomUINO1ekPaxPjRomNPi4kBOt6nnSv7VG7NARl4q3X891K2w2TG%2bihZqV440QfshJOgQ9Wvs7CPJWof8wgxGXlPbnGSszQYWOTTOJO5tO0RO0gqgA%3d%3d&fich=OrgaoComposicaoXI_json.txt&Inline=true",
+            "filename": "11_composicao_de_orgaos"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=lUiWuJihOmz7dEfQt0OWGPHmcU0Arid8TmR1Dflu3tV48VusZRRNqGKExIwDEaQCSwsFrtXjsLxabO32R3VgFvCUgD2ArwsHcr%2bbl1QogmJZ4N5HWutZlMI%2fqEXouNP0TuIomVQYe2gM2BqWyDWh1f9SPkcuV6NEjOm9I4txiG2EA1a9Cxh6AaMkoFltQAGdYpJYd1OWmoPhgbKqLW7s0sNABOxNaKqfcWXAXx5C8%2fndvBMP%2b7ecTrZwjNCbCXiXzzGMd%2b29aUwTTlr1bxjiPZyYTQyqedUytvRfR5Qc4HrHXQ2lhvyyWg1UYlwTd438xZ7eSfZmfMNkrtTQE%2fmZuhnOu1nnbsLwpLbNB51EIGfdcIaZ%2fk%2bMTruq9Zdq%2bcjeVsfLX4VANOhcY%2fyV%2f4Czv5DjO5JIJbiLGoTmLg0nRkM%3d&fich=CooperacaoXI_json.txt&Inline=true",
+            "filename": "11_cooperacao_parlamentar"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=xqHNWAfj5WdFRzZRs5cYjoHaOQ0YsRiXsCV4ovNcx%2fEGWkU1D8m%2bxKHzekVe47qAi4GDJGFoxUm1PR3Tj2wMDYdwjHVcoYeUJXiRNptr9rO0wJfk73XpDbuyG%2bGxqfHaEvEbma6LOviLLOlq10YI5GFYSL1soy5snWRUpCPFKM%2bAlMkwmon%2b9br6CFB33EfVMK9OXRrtMXxxqWJgrxdalvIfyEIfnYVY4hiumcKJLjRH0B8rUPyl1yAlbGxSgkG3t%2bx1x4jcGdI6G97fLdl%2fez%2bm7vrgjNPn07HECrtVZfgmjAauwlf7MPEyH7pXymnbCCZwuSZ3KuRGcwSLULn62xHuoZP0RZujg7DHtGszWegQruvafrTnpT5udTK0DGZWHMDZO1UfgCovf0goQ60b0A%3d%3d&fich=DelegacaoEventualXI_json.txt&Inline=true",
+            "filename": "11_delegacoes_eventuais"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=nQdWgVEFVnRqkxqAxhiaOLnJ6fazgAAF91DPNd0%2fFhC%2bI4pcMIHeW%2beq%2bwvjUxYc29yQDGiKqdQ5b%2bIcEL%2f%2f6tjIBMQJ8bPKS41Dggm4r%2bJ%2f7VlH7%2f78QBuYSHRE%2f0Q%2fcbVXKKMs40hLnscWmztVltrjcHRz72YvnRvPo%2bALosvI%2fl0QDS4oYx6AWgtun8OzgYGNud50jS%2bzfrmOpsKdvzj2bpQQZYnRiYikKbNMy3S7gIKQtI6iT8jV9fh2y6RevRmAJpMntMgguZkM0xAgSx%2bplEMgVCTYyOJdXl0uTmbg6XQ4Zjjno7fVJJMEkDSpB9wG%2fZfpRQ8BGZILhnV6UI9HKdUGFRUwpFSRGJlZpEjpecZdc%2bkF3Q%2biQPBNpz6rMwRR5xOn0qNbYVw3gryJOzynaPd7k8wdpXDn6pGneaE%3d&fich=DelegacaoPermanenteXI_json.txt&Inline=true",
+            "filename": "11_delegacoes_permanentes"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=KVO%2bUe5cr7ksrCy%2bW9865lmRTVqP477cqXn7L7ffNEhQW%2fif7hzvE2kfJ8gDRq30vlclBNlL%2bUEIoh0nc23xJ1IuW5U7XTRhwB1D2gNGKmNJ2TEsUhq%2fY5%2fldCw8Fuie44xUFSPRZLe0YbTWV%2bt7JAiKnUynig6u0QqpJhUFAxMHjY5xyZ%2fq2BuxmH0DkkBHKRh3eNMy3hftXewW6qRYVptHkuX0RRVOwnqKrh6otdxgU7rUKoDdF04sAP6D33eSVjUsx3WJtdOjL5ugHpcF8MroQqembptFsZu4HYLRuGEo9c0F6D7CYg8iWxPJZHv9e79uuNsxtNFYzIyZ58wNHC%2fbblrNPqHyh5HV3hsZg8Y%3d&fich=DiplomasXI_json.txt&Inline=true",
+            "filename": "11_diplomas_aprovados"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=yiAQ%2fBU%2fkBBEeRbGzuSOUzmWx9OY%2f8QRAy%2bURCQVS1gyceVsr8WZUGrIudGgLlVEvq6aDU5NrdFA2J6kfIswvmuwQDUn5bKCSAmu%2bQLGTW1vuPcwxXa8dlTf23HcDmN%2bHioQzurvtKJ2ffT%2fnNThhdPMpB%2bV7cEqTV9OIMRICym%2f9TllVZuM828UwhM%2bChkpn6vL%2b3kgqKR5egQB0ZNJGgF2D5LWDPbD58Ze6T2RZzXvOOrI522Xj26IRqv6sqV9UYPGpP%2f63GyoqtaYp47KcxTSkrIf%2bKChB2IsZrEmehVDl8wSAiBOn1kD0MITs7OAX62jDOjXLsqH5yP5ulDcMTq2gFz%2bPLRNSIoaQsPIeJBO53dEkVUIb8mNYFovT%2fJtp8mM3rkhBRzOFO8EYJwgK9pmGixnoK3rq9AhJVOIxl6AbywsNO%2fA4KuJGXLNiTpk&fich=GrupoDeAmizadeXI_json.txt&Inline=true",
+            "filename": "11_grupos_parlamentares_de_amizade"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=wzekmnybgEqtkhs68avbNfr2Kc0OtZ0CPMniW8y%2bxRZ1%2fabyNdAxJGRG9cAc%2fhDT0LDZT%2f%2fcEX72h%2b%2bOE3du7On7jMbtWYFlBj6QTuSAOezyhlI1JdKoj2IwsPNmSQbgiW1TmXvACx7KHak6%2f7kcioCPCc9EgLC%2fQMnvy3N7LYxHfIpZI%2fdrBQVl5OmMmBokvitcCNbIBiUXd5AyJKwokMIHLSnFYX0nYk46lDccZ6dmW5OOlbNaKL35XN1o1upX0QVCUd8mqAt%2f6elzBTYWvvkhbOsUTU40S8kkyV2vfBnyfZWsOddnqo4JqOrqqnOYlVaP80RSC4uf2NxCi0G%2bVD814qNJ7INhs5IYc1x1P2ods5D4V6crZ3YP9WjUUtya&fich=InformacaoBaseXI_json.txt&Inline=true",
+            "filename": "11_informacao_base"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=Oz07ilny7JroSWFqw15y1pintsi0LekGe4GqoelJo1JWAljLI14NaGYjBDcLimo4%2bdhPMfpo9rat1Mv2EsxQ8sWt5Sk7jY%2fSAlYbMVA1iPZtZrvI07csBIEmNBwC4Lb6BJhrG0fW3tNW%2fcbuCNO7jIfUQixBNKmYy2ypFSG1MACAaZ1pg4xdvZYfzoBIoaG9IDqQHZgWUpJarpMtXuOcuMlfQ3C2HH%2fDFRo0ZLpGl6Pr3DNUX%2fd6iHkSyIGzGv%2fDsv2o%2buDoTAAtY50Lzua%2fVKfvTNVCWxd4Z4H17Tqh6inJvbu7%2bMbW%2b%2brxPCQDtr7q51a6MZTI1Ly%2bUNPRslZ5tA9KV4O0V7DJ5tzDhehPf0KsRTp5WWsEmx%2fw8ydq0Wpf&fich=IniciativasXI_json.txt&Inline=true",
+            "filename": "11_iniciativas"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=h2ruJ1BQY%2b%2fTD4wTQI68ZZf%2b6eQ1XwXsW0ApcKF863AxI5VnRCcg8h%2b3fxZaz%2f6ZQq7MDaJrw1aDmpLk5LzzDROOSMMEIj2aKMjVGPnGsbJv9OEqLbYoH%2fbwqsrKiVSg7Mp017pFLFkUNw6EcxaboYIIqeLwtkGyc%2f0wJ551GxiWJIYib0Ixf8%2favhdI5hwZlLHxAuHOWG7fcXTaZyAqF7HONBwexYyxgvjWhhz3jnlvIwgK98puPFBYkxBQTIryvHxNYmjhL4VUVUU5t1olPMhwQMryYeTfU7LK48rxQA8ubchDyocPKogOglZxHdgNhxkuVcAOtd8bhdWaT%2fmEr%2bvsM%2fNQ%2f7N2qSVQjD4A8sQ%3d&fich=IntervencoesXI_json.txt&Inline=true",
+            "filename": "11_intervencoes"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=68NKl7Cvu%2bX5Rp7BBYXIzQ4k4AlBNgZkdJAxVfFhUwJqHm5FIcYnPHjnEAVaa7glGOphwA7ZLnqB4Tt1c4wSEkCTr2hjuyvJoyaL0H%2bAiN%2fGJDoEP21X4gDdAOefInuTbVu0ybzPDD7ETAmSvZsaR0DjaYnq23kGedZ7QpiF6eOJ1iO%2fvuVb1yl4fpZruxEy5uHSw%2bCjTxCJwvlbyJxvyVhLEzMO361jMF1BVmom0Awc5JHMUpkO%2f50XNUUIw%2fVwAuKaMQqscpz78cBCuS8IbpvzyW5%2bNRY%2boTPg7EJxch2DSAE%2b7Dotnl2U24YbgcK21pYXrmUdlZlhjNN8pEk9hCAh8C66iFi8J4%2bsClexMiL0usSDYxStL2Pw4zvMweg9NFK7G9q%2fOUtLSLi24YlE55PmLsynKgVT874TT4I5HaDH6zM807eu7N5R44BJEIab&fich=OEPropostasAlteracao2010Or_json.txt&Inline=true",
+            "filename": "11_orcamento_do_estado"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=tGPWMEpZGlW2D%2bPovRvMlpIefw51Ys%2bjL%2boFK8DwcWQYcj6PYba66jS6krO0cuE%2fHamf96i9z5p9%2b9tCIm2sOkUmj%2fzR0vWQLrvk8gKbb0SVJyu1w7JDkIWDSNb8wtQHGpQR6ZG7i26C%2f9UHNI5%2fRG8Ng8NFLx9PmB6jrpA%2b1HyrkoHKQ%2bgx2bLNslvNtNUmzc7q2iDlUSigYV8RH%2fzHxOhz6gN79VC10tkJNidMyhVV2C9AMYxTr3buQec7yjkkzu%2bfJ07Q%2fXGqkBXMX%2bv%2bSOpBgrRKRlevmJDCCtqYnx9II%2fZ9%2b6Y%2baGoBcFZDbwqRzD2zXuA8I741ORQWD1fX67JUGCrhqT0%2fRI7vVmhWlCFFodz9g78bLYCX9ym%2buahb5w9gljxTm%2b0eKkgelAEza9izF1OdtjPvJfGAzd8WHVxXpmsVB%2ftRoSuxNrK3pp9S&fich=OEPropostasAlteracao2011Or_json.txt&Inline=true",
+            "filename": "11_orcamento_do_estado"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=MNb4op5oxPwvoDrdHN7iXBMYyUVBnPi1Sv0WwRJw%2brkb%2bkmosVi%2fKKev4R0LKPunUZIkHtk%2fIg%2bhz%2bbqRXCZ34qfGTOWmjrhh3a1KDjozk8gSlJoZolKKT9rnnPUEoO%2bC0mnJps39omJoxoBiv%2bpxASo4YXibfA97oa4b8aRaNSb4tVqLh31VMk7%2f4sIUvKl2k8o4TtpSailnkuUolMmEZXeb%2fybFeS9aGZoW%2bj4yhfDeROG1ZaGcbDjSE8%2fLzWsDe5C7nY11MA7GgdQau4LtFDcGY3Haw4mw8JEy74zoayCiyT11l%2b7ZQW27%2fEjY6jchV3oYlf0WS6jI%2bcJlHyVS28LDkGNtUHQz%2bhrzTwNJWTIcvTH%2bKNJR9yqGG%2bDuO%2fPyUp5vtzYOlNCGrZuDAn3UScwhlVptGK7w1iTVmvSdgk%3d&fich=RequerimentosXI_json.txt&Inline=true",
+            "filename": "11_perguntas_e_requerimentos"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=K5QxNl3Hu8Chl%2f4jq8CCRjMzxqtkFjZ75tzKHapXg82HV%2bHesiJvNKILpZy0Pe3lmJFS%2bIy17Nmz2c8DGnuymmEJhEd8udsX40JZV4NYVPI3BiGpOSTvLdY%2bHygeMkUa4AUgebO47dBQxssXC1MIRkVVDy%2fMm%2fjgRK%2fJcfh%2bsvEXsvi9N2UxkNlpe4Hfi3tA07pgoVHp80IBNUnWKem7AI79a2PubdSRUSLOEIZNXahGdAWw15mvJBffkNGeIAaMGNBFbszvLqnFOtad%2bPRqWXSZjrCkrPJXFkAOHpsF9a8cFKDVn71jseaxB4gwWzAM7IpkDQCEt7XTJ4B%2f5Mkeb5YWEhBrrPxxrdlDfEkQ95YvIG2rB88d7V0zGHDP0tur&fich=PeticoesXI_json.txt&Inline=true",
+            "filename": "11_peticoes"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=xXFEdArI1OXYVmLhGwLaBZCpFNne80pWDQGNA3%2bfVtxXCrwnveOum%2fx1%2f69IDB1FvixclJ%2bkiV9LlNVOAtNTJAPTYEJuGVbOINItU4Z6xQNxabv83V%2f50J2I%2bJkoHyk6%2b%2fhwfFAomcg%2b61FxjSxA5qxRANxMxYs11zRdEIVU7YpIbm5GlIYyUIYLtAT%2fnGnSEokuS5EoRJEDEEpbAB4Yzks32f1MXiIyMWVakFHY5rJahoYw3hTGsgWQ3jIw626%2bFbUDuCzGCRtY2DCZuF9gfapDDhE7c4q%2bKhyAVT5Ff6oQrJgB9gaF0WVIzC1UaFAzuPhhNo010ZN7l3Zv8pDnm%2fPDKGjIhFT4kCfXsMQMpfUlR%2f1RPZ%2fbYO4yvdeEYF8%2bXUh11Puog6VpBinu3As51A%3d%3d&fich=ReunioesVisitasXI_json.txt&Inline=true",
+            "filename": "11_reunioes_e_visitas"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=apTiJKOdwdil1qJ72nC8Pl%2fLa%2fB%2feeq7MIsiYbeWvXBPJT86XIYGEz45%2fbr%2fGohcyf6UQL%2flvzqRHiwledbdaR%2bwFSlwu3R4Cb%2bVFw1J64uemgxj%2buDn4IvnwpFZMrvGKHPG6iodJwpJQZzM%2fWx4efwTb4QvayV96mUBL%2fjU43xBFdwHnLiDf64i%2b7bp2SPWSbHxMqzxzJWPl6VSXEhgCyq0xptbssM366cwvkEzsKxL4UpEosO27eWPDY%2bHhL8H%2b8DBV7tUzz03yOp%2ftVVg4YPb0ovHJa2ME0OOFTYcSnCLihWo3UlMrnWhHHSIlJkWXTekIICjt2gghPmSLDDd3P9H8u9%2fKf%2fBQFrZf5Egoa6jyxheKvDGa%2b%2f0PDwD%2fS4bqGGokfyj%2fqEyhwEtyPtLAQ%3d%3d&fich=AtividadeDeputadoVII_json.txt&Inline=true",
+            "filename": "12_atividade_dos_deputados"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=OzsFAqfiiw0DUCneHsDMHOHs7A85QT%2bxxP%2bG5AdFdTh%2bl7J4ahEsXWLWhCFDkf%2b4vu8zxf6ePx5mBhC%2fGaW5OS3Mmd4naB%2bZvJfR9n9SKVha11hctbdntBvQfjRw3pJSpF%2fP%2f%2fnuGNYgm43FDwTMxXh%2fBUbiHv35TAbh9DeAR%2b2XwOfPDG7VXWdESI4lebsfpuw0269u5DMwBMdsGtDZ1KWEOrhwJl4TK2ydjekQjWNx6vaSMy2UFGvJPLsgX7ELN78uYBVkBKJ7kLD5LPSMHNmrkZQ2Mc%2fwaO0tEWAVBmiUXwV5jxJQ6MJBtALNrifHxODFflLVlcvGyE9ip1KJdr1LUfCCSZ3KGPEZvmsmJWs%3d&fich=AtividadesXII_json.txt&Inline=true",
+            "filename": "12_atividades"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=kPfMlFd2kEM5W7HHGF2a%2f1gZQlx6Yhw5PQvE%2f%2bhyG53b%2foD7538tJQAFK5nEXGnqmUx8T1mzsKQ86waO1m%2fNBs34LtVv584gPLMgcGvBR%2fW6sLeYkMOve%2bTC8QaA4XkvxXMJM3w7ZVnXpJuxzVoQdmlVPUnwsp4jkF6r69%2fVV5vfSpgA%2bNKbf2Un2w3C00nT7a3fotijmwmNUNSnUxz1PN6qdROvd%2f1WVkTpuui8tZChWgjyb9KaW7v9JP7E1AqF%2bd8y%2fi74Q2SDrSNiyucjTz1UpXh9olFNRUgJaeyx%2f42WD9EQed2xPiSTSLChYl1lEWnh3jBkxk1aaS%2bCp3qo0KyBrWo8TWQeuWEVmAj5Q2XVb7Q6F26UPhq0TJJ3DeTvgOQFb4CHbXMqQqt1hDZZQw%3d%3d&fich=OrgaoComposicaoXII_json.txt&Inline=true",
+            "filename": "12_composicao_de_orgaos"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=RiIrSeb9%2bofhPyuSyiQxQ5oQvVLGorzT%2fgbNs9yBz8%2fL%2f5NUPDmAFCYTIXGxcbRGfoYqfLTC5OYS2RUrJLmxuT2UtiIfapGQ0UvggZ8g6BOigCfdWXUiwCHA519JEqsyhoJI0CeqvzSjnP3gJY%2fm2rLnkcy7WxAHR%2bDuo9GDAu5vv1%2fJa8DuD58xOwRaNAo2lYl55DL%2fA53BBfUklipK70KKB%2bi4CTAte4Ke1idvMRN9SNVD9sPCdfN0Q4O83NFczdRLfuJVUqrd1pDrolKzYLV%2fJXG8Xqukoo8b22k4FDbzlQshEL73A4hLAj4%2be4m%2bWxw464WvwRORqXB0Bo7QnzfezskFMUPE5KLTeQoOHT%2fiKOAF9MnNK1OGLaFdId3pVo%2bYIBOmVK0e%2f1gN9OMXrw%3d%3d&fich=CooperacaoXII_json.txt&Inline=true",
+            "filename": "12_cooperacao_parlamentar"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=lXU3ztohSf0cD8IS4lCy5z5NUzOTkcmQ6zz3M7gMsvcnh2rsn%2fdFcC%2b1u7jRDy67JSiFavtIU4V%2brW8v9N2wljDWjzCgpFhWlGZaj478F5avtZ3uYRrq26SYMtE1BIx6QgB9orBbZd7dFUXm7K5Ny0hAb5%2bP4%2b6ssFwBKxOaFQFXwA32PXq2%2fZ7%2bx%2b%2fbzqK4yJdQjMvcaAhTm5re1F1Vo6PXeLyQG4NbR9cVHHXlyunkfpGvDdwG63AuLbQeLqwK%2f3z3Tm9lX4rSAzdJ2UMvUDvIP%2fCerRhOlLkZjHSbMmQkaegJm77ifwkyRwPnXQl%2bVH6mA87pt0P1wRTRhtgmmRRa22v%2fv9Rx2ZZYWIQWkS1TUNDqQSfgL%2bJv7rfUs1PKQ1X9BhzH2777BoDpYSH16CE3qvNs8zVy9m%2bnQp1TEWo%3d&fich=DelegacaoEventualXII_json.txt&Inline=true",
+            "filename": "12_delegacoes_eventuais"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=0aZxImfOYMPcXFvGTheznt9PIgUXWGU4zAGwouQK8pHAprqN2hMT1EQKb4OQaN2ZKNMtfXBW3YT6NXoyq3v6MckjTm02vishlL50PGy2KQnvpW3rmiUKsJ9lVG%2bpuAHalq5KOq%2fnTdkFHczjTV1ERhp40tpTCSBZWnXcetlyl0Nryw8K3OCMNOXrtta9t3Lgs8%2birYgfmKnZV2%2baRG6zo9NX6LlI7WZ7RgA62n8Az%2fLYrbfFtB81awQbrRCPZbssjmrq0kZ30iVgYJTVlG%2bt7%2blTy2Z%2buwEUxegQtZ6G4EoqIasv9tV4FWME%2bqMtkQH9D2hEyV%2ffNobnI5kWKn0WnWsb5%2b%2fI0yHfh9royb0c8i7wQg04CjJacfSCHCBmvhzsFyNYa8CzQthId3zRYBE49g%3d%3d&fich=DelegacaoPermanenteXII_json.txt&Inline=true",
+            "filename": "12_delegacoes_permanentes"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=PirDA%2fhm2Py1UGHvbR9zTZrdLdMP%2fPFeOgx8euhzMkIZ8mI9RnxDGGH9kPd3iQFRPqjNP%2f57h3dGaETMsBGurO%2bXqX4W2Rm2oV%2b1yhsn7Lv1Mj3dmm9sz6COi96NSbctlPydMeL8vlhjDi42Um9D9jUS1QpH06qTmCcPbnczzPuPcg9BeNEwLVPFF8i6tOBvr6StfuOXjZAEszGV5TSaZlfnfh%2bN2Xxr1teBOrrvrG9rq4mR9u%2fDIgH1uEkRLvvjtKwNngB1JeEQKCmU6OLH6bQrcHJyaYNmX8PVSDkW5v0zLcM7vcHJIL88OzH%2fOQ90U4DoNajft95yp%2by7aq0uaZqQJWZUdvg5WyrYVHuGhrU%3d&fich=DiplomasXII_json.txt&Inline=true",
+            "filename": "12_diplomas_aprovados"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=sm4bkAQD%2b4Nsp3BmiPkL85ytP9VPypIiVyZbsPAW6HVAxQxOP4fD5Wz9QUpr9gDVF4uA%2fR4eW8caZvN0XTCM05hHmW6X6B9MmBDp%2fD%2fl59Fd1UzViN669UWdg5EyuzFmrFpU4kmrfATgpmqS7chpT2fSuESJyPhlMqEv4aIDkHJsndIEZqqfDhBI%2fnfULhccYDYEdIqHNMAG2BZ9KMvE256CI%2f6wIb043lM1pCdZUSNFrbD2ckGP5wChZ1GcMObuo1eeZNIQD7%2bvtKWRlYc0WHCHBQ%2bO2yvQj50%2bltbwzek26GxVk8wgzFC%2fr4%2faPKx9VUeQjNUbxIi6RgL7B%2fhHESojh932X7Q5diKe8pIs%2byUMro6y15ty5K8DHWP6sEyqNUd3voT8ccUh%2fIckOP4ZViv4SP2ihrIHe%2fzinmBj3uI%3d&fich=GrupoDeAmizadeXII_json.txt&Inline=true",
+            "filename": "12_grupos_parlamentares_de_amizade"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=wzekmnybgEqtkhs68avbNfr2Kc0OtZ0CPMniW8y%2bxRZ1%2fabyNdAxJGRG9cAc%2fhDT0LDZT%2f%2fcEX72h%2b%2bOE3du7On7jMbtWYFlBj6QTuSAOezyhlI1JdKoj2IwsPNmSQbgiW1TmXvACx7KHak6%2f7kcioCPCc9EgLC%2fQMnvy3N7LYxHfIpZI%2fdrBQVl5OmMmBokvitcCNbIBiUXd5AyJKwokMIHLSnFYX0nYk46lDccZ6dmW5OOlbNaKL35XN1o1upX0QVCUd8mqAt%2f6elzBTYWvvkhbOsUTU40S8kkyV2vfBnyfZWsOddnqo4JqOrqqnOYlVaP80RSC4uf2NxCi0G%2bVD814qNJ7INhs5IYc1x1P2ods5D4V6crZ3YP9WjUUtya&fich=InformacaoBaseXI_json.txt&Inline=true",
+            "filename": "12_informacao_base"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=vb2Yn2%2fbxn1eMrT2PCEK6OFI29JhtvHrXFI8GPauMZYUku9S3bAZDszjsGzLERZVTcUAovoe39zgVDt93F%2f5vumGj2a3JvhB8Two1OafDrEOYy6YQ%2bmqTDRmDlFRI6jCQfQSLlsKGyyw1MeGl0p4Y6Q%2bPdvumPmWvR9wN8X7Acs0w4exTS6c7HYFR8%2f3gr5SJF41Lvflj%2fLZtM4XE4Vh3CxrPXju3YIogANp6P46a7KtmxShgmg8%2bpj9M05DIBQfACaUDa8P64%2bxZOOZyo8gqvPyQyKEGZ2rHUaIHfAzpMEnDtglEXfpHO4us13AxdZjlYJgzJ3s7MDo5BUgI%2bCuhrMVnfyIqQCpeHTfAv%2beBHE%3d&fich=IniciativasXII_json.txt&Inline=true",
+            "filename": "12_iniciativas"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=JVnN9qwkvtaF9GzuzRUdBN8C%2bg4uyF%2bCWR%2fUXlEnu4K3x1gKUuFqnffyY8X%2fncmr0UdNDGt9jM4G3DAj49XJhMG%2b3iL2styXx4MGi3JmJEzTM4RRdKo3daWiGJ0NaVeFVap2PqBek7qCP4mDB34C63MqZbLTgcE4VH1P4t6edLj7oUhujJHCD1kFxdcdkyqBs3aSHFSpaXnis2S3c2K7P78K86z3Tusm6FPmgK%2b0rgfYHlmPCK75sMtSvHc2p79xL8Ow9KPwqfVN8tBQZ7eeRZhHPtAm%2bBbKwACfcpWBKzaFMBrmc3FoPWAPIL3JRrgi0LnCCUnES5CV%2bqsjYw9SMvGrfY7cfuH3p5c2%2f3yJmH8%3d&fich=IntervencoesXII_json.txt&Inline=true",
+            "filename": "12_intervencoes"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=12j1DltEfNYVWuiOdgCDiOnYAFNIdo%2fOk6FQCxIiyTh8N75hhZpsHSi6fO3ZD7CnV0m87MdKCvuHQ8Pf7E3NVReMnwxThYBPw7NqUfcfRmx%2bgxygfSfcKoUFMnWvzKkZwP6boH%2bhxTzZpIlgpvIW%2fQRN5vtIXsOkHIh5moPgpou5BfIXf6mBgvMEkBMwBndQYWBeR7mTTstgqMdng9PqvwgoF8PPgUT7wTwmjvW7Hb%2bnDdwGytAkIFzDQONxv7p3wLW%2bRYIdjXmKEB86wUxPo25ImIS6ptAYi1gryYRkfjzbLzIgDB%2f7q8nAmVt%2boGDdVq%2fmf29ChfK7fDO3008DuNxphePhZfUawx2FlEklbp2HZGvc72WoJKK883WMBptHxKTympFhKuHSyngQ08BjHw%3d%3d&fich=OEPropostasAlteracao2012Or_json.txt&Inline=true",
+            "filename": "12_orcamento_do_estado"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=BZ7BACr2Wr384%2bVbvSoo6BArWJ0mWaLuBl57sxMFrVTZ13idtnAz4p%2b4lIC%2f5FdSTXOM%2fY%2bQXl8Nf6%2b7gmSMt%2bWkp13RZCxzrb%2fLfCWrNtjkwy%2bwijYW8DwjKvY1v4IEuuS7OtaMmM%2bAXxMqPDWULysGURBBmoYThbfqH%2f1y%2fwl66Rx3U%2f5IyHpTsyDk3qAo%2fmreRKCKNEkO5FSBHIkHiQk0gGUcDj8ZL%2f6BXHsGPvoXUHQg8NlO0Gj%2f3lfy2aIeihwKnw9vO1IGrZmRpN5FzNqErJmqZzIBfKmxXHqGY6q5IEwSzwzmKGG6nz69foh3JfiuFRwW3gddjaa8yWI0wNBJZGJEmhsMMXHDgiFUaLkqwYQcQ%2bhMKJOCPvY4VY8cyxZjto%2fRPy3YSCWyB%2b%2fMRXYYhWDZou9kRTvv3jHBEAIqM9kDzQFJwjWxa1q48WyH&fich=OEPropostasAlteracao2013Or_json.txt&Inline=true",
+            "filename": "12_orcamento_do_estado"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=1tpaoDtjvj75D%2bVCl%2fbSZgR8D5%2fjurPq4eNz1wFUHps2EVYjmy4ydWBtNCZMGilsTNyRcjsmBDFR%2bMBLX%2bqRnwDU99whre1VPyu7JOsoJhaLs1GQ0P37gcd91ELcBZFjPRyqaM6Bp%2fP456b5JH2Jq0U8zCWvPeEkrBJnOn%2f2mM0sYjjTOYIbPV1k7i%2bOwKz526Shqc8lfAkeRq%2fuLOL7MBE3k1Ljs%2bCLg7WRJXtXuA6CEwbIaCUfirRZkY0mHSjmRgJFukxLcn48pqkae0%2bLEDRdq94BPqvQDVul%2ft93s1vV6st%2fK%2bpz5BqzA5EcLT5M2%2bRKvw7kzC3Vt1fe9RLeyX9U6d0ZIKtcadzJbgJlHEgrbjq9bGKvVoLkSCBAYjIdFLYsT4aNuy5xR%2bfToJQOW5twlJJYRmaOvLw5obhWyvc%3d&fich=OEPropostasAlteracao2014Or_json.txt&Inline=true",
+            "filename": "12_orcamento_do_estado"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=7Oe%2fHsPxeKPylyguNY9d9jsKjYW6NGI4Cv700yhFGN246DGvCHYsJaZsU8L5jHVX841PLx9%2bGRttdMfa599UiUuOSCIN%2fJod%2bkFE%2b3n9vv9XVPINHQlZv9%2briteQRb1pu1PGEIQ6r6XoK26Cia18PWjfyg8xGTMwQkrvbAdGM3wXr1ZoYcXj%2bt4U9B3pAuOfKKYl0ZtG7zwzvEHqZp4LDMLkwL9RazTLH1i2nKfT29UvZQDTEyD8IWfW0FHkoJssv6f11zlr1ceEOIdE9HRmWFKjMNb9YLRYRna7FFenXX4g7PvpVcIF0eWtw3VdW16fE3OApO8COd0b2iG%2faAZ50sfQss3fHK0qggevE%2f1HtJvhkMMoyfmfb4hahCIoaMjhHJI5BG7MYmRta2jdmT5CZAz3y6%2fQazHbPOFGyypROlc%3d&fich=OEPropostasAlteracao2015Or_json.txt&Inline=true",
+            "filename": "12_orcamento_do_estado"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=lgKirToueKDBFB4FPtdgK6%2fHeqGJ4gN0UweRniV%2b%2bB7TSEn02mcEGcHkWSTVZrslK4rIdfl9aCMvATZehWp9UjwRtgXzqdAkOnADmi8i8A%2bJHACj2R1ckUzkf%2bzklAsqkuVw2FnNSHph%2bZE0iuNE%2fkO%2b4JiKWAUYgxaRTQc2FcrRpCjg8mTX82cyutnF5%2fRSCbabjdUNpSC55iXiBNCWog3xm1f9OWVpngWStMd0OADYe6YbDILJdaf%2fQRwNZE%2bkDsC4vYeHCuDGA7tbPkVOz0xn3wzWu49XZfYmStfbNgv%2fPNmyMHJjZXjqekPl37iHuW4q4lUovMUUcYoTgOxPalpO961Eb9dHRvXDrIJKm4mmoG4dwhIVQaAdOEmjX%2fD%2f8BXkLHdueRkSAzykf1ULSQ%3d%3d&fich=RequerimentosXII_json.txt&Inline=true",
+            "filename": "12_perguntas_e_requerimentos"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=ZA13K3kMxFDHSYcfTvkRlvyG4li6LXPyJ6P%2f0ldE3O4DOq3D4PGkR0lqNsCJ7T9SJOJXYMqd7UKNWnUXv7HmaKb9tFYZIbltUbF6N4Q4Ag4O%2b%2bbMlaLno%2fxgnAsZKRvEikgE6cJQnqbdg2R96hEaz6FruC56b75%2fNXWkYvi3HzAgq8Wdy6O5GnxIePk2BH7EsDs0W73RIZXiaBQuFcR8tuqDAwx0DrQV6BUWDdJssaZTwA8GJudxdLmI9GmYSO9ovJ9vwKr50I4sOhxOF0RAi1whEqI%2fAsUlKgp%2bBz5Yx8%2buvkEN9kVFY08t2vn%2f1ORzcCgGfV6gi5bjf6MHD0mP28U7cNxEBlVDlvNfKvPhVCk15mEbwVdJ%2fUjEQEqtEM74&fich=PeticoesXII_json.txt&Inline=true",
+            "filename": "12_peticoes"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=SACllsShe3EDUuGHdkTqod0FXRLx1bj4dAD6eLZKskIC9a5MknKJ8Ia5UTVOYOMfp0%2bNqTOnyWhG4Vay4kyYRlkg6pDZmRgxshE34GYBj2rLWmgpN5k4L%2fkMyqY9dCYV9mIergqPfvVENe%2beu2p8L7rbtXfnZnAujjInNTIbCHNDUnZmXHzJetPi8DfGv36SlbKm429cEY8K6tLyvi%2b6KBontRpk23mmuhtbAR8jQzZxWNxQYztCv53ARi6awRlgCfQ7fd%2bS5uEoEGXHxtFZTXWBoqLU3iy85ENCZEDhUDPlBNOhwZAmNwC1U%2f1m5mX4zhz%2bMMF9jri6ITsnBJoPjvkQyTPd5SjMd5xzoYRpQdHwwfk1ToBE0YONob2CPrk6h%2f7Qmp6Qn%2fpB87e5C8VqLBifMutSMXDE336fbyT9VCA%3d&fich=ReunioesVisitasXII_json.txt&Inline=true",
+            "filename": "12_reunioes_e_visitas"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=MU3V7lhBI%2bCJhkRB13KkzhlMDWcJbk1lL4R%2bx9VBhnCvCumwMFHRd2hQCg2t3Au1SMjAWqs1sKhlhhYAAsiXsNGUs0glgT%2fKnlZaKQp%2b2AvAkNxYQmPMxJIe41LF8M3W3TchQ5jKHbB%2b5b4Y2wJw8H7LAssQIrTIwssVhDbvr72gX2GOh5YTcFVvmcQR40dA%2bdgH3WrcCcmnxQRvp8%2baS84YwEVOVpqTkIbmzMKFpXxwvkh1HFK4fX4TxkeSpLDd0gXeFyT3sUyhpB6OwKRx4l2qtUtOmr4knEfBoMuk1S%2fbg4bsPTR5gPLJV7momsAMo1Mb34tlixPRRH4tcPB1XLJo%2fKWlyUQHcY4%2bmhucJG0fFSXlKBS0lBGLVXF539NeBzfEC%2baMVXZPrkHrjno%2bRvxfE9d8R0qBhDecvm%2bNXHD0h%2fZPFmWG%2fZm9CTmgPScJ&fich=AtividadeDeputadoXIII_json.txt&Inline=true",
+            "filename": "13_atividade_dos_deputados"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=HVrf6yL77e0aFjxmBv%2fyeSvgq1iLjMoDA76ACrUEJCclFhSjbTUHB7KIk%2bfTyQO00t6hkIvhHvdtIXIqu1N1mIp3L%2fvEOItAHHW74jMeha3Pulz9%2ffs7xoyxa4thsdbaKb4s%2bWoVjnAD1CkrRJQjpamIxomqq1m%2bPhvhN%2f9lxKkWciJJzpsZD85%2fBep%2bRGnU93O3dYucLHatGOPLXBMjsW5f70fs9VoRIH%2b4Nhvp2n%2f1UWvsmG9FEDG1ZZF8%2bk7SHSh%2blu5h6znbBZB0j3GG7xv0pfzKshc5vSV%2fAz%2fb4ZVUrT5v6YmDytiMgYBqgA2diVG9H7elv0Y0gyazvKJVyMprQn7HPaI0518%2borJcTMM%3d&fich=AtividadesXIII_json.txt&Inline=true",
+            "filename": "13_atividades"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=sKewY1s1%2bonOfEqcSw47fJcwxXiK3VTaPnX2PmoLV0hyHtXgG5YUoM0qMfDc%2f9LouLlicQjWLHFGGClN10Kaq92PzeX1TkKG4VaMJc0EF3RFZSSuGXyO8Ub2%2f8DUGMLm7HjNxzaL2sUP3cuLsEu%2fAmHVhnTfiXoGGM%2b1dGX%2bRG5Rl3vY%2bRnssIXzGIOJn1bSx17BS2xorPLjwMDjmt1p1kOn4EaqdNXudbmK6nmxUpUV07vvCSEe3J4Yb34kVfOKqVJRJwkeufBLwkPjdig9hGCxv%2beltlDUWDscBXh2zaP2kZ6AAT3v0pMCUGicD4rQ6EC1%2bkZGN06YIFMQUnEIYeNno4zSoqDNYUIMEkg4Jr1Tlvj0%2fuKMbd7GcRV3dDEszR%2bveDSwGtddlQEVzDTsfvI4KE%2fcOZlAKB1zPNtyDPc%3d&fich=OrgaoComposicaoXIII_json.txt&Inline=true",
+            "filename": "13_composicao_de_orgaos"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=35mEzB17DJCG8LSRFd4PXkP0edxs32rQB1E8%2bM7j34h%2bTYsaymZI%2bw%2b3eXp74c4gL5vAr37w56vJPoqUIi6oEsoV0p%2b5KXL%2b7SucUDiJlRHMrwnq92jysBXSveIwwlYqjZWTh1GzwnxQWtaO2UOWRv%2fDG5ZRWAHd%2baPsNlNoN15pSXSd1%2b4Rxhf5j2qF9Ka7yX2ZTTKJwLc2CiPPWZ1R5mjikCtu5RtsCv1fEWYPsokjKmQkqgaGKxLnkOO8fefWp4MdfFlqEvxN7HmtONddRyL6iNuDRMLT6hR%2b8pxsHLSeaYQf5TyfVlLyZzlRWqfOg8D9EDI7D5XEtJ1xUuLJ76jzqwwts8KpLwgRmf9YFHAZfZtQbMLVy5EGu9%2bAnD0kJno73LXhq4MtJvRHu9N1IQ%3d%3d&fich=CooperacaoXIII_json.txt&Inline=true",
+            "filename": "13_cooperacao_parlamentar"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=bdwR1v5fjfogWvEVbD5NBPdMXraU8IcEhAPmGNn6PRGbFY9EmDHph4qzgscXhQrZ2iE2AhMgZGHh0P41kp6fCObuhreyq3w8Z%2boXf%2be%2bI1J8AAszj%2fG%2bYi504vSf1d6Z6ZabIgtSrXZRrK9C6BsBDvdKIAzJ93q%2bllXLWoUhBNPBdY9eQwuoFHAr%2biACt4qI8J1ojDfZeL6syLPV5%2fgJxlpi4b8ei%2bgk26ThxnMokIRMjdZJWVYPmWhWNNXFhJGA6iGqeWLYusGj%2fWmvlyvfqdffXv5qv%2b30OUhxLMXy4c3K5muNRbmrEeGpYS4xQqBoRITFV3YV58QJTs%2bODY3XQqykGfaRo4vrCU4ld3XBROrm86kkjyMAfTWjv0FAS3grfKHeONT3q5xfkzy1VKdWvhXM4kalo1OlbINFkBYm34I%3d&fich=DelegacaoEventualXIII_json.txt&Inline=true",
+            "filename": "13_delegacoes_eventuais"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=tXD%2bdu3ARobWnYuW%2bs2Vpha%2bjw%2fAa%2bgCEji4Te%2bF%2fNEspEWlf4pMOw%2bgAoaIiPvlKGbYtcRN6DMaHVFsP1chmfKhlsFH29XY8BT4d6mKAi1cLhkuZHm65wury%2fGZYSOacHgdg%2blJw4wof0Pz2fMBAcQM5zKmKCR9GNJZzK0RnCMn%2b1ufJkDuVmQ%2b4iCv8ipnsruTorJP9Agcrh2d2B0y91Eu1bBeo5IxMQ2ERs0O8%2fXzSFf%2bMTmr8tF%2bBFuF3kQ16t5g3RePmXnzCFyTUPMOBBp3URxyqwt99g7BzE502pbLCJETi5zCrUwu6lMjk0s6%2ffJ0uStaCsoEJj%2f0LIPFbYgNIg3NcYMnsaByLMW0ZP%2brQic3mZMWHxVNzVl0XRloPFKGjOmmleodCrfIQb4eeAt5pn3rFSpbSZzpVnrUWpw%3d&fich=DelegacaoPermanenteXIII_json.txt&Inline=true",
+            "filename": "13_delegacoes_permanentes"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=Bx2lG5VOiwGYsn9GhEj3bu%2bDULH2k9V8Q9AbXPrrb%2b8uEKoszfKqAcN%2beOwBwvHXRxI17FZ3tBy4MGammuIgWGz9f8lZ0atlrz%2fhXtGM4tslkfD3nW7R3b1YaFPqhJLNXsB3GEluMmro8Ves4QBIdDGCRIsJyB80dBW1n6IYl7kpBeBE2M8J1Jp%2bMFjYrVBfkPp%2fOIJd3m7bBb7Tfaz6YafMtM%2fryJuxQSmqzxAiFJl4ay%2ftGd9uKUr9MNpaJeyoob%2fF97YISjJr92rPjX%2fpoafbf8%2f5GO3YTg11RDmJDtfWa3Bjipbi%2fyRetDeCVOCAq914LRDo8CMfc077K3MVgpzpnL%2fA3S%2bpe9DVR7vT%2fnQBTXXOxb7rIZPjB0eZOF5J&fich=DiplomasXIII_json.txt&Inline=true",
+            "filename": "13_diplomas_aprovados"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=OiMLGWKucqzHCDt2iSNYAD1cYyRFO1c27AnkG2doLyDi%2fs5O%2fGWLPso3jjFtBT9F5Veg2x%2bRZPPKurAngA2mdR75TAVGtY0nptoyZSmPxyZTdqwbWepXKlGmKd09Qz1pUoaKl2gktO49XrxbIVPrGXQx%2f5bpRWLAi8SRUsbkVS%2fH9Q4TdOGIXd3o6I1e5clYgfEq0wH9qRmoderw6xhMo%2bV2eRX%2fVo2PZfrCjLfC9EaioeGTsnqO8PGqqY319d1EZvmXiRVsxQiDL9jiU2nyODHVrNJmX29FwtDNufkaMQfKXzg%2bEvLAVicLUrDdHOP7vUEOPLaRjg4pJ04YXV%2f1H2t8Yjird08NXWJ0vBWvd9RQvN3Enr9pxZHXU3h0Za2LxywbFvwTXKRWTn1PuZtDwVoj8dAODtRJvB%2fE6KpNV4M%3d&fich=GrupoDeAmizadeXIII_json.txt&Inline=true",
+            "filename": "13_grupos_parlamentares_de_amizade"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=lz%2b5Bz4AEkOe1wns3SWpYoL5Y8CzjJJZd656xjlDWJgKO9mdKMCh2slpCst1kAJOw3tucJc%2fWnjUB7E50qN9pjQDhXisu14BWaE830jgpy%2fAStH4UrVray8nsSAGg8gY2ayvhtyAIR3n5KC3GCQOtmgR2M7QngbunBIOoaOSxwJeU%2bmi0RsvaDVtpnKYNlIFRf%2fup7vCU8XUm%2fjzfQcLx7qMIxYe1n8jMyTHy8msDbhyYz66H0vKHpp7IuJUzAC%2fzrDDR7LP1x4uUK2OFgdfQRGcrXRhvQVlZObXEob%2f22egna258lSw%2b3HMVCw5YQ5MIeQOvroFYO6TDAWMPbcRaaLySpj6JI3m%2b3MWswmZIObSLjBaa%2bgTpQAboY9581Hh1jL4zQ9ATPRGV5qJiZp3hvTqrXcssOhf%2bFNLmcHNPRA%3d&fich=InformacaoBaseXIII_json.txt&Inline=true",
+            "filename": "13_informacao_base"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=Yx9O6wLX3q5IPHfwdMnw3jCs073PALgwy2dRcJdL%2b08JkWYJ%2fmnqrCXMW7kHEHCTVM0uoSiSF5uieDmHzK%2bX1Jwp1wtZ1rB3FSf1yibzPxr%2fdjE%2fqJnYY4iTR%2bqzl4Br2vJtEumPYIGK5OHam9MneUpkkKbigG0Y0gsWAolKfVmWUWOWL%2bviVTG3%2bmj7SwETK3yhZv6nD00tMol27%2bTd6U7Xma%2fyMm%2fvZCkFBew6mUPz%2bHxD7yzv1iPyWbub9BzauhiElObR2%2b1Ui5%2bMq2In%2fv2e0%2b%2fQFdSYVjmaZI8GmidVdVvrpyok7YczbDdH2KB5SoegwygD9D7LnBsGoOGd6DY%2f8B5vSB5BZnwVNQjKqjc%3d&fich=IniciativasXIII_json.txt&Inline=true",
+            "filename": "13_iniciativas"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=HgjVr%2bAFpEBuqV8dij1XvRH%2bsmRcMek%2bCCG9wWyZP7VM1bG8S2N4z9tkSxTdRxntQHIDiXA4kA%2b%2f%2fAGSZ2w%2f3MnuLvuz02mXgxvbwQYuIsLmikBF5bD%2bhWPXGZOpB0Ti%2fFDO5n%2b%2bEztRPxJ99uxM0tB8VB054eCL7gc0ii%2fEF71VpOrJvy%2fFWL1CsBmZGQ2q%2bEgyJcKPv46N%2fyQ7RxCyzocGY2qohwUtlCNHpjZxz1x1phvwT3vEj48%2bUnAQGKO6DPwKKv4pU7TbBcH3PdFIkh0k3bkB7zGZkrmBjSxH9E2NgyWffr6WMKvVNr8x91vp1noUEdZjCW4%2bPPbf0aL3LJiHBQgZ2gX2zxplEiPf%2f50%3d&fich=IntervencoesXIII_json.txt&Inline=true",
+            "filename": "13_intervencoes"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=hrMs8ZTwTgnn6JWtSUrEnMGxmBvVBMrVB1ECM8ySO4wPXV9FhFredn%2fbh0m0aO42Bf0XqBZ%2b75aFguAxpLjfui9a9cNvgeCWPhQuGX097X7u2GosBBGNeazEdBfoLT7xgTnWGmdZ8m6F7ALQ%2fc3sEHUKdhJn4CVxPu8NxtpMHtNwZmfy1zNcFhP05wWytCB0cZs9wd6t8mAShg%2fOiVojfqW%2f7D418eFPzihKAgncUQt63U8ggCju0YcCenPng5frsIWx%2feo%2bfpMMI7XfFA9s5ND%2bHKPoXA53GlIb%2bDVBQ2uSsXyrF%2bwIyN5AeIcNoNNID5ZZ%2bk72Ur%2fzFOhOEw3uz72uSygt2sWOXRtuVACGeFLvh0kugA%2b6yxelUpiquTjn0M55claBl7X5q1P34J0jMcrfwA%2bHitWbyzv1g9W%2f%2bL8%3d&fich=OEPropostasAlteracao2016Or_json.txt&Inline=true",
+            "filename": "13_orcamento_do_estado"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=3OAkaCLXuzHVEPfWLFgF7jiRlaehxY3QhhS94Ys6OMSCagl1JozZtyNsy8tOxkmQW6Jo0Ccb%2bfvDITvCzV9OhE%2fj7M%2bhOJrBasx2IlMWB%2f9e0UbJZ%2fRM3GfjOpVZFzEf43NsLwplaOeb4%2fkW968LqXylYmPAU145857YKce91nfaIp%2fwPTpgUWYfZJLYf6hurz%2fF8Ip736iCsCptoVGBkTG6bKKrQ1TEQtiXdo5Ledmni0vmWGXpskYWPozCq5sBwN5APRMdj3PQ%2f6OrDnuxSNm5weScs0%2bAWDmHwT3qGVp%2bTjpQZqQV4JKr8mpm5A6ds9pHYSZH2elygt%2fkjh91tNraCrukaM3rAoQEAUCe%2fAoGW263O7EMtRPRjN86j3zp1ewwm5vrDs0toW%2baiEeIcyeyjjQ6ziqUddL1maSBFN0%3d&fich=OEPropostasAlteracao2017Or_json.txt&Inline=true",
+            "filename": "13_orcamento_do_estado"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=DHakQBfvmpsJyZyxBUvsoJb6hXr%2f9hm2kWpls%2faiYXqKrpNTIxbos2SUYEFNx%2bzAsrKWrXa8iG44qXHq8ezPDz3xgbszpyPJEvMtrHWAuuIfdD7iNfKjtb5LAgrpB3Q4k2iQDXrSS8umX7wF5WOFliL0atrEI1%2fFi5dHgql4%2fGOPap9KHlRyZtzUkWdOOso%2fdF3Lj04hvqUXGosRStiBOI9rnVGalV%2fGiWSbhZ19kHhUkyh4nlUHRVQMbCwV0nPGYgXI44P3bB3mwPQQs6ACtweCcjRWyH8ivnrWjGniS3b8uif1DmrV5IaYR3pG3%2bbDaIlgqeqOWAykCUFLPlHpcMitSq%2bCyQTyMVbvYIB3R0YFbMCFLnwTMqFs6ZAo0nSiFVPLOVZEUV3pmdN2v0X5USsrHwryjVqlRl66%2fKrs%2fis%3d&fich=OEPropostasAlteracao2018Or_json.txt&Inline=true",
+            "filename": "13_orcamento_do_estado"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=8fLxQKkTY1k4Ox5qrjevilpgS9%2bn52d%2b2OGOqX3D77goZ7Zk9Afl3%2fC4WhM0gXqs3yApqxsplQ0ZdKi2f1V5MIMkG9eacqKqoXN3dyUB9KowLppDrciYH3vQaT92e0K7fuCWlgjr%2fgpCEEZJhb6TUKXK80c%2fhalIou%2bvUgmXdcOLmSvr4FeWI87ZzGD%2fqimC0ZJNryj6oFSR6hXquxQCVvOL49pfbtycU%2fdhG2PHhwbFxstnQ8hbB7061BgqNSdN1gUBNQOrgBKLs0JxV0muUqoBu1IVynMFul4qm72H7KUJxEW%2fz9MkMaP9srYU7EQGmT2QADVoqUQPsLy5SrXkqPrMeUkJAfoD3thzTK%2fsEIeGiJ4z2UJQeaafXdE8F46yobUnKcJBYuozZv0wJgeSuw%3d%3d&fich=OEPropostasAlteracao2019Or_json.txt&Inline=true",
+            "filename": "13_orcamento_do_estado"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=5ErrO5dBpy7%2bm02nmYo5MNd%2bKVtfQ530z%2bD6Cd6uDORjkGaN%2b3R0GBtnhj6IXvC3lwXOnVuO60Im%2fg3PoskARO1YRrp5pU3nd4lyuDqgDo906b0P8IesOMB0rZoaBXm5ecpzcJ9hWDR4mZb7eYtjbw8qSnxLRjJkje12e9Qci12te2eDsEyYnoAjhwcnOfuNNd6MhTv5McGGbMu5egUXk1PnrGOpwAwZ%2be6dLH0Ic4eS8r9qTyafAmpB3miua6C3h%2fRdHLf13ryVyknHfbDhnnz0xdRx0o590PYvHifrZ7CgbloV8KhUJ15nhESmUg0AhRa4Q6meyMtixyNy82DHmdEaBNRlbOc%2blrDPkv8sEs7Qfw4WsAOwYTuyWty0rECQI14rSl0XTJAhjKYWK9%2fB2Q%3d%3d&fich=RequerimentosXIII_json.txt&Inline=true",
+            "filename": "13_perguntas_e_requerimentos"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=6aNlBsmAToA2P86iJj0uvE4d%2bJS3RSCRPG72O6ic4QtBxdXVVNSV8aERFxtqiZVKLkvJttLUFukkwV4s0uq6CdhgfTCdn%2fT7fN1A%2fmRyloCjt9NoBFS0U1VRFzNRu8kMpBA2xPatjNn1D%2bluqWPgCIRyMALqx1ILG%2b56%2bdtyMYCJLoO%2bNqFi%2fA9mmWhrMYIx4b3YFtf028rTUsAp9p8UUlf2c6ID2Yl6%2b0Ln%2fq1WgE3k9gDP0aEm%2fbeM0scuYfDDZQkTSOG4S9E4kPglNcl8N1e%2fzuVdlitVW5vKG5hm%2fWyhS%2bYx1SMO3ZX9lQozOQXLzvcAwzf%2fYO5WJf9uVSXM8LJaFBUTg2Hj0LGr%2fCeBcQV8jMxsiRxw0SVfzl%2b%2bYn1N&fich=PeticoesXIII_json.txt&Inline=true",
+            "filename": "13_peticoes"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=OdIUY2BOanmidQaFToXms7tiepFpf8Qw%2bemp4ur%2bJYw7u9n6oi%2bCcOMTgLXv5AdVmQzplL2o0Pfbj9hFQv25d0fjFTy2qFvLMlno4uGEZwjnw%2f%2fAxAtumHw0w3yDECmNI%2bXvOBldi8%2f4CrBnIx3G0xSneCn6mYN9j4NtkKMW6gMzf5vCXNJfHJYHbf%2b0kdXNFpUwEQxhWjyr7YYO85uX2rE%2f1OeTFSbrID5LWS944UqvprYxQNLVx8%2fJ6H%2fKbffxJLV4vPNpzGH9ejYVLXpVv5rnz7VKx12ou3O2mMPn9IKS2eEPIkMxkovEHtvJGFOt19IhzotJjE0EnDGSJ2ww9o3QViiUbolN63C6CwdW6Zs%2bkzAn%2fNhiW8EE6x4qg%2bcjXnPkFvQQGwo1TaqAYkdwuw%3d%3d&fich=ReunioesVisitasXIII_json.txt&Inline=true",
+            "filename": "13_reunioes_e_visitas"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=Uz7YBSKZcGhCY7ns6pfcqjsekspjMNPDOCkgTEbAc%2fv0O8onqQP1%2fmdJ7OKWwouaSSP1uawPJLXCH4bOeQF3dYQJKW6%2fULanpm1EiXuDAzrFwqEiajyF%2bbgX4uky%2bHvADFdnGRNbvVoxsZ%2fPThNA%2f5kR%2fggAudSmLlPsNzoD0QG612x7pQF%2fPXtrGHtLKD1oWeoevMBGR22U9FUa8xpRyTEH4LayR5zR8LA41t9H291gApo%2fRK94pP93kVMRzJdAEZElRmSFncWRR3GFHHAZ%2bJMm8z7VVC%2bAf2pgDFx8RSivUvEf0KUVOIN6w8ghhgbzv32MqHPJFYv2QmmYER5sPqPtvh4AYcVasev2Yu8jNVJ%2f%2bdSBawtaUF64OnmDm4lXOKxEJL4%2fCFckX3D3xRkV0w%3d%3d&fich=AtividadeDeputadoXIV_json.txt&Inline=true",
+            "filename": "14_atividade_dos_deputados"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=VSph%2fmPd5VWaVYmcuaSmnu2Q25knNnBaTszcGLnUuaTisnxrBK1NuVxXClZW2nBJdly5uEuVtihT%2fdkSgdC08bMSOU5yat92gxFGQjroNCvS%2fuHLsVGPCiGrxE09jeH%2b3DGKQsmTz6L2o2KV%2fX1mTtqq9VxzxjsrSCQPkXE48ZDwDwOpyuAuX6HOWhEz%2ffy7%2bfYJ4H3XpBHkgCYs1dV6KrruiVp7JRPsDw7k7HwYlV1%2bF8CP6L17ReyTtofkOD3sqwS2P%2besJ%2b4TkPUVZIQtU4zrJ2gcy0%2fSwnCbEWDGSYhoBfytqcd8TfUUJgj%2finzu5QjzYrL9N%2fh3mkXEQge4swquztiLkgmjeZ2SK10I9Jw%3d&fich=AtividadesXIV_json.txt&Inline=true",
+            "filename": "14_atividades"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=6EhGrNiMluenUlLwC3GfBx%2fAqbGSiFPRg%2b9D8R%2bcY3L%2bIUO%2fMCfYsKhJThTlKoh2iI2sBHjGGfDkLkpvHMEwDERdbPTtYd0n%2bLens%2be%2baPxCyvlzjly3%2fH3VhswlrzLoC2oAiU%2fwPwyszjnjtn7qkTrinwta7I1oEEUki3BP1Gt7GHk8JKbyKTYnO%2bnXpAkj1AK6f8AfuEHazfJf7o97o2em5iY6CR5ldQVhTdaqQdUqDrNHXZgPH6XPSW%2bT%2bWPWyS%2btWJ0L%2fJmHcNc1xj%2f0sFv%2ftwrv12LR7uTC%2bE8XTXGzECpSeS4vHeoU2wSpT1MMhTOirEK8fraCMLDBbw6qIr0%2fF%2b%2f9cYmq8zA6mNKXdihMZYbvJQdo5ZpthWU6RsD7z%2bZls3ReFQ9hkaKodYmctg%3d%3d&fich=OrgaoComposicaoXIV_json.txt&Inline=true",
+            "filename": "14_composicao_de_orgaos"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=2X%2bD%2bY8QIuhXJGZkUQKU6cq4HxQfZgoBwgkeor%2f%2fZqM7NCc6v7OkzZh8LTUExAr7HNYvrxSBw9TECMSigVkd3c2szGACJVagkKtDiRdfMKtloe1ZzJJrOcPGEFclzICmFuwMi2n5s6iexmJoUCMDkK9Nd8OlH6dJ44blAjU9Vpq5y%2bponGrPDofC%2fFaPobZARRzkpgMOduOcITdzrqEVhDBXJU46Lg1WKgB32l9VfRUipOxKVNClrfD2Y0i8H2CZ8vbzjCjbAbJDOqfIAyWhR2F2kAethL7tFMj8yM%2bsycT%2bL7VGWZwOsvapPJ4dd0faAXalXIV%2fW7zZGk6P8887h39N1IfjJt3d8d6NJaEkZeevIG7OqNqD2OkPKiYijl84Uy7RHm8TDoVACEwGR7kHiQ%3d%3d&fich=CooperacaoXIV_json.txt&Inline=true",
+            "filename": "14_cooperacao_parlamentar"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=c45b4Zg75sCWNrsnvbByrd76hS4QP3DZToIRT6uKhrGokHWkCMKHYwgRcpfzJPTx5rnNx6QUHlGd%2bIVrESPTquX61olknLKGf6Brot%2fHN%2buMY1R55HQ3gnda5a3KSiD7AIEYocbqMDUgSzlri85jP0nUped9CTzpfMn73YXnHHnmyvv50p%2b%2ffamSEpsW6OtzQuPsyoi6s9jChK9eAVayUj4BTTVMUBtNOO3XOTlKP9%2bUUmqU0%2ftisX6GcW%2buD%2fvwnBlaxBuc4lzuf%2bwfkG7PiB61M9wFJ5OOd%2bOe7Xi1%2fxvUtHu81g8fYdMuKkoByElYCWE9OTExSFoz5dcwCYYYvndhCg3PPwJaxIeelOLgCd%2f0240Wv8Xqi38W%2fCwkYD0Mf1NJr%2bDBT%2bN0Df%2bxzb0EPsasqdiCKwYJoJx8yCHL82s%3d&fich=DelegacaoEventualXIV_json.txt&Inline=true",
+            "filename": "14_delegacoes_eventuais"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=w6J7flCHMCkk%2fDX2bup8xXRr1tIPWV41XZLJkhlfdT3OTschxl7Dba0%2f0wgCIwrzbL4x9YNMy53IP2Nie9NccvNv1V3jOAsoAXOMwk639OfBAPMc3sYN7mmMG1QVJ%2bjqB%2bORoXHukllsJfDzdkUHW7S8l6sfJbt2nAEIMqsV%2bausidEM2RWD0kVG%2bhk6b61T5ZWO02JaKEF2PNjglI1QaTgUMbmS4S2DEmZr2iWRTd6VSvvgmA8Y2uklLOro7qnIbSsIdZf8%2fih09jcYEdSvpISGPV7JFCI6kwC6xOHfTPHjxUGT2pc23Enqt28m6v4vJWgVFFffzRnCwuwY5v%2f8%2fzi0dkCjAYTwoIhg8cNT%2bCmETQF6gsLsm8gOAH696j1FAi6BF1hLHYabwqILzDNFpA%3d%3d&fich=DelegacaoPermanenteXIV_json.txt&Inline=true",
+            "filename": "14_delegacoes_permanentes"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=Itu02rRXHI%2fwWHqVOiaTQmYUceznREcxrW3CVYAuAd2gY1w2G%2bL2uziEzjOV6JzB3vJsrMwe%2bJ5E6J3b3fGd4dCPQL48FFfxzMCNHWWhkQ%2f6ou4BafpgUNSgCumlNLJVNUnCauVI4nE9vH%2b3tOuF3nsayzqMpmXg37Nk26AtteGtsR7dU4n12b64CAKxR62CQQSoN%2bR2lKEEYmVV7u4dms6vgyqBTbk9LQOyR1S1O6dAnsY70LE8GtJiWo%2fI7U7thk%2bvuH4cCq18SxUggYFLBVyGB6ZPwCf1rjrgH5kYdSz9X7RWJ%2b1BqlujzBv9%2bP7pVo9yaZ3BqCseCbocGRq7up2v6p%2fzvBg3xFH1uGxgeGI%3d&fich=DiplomasXIV_json.txt&Inline=true",
+            "filename": "14_diplomas_aprovados"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=3Lf1W1LIj4ZTK0ZNh%2fTnqtweej9OCuqoY6v0Afh6XqcjBsjHkx9RTMvgEbq71r0c5XhOg5ab1ZycVsRTJOpN9nOWVPo1uMBRdM721EeCUr0zQI%2f9N1MzK8nfUIh9hkVgyYkQL76KAae6vM7WZ6uo8mxjHJjDFlyy3U0yHxvqYHRCNYOZDDvPM5h0LAd0rK0WUpT8TCVRY6TrxcBIjnsJPD%2btyg8FytRNMRSYsjfQRG0EABAy19cS76lJvRFa6%2fjlPkwSyC1DlsatjclH%2f7zk6DuQ6AizFOzCd%2fbsxw%2f4pfeePlEIlrgKL69tYI%2fyNhFGchnVe%2fXaJG4df5vWex1hOUMQhqouRWa6Bpeizim6kcSF5TWmz4oiy5dmYnj2ZDwDIjClBTdTwCY8q%2fM5478UBaLTL6sjr6xqRkfvPBYUXbQ%3d&fich=GrupoDeAmizadeXIV_json.txt&Inline=true",
+            "filename": "14_grupos_parlamentares_de_amizade"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=%2fb4HHkL7iyDZnvc1WaXF8GSZ8%2f6imY5qEFIGDRGf3olqLan8MzuKMMc%2f3iNCyt3lM5NC9f6HtEpj7%2fP4F8psO5ZyYv2hDjUBxIuj8ZaGk0XsQy0Q1cJrBeYl5ydYo%2fBFEqK2PIYEBbeBd2uoMRdJpR9YO9n%2f6G3CihP02OndLTbyfutn2fJ1uBjX%2fwCTOMLSkQdFE6mB3l56L%2bR0%2b1%2b3FFuJD2gLZf7JTXWUVANFfL%2bp6MQnGiwrMUzMhX%2f%2buL6FCL6bXVKE5VJPDHn6L8kdHgt3XC72ihJdHBpFiL2kE6kR%2blphr8vs7g3E9yMEO%2fYkVf3rK%2bnV0zmPxLbvvwHyCgcwXEfAu310ElpoKX0he1kM6vFEQs%2bswdiOJcHw6x0vh27kamr9dxiVgZuwbVJxMg%3d%3d&fich=InformacaoBaseXIV_json.txt&Inline=true",
+            "filename": "14_informacao_base"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=8ozuDpQ5ml0BuLGsMYQvVONc7H%2b4XlP09kHesZt808gLQGPGoZbUYojDBjg0DCbnE0ph3RiChp2cChkPFUPVeJ9XMN72FegYfqSXotaoi%2b0iOVuJZGv167CWP1FMKUjXFu%2bv5oKgaw3buaZkhFgXjJ46%2bTjqm6ii9%2foXVsX8H%2buxUx91ZCLpB%2bjHEtuIUJrsdaFwRyM4HQSdmvcOKzGK46i8s%2bRJUXJxH692wonBH4Sd%2bmhWgnd4sxt%2f4l89212KPmwzrky1hswPZQ1CPKk2ECPk5VKelLfLi7GxyCYaQyrW9Use7x0C8E8V%2beL954TXpC9TuMe2Ir9uoeVuiGe1VFUG4dIix7%2fqDLHXSV4%2bmJg%3d&fich=IniciativasXIV_json.txt&Inline=true",
+            "filename": "14_iniciativas"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=jz%2bXGd8Evbcr1Q08VMHDc3lZAR%2bdi940ssbUUX12mil%2b9Vi1o%2bWFKEqkrDpQGUzIsHJIrBLv4PGgkt5Tc4Ej41cPD1%2fbBbyEZkrc3zbUEDPYAsp9sybE1ENnwjkIhdp0p13h%2bJqPEym1LEYjJvnFWOsvf%2bJxpuSXNLhq0%2bngcU547DX1swRz2jUOktnsLu%2fGMTu7mEE79bgKBtx891ZVp38BsEDpj2AdAtLkbvjbjj386vUDV6yEjF7pZK%2bPqYOTk4Hyl%2biZ5UX4KErinVeNOWl185DFouiNPqQz9B90xX1S3rO2w1oKXu3f1Z4OZ0xmfd9IEaxs5RUDm7idpikdwXMQJz6yUZF60L%2b5IrwPTziOOl8rLc4HS4Cbe2wIFiQz&fich=IntervencoesXIV_json.txt&Inline=true",
+            "filename": "14_intervencoes"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=e%2bQzSl2rW%2fR1%2bYrUmeDyK9GZcfkkbss733wRDg0Jc3P0q4LT3IPl43MTneBY%2b62pUZ969MWE5H5ghz8nMNORTU11Lh7HzNB8BREtd5BWPheQAy9RFRiH7hSykKEB3UruIwm74UgLfix8oO4GNNEGxctXwlZVaJVfH85eS9E34Krm%2foG6o%2fmFki7rI7Tp4acY6c%2fK6%2bTMPmt6oz%2bIwR0zgI8bYbcoyiMZjT%2fIYcxNjXALtS5aAVTcIjMkF2VkZbdlaaSIVKE1Re%2ffdybbYMmtVytgF4KuP8ZCA%2bwy70BGPJHLmEiLHlntNAjlkaP2qjbctlMUnXehyrJxMqsZcRL8jdobsiW%2bPO4sBxPfEGaz%2bs0lFtTAEoPCm58fylyTpE1ft12SOstxzsnXyKLpmHOBn517e0ISov4%2fBsxcmeU5AJZ42J2kXtyk0Wkh%2bjhaaM6w&fich=OEPropostasAlteracao2020Or_json.txt&Inline=true",
+            "filename": "14_orcamento_do_estado"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=DPj2hJvcPJS75z5%2fU02TPuJmnVR3vfR5zRkisuEF5oxSfeqkOl4%2fkyVm7OCSj%2fXFTIfkSS0iV8mkOhra4UeqR3GtqWtWz1NYrK86LCmftZ2Fls6hqehelUIppydHL0XONBxaApQSOXrCruNpu2D5Mu6OfyBM33A4qfWPzOfysqxYKEp1MLMPAY83Z9X6pCCSxyTF7sPHF2RpMA7%2b0V552nfX4E3vNC3%2fXnqfCzwueWPCeTFzo6PduqylhGdf7FieATY0WKgOzh%2foTPXG63CaOHp65bhg0nNd9QisJjUgRqU81bL50TGJ0vAwR%2bvLtXE2pb25A8R7HyjU9y%2fsvbKfc%2byOvN08v4QeHHSjFrJ40Y8LB7BIiIgjuYCRoc2cMknIS9QizxQQjP7i3F1cc9VBtNVVYPF9Mbw7BJ5rpT8LNI6ARoSEOaELoBK7ZMVhY9Ri&fich=OEPropostasAlteracao2021Or_json.txt&Inline=true",
+            "filename": "14_orcamento_do_estado"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=m3Bo8bxeTvS0Fdr%2bB7OzahP%2b9pq74rX6IbjgH75E7fDfHzI0I74zKf6WljT3zSfmhAPbqwETLvsp0oYqyFNNopIZQpM%2fQw%2fi%2fhwdcU%2bzOhatL9kYvcQSQN%2fktWBD4TjhbXQZAKw2r48r5Rihp7BoKUTM3EFuS%2btpgwb3%2bNrT2QnnL8DgKiCile8Dt7bQbJJk2Da5moVxI3AZ0R%2b9ISjXpQ%2b8FOC4J%2f1VxE1iQDQ%2bKEyPk4FOi0%2bMq8SItE%2fyFFs93mskHP7E5UJjygk3F0smDLL1XQsqOIpaVEZBfipU%2fm12bCXLdMFytQjBmoQdOBgT8HwueO1P4dUcLjkIaJuBmPZ%2fHUO4UXkTcwngH6FdZ%2ftgqA%2fnX3qYLIAY3s1leZ6Jd90y2WF1QkqpSVSuL2v3nADWoEyNpLnCrCXJm7RAeuY%3d&fich=OEPropostasAlteracao2021Or_json.txt&Inline=true",
+            "filename": "14_orcamento_do_estado"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=5m9z7W8pdmunuv%2f4R7aaF1eG2CkM1o%2b2f51g62Rr8gf9%2f0yiLVpPpf1Jceg7ExfcY01FdNGoaXC0c1Ma%2bFGTXmoI9P2jjYSsMaTv1aYVraYftaWBMTBFhjAb8VRuecZshBlgVOUM7%2fuwW0eZra19Rdtbv1ppIh76wFVy5%2fOxIHHBsONllUhPl3nO7ZCZJj0MNG3jA2j0UY%2bGHM%2bzymWx%2faQU3us6HDfLkjgfWQeWvH9ABzhfCN6C5bUzUfF012Pb5dlPAuRtlUtjTzVSYm33wV7Yhq5e0o%2bC7V0m37V20LxzlKAUrZnqAbGN8v51lrLsrPdVrVUVG81ecq8Z0R%2fL9R8DMMFiFVtyRjeevgioQrH%2fieXdx%2b1lI3CbhRFWiMOnEhyfyvNBrHQPZ9qvec7vvw%3d%3d&fich=RequerimentosXIV_json.txt&Inline=true",
+            "filename": "14_perguntas_e_requerimentos"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=U%2bmmHFY9YcjMu7PEuKrS%2fF6B3aAm3xDRUzxIBQCvbncWCRVwmRQoSCZFFigf0Hh19mOYdfINWl2UdlB7GJDQFWACORSpMw7hbExHbFDOmy0XXVpYwWLAQcV3xfxeODVQVPBRfX3dwVY5GgAm%2fXD0lFeOmjkYCAlF4skhSk8BEFXpVnROYx%2fXXKv5cK3fBsGAjly5msjRqliThL5ZjvqSl8jW10lZmf17LHtnfnFf0vZ2TDhwXZ4Vrn6jmYcxSBs8cEaIg6VeVxSc6aitcbokUXGRyKlsk%2fs77HOZy6TReydfF9h8f5AQ%2fgec%2fsA5oL2PepERJRg3zK9Hphdvd72yoiMGU18G%2b%2fHIz%2fwzAUghCeg%3d&fich=PeticoesXIV_json.txt&Inline=true",
+            "filename": "14_peticoes"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=SACllsShe3EDUuGHdkTqod0FXRLx1bj4dAD6eLZKskIC9a5MknKJ8Ia5UTVOYOMfp0%2bNqTOnyWhG4Vay4kyYRlkg6pDZmRgxshE34GYBj2rLWmgpN5k4L%2fkMyqY9dCYV9mIergqPfvVENe%2beu2p8L7rbtXfnZnAujjInNTIbCHNDUnZmXHzJetPi8DfGv36SlbKm429cEY8K6tLyvi%2b6KBontRpk23mmuhtbAR8jQzZxWNxQYztCv53ARi6awRlgCfQ7fd%2bS5uEoEGXHxtFZTXWBoqLU3iy85ENCZEDhUDPlBNOhwZAmNwC1U%2f1m5mX4zhz%2bMMF9jri6ITsnBJoPjvkQyTPd5SjMd5xzoYRpQdHwwfk1ToBE0YONob2CPrk6h%2f7Qmp6Qn%2fpB87e5C8VqLBifMutSMXDE336fbyT9VCA%3d&fich=ReunioesVisitasXII_json.txt&Inline=true",
+            "filename": "14_reunioes_e_visitas"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=gy1jVnYJMa6WCxuSt0e43iy2J6dpCaBrzY5wJHgydwbabSplk5SneOrOTDCfLuyJHNxE2Y3Jm5CNYU6cdvKr5%2bwr%2fbGCkr%2fT52IjC4v1Ca7ISXurl%2fAlCzRhhYy3Zhi3t8J75EnKHzFitey2VxGsQfXpri62%2b4oUvN8hrhNTK1P3Jk70vBhGkK8cnaV1FzsqmBIztW%2feNU3hzmbWwohLmN%2fk3kC2XAf5QrCLA1e76JVJmjDyDaJDTPWIZFp4DoRfez3TJ6rlH1F5yxWyz9yeHbmLyb7UAzUdQ7xADZ75LvztTMVgV6YagsJlOnwqpBmAiERkcgfFGdJwA6M9d7oXcE%2f0FfQBPA4b4mfuFKc0mJy%2fpM3gzj2GbsDXZI9PXj%2b8qEmqcKzxEtfa%2f8%2f4W76x6A%3d%3d&fich=AgendaParlamentar_json.txt&Inline=true",
+            "filename": "15_agenda_parlamentar"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=nqOYuKdoi%2f8L9VbM3JY2oMx47Xet8eA%2bb6JOEAIz2dpghYKpEAoDB79CHPQ8zxisJwoyBCU%2bPbNYkR2GPbwZG27LFoKiIUClWYmTeT5gRgBywBZCFIuGrPZSxjOqkXyh2wcZpN0Zn9JnJ9n5R8dJNhM2RwIs2coRVKYjKjsiRjUjaMW1M2CMByviF9gJKBj1LE5A%2f6e80f5%2fLM0vK9obLaKRBoKOgpek1%2bDiRYijSt0QaIeKBUCux1j7NRrUwWlN1O4UhZEPS0eKxrTy43yGYZbCICWednWzNlCFaQ%2bj3%2fkpWzTaQPylDsebVJFlmS%2bx9s68UGjGZyNWzi1K60zl7w4GFhhQcHbdA9OrJ2eac2JTAZxwPc8zFPksSjtCPQbnyIHC0gsrEMtmIocuGZlHNw%3d%3d&fich=AtividadeDeputadoXV_json.txt&Inline=true",
+            "filename": "15_atividade_dos_deputados"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=dCPcTFwQqy3F5oBGYhIj6cmZ5GOig2FpnyxZWP52b0MreQgMWmFY6LTd9af9MKYPQ9HYEPHWfAScB3Gb3me9YGiw5O9W52KG5jtMB5ap56tPy3rZhuOEqjvHJCzD84BWhpMNHvYvyEqUZv%2fTQyhEjE4fXPcD20QV%2ff9RXpIRid1SVO8uP%2fo2RaZzx6AX3hMhVS4SWRIvy01xggMDjNlhQY6%2bUJSBIcXZp5OhW2wEGCW2qa%2bFAnza%2f%2f3Q3IkCJAT%2bKGhpHOFCi%2b2EHmTD1UvqdcxK4ll2D8k0jfcv%2bbqVKZDHAXCzw5vHe32rLmS%2bnGsq4y7EQBD5yojl%2fEQlIAg2duJLluggxJrZ%2bSLeE0GsWN%2fGJe%2bvch%2f8kabbZyexTTtS&fich=AtividadesXV_json.txt&Inline=true",
+            "filename": "15_atividades"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=hQFcD77yx%2bwMcKvrXcjFLHZhnDNCAQfFO9j1EUNQ9RA9z8W90ZQMMzY91am0cHTcWFI2fyMYvPrSwZb9WlMQb7jyU5T%2fA6hD8Td17kUih5PIB4mtVkIJz4g3Ew5%2fv67QkoBwNkneqbLEHELej1Mkg9LQL5mciqytgaTBVoK2flsXkR7fRREhKtxMQFGra2iSO%2b7nGcmd%2fuxfCPhkr3KB3uH6zphQG03pVs%2fLFuxaRb4SmO8Kk4id5FuJ%2bZdRq0Hx2XQZUyXhtxAEC1bxGLW9NzaWuWXY48smiOFjKNaAXp5NHabDjrRsGGlousC%2f6Ehf0u6J4Q22SuKHGCyQrGqwiznLNcZZWycwLOnIn3me4GJymZQ5XKKN0xGO1cr2lUupKnekUFEqLFyPORy1v6t4Gj%2bXaZ9x9CoruThMVHMIcaM%3d&fich=OrgaoComposicaoXV_json.txt&Inline=true",
+            "filename": "15_composicao_de_orgaos"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=ftiHnFyhA9wtppUc%2b4PMsWwXcoKdOsBiBjbZ9oA567%2b3EQE6IL8VMknEBraGFoHg24P%2fUrxLI94A1X%2fpEjG1r6pOMqoGBFSYSxdalY0qe8cLuhQLN2GWa%2fF6VE0ClN3WRKYVn5gwOop7xypbzpYJOY3eO86H%2b0NSKP0WzYQSTky0Bc3WJKm9Al6GYSgs3B0GHZ75V38P%2fWKSf3bjrsRTR7scVUGFmYUGPyaZaHA1mxSFHML7N52qfowUywfG5B4tt1SQDbk%2f1%2b2S10MHmR3hXAeildYUGLydlH5OVpVQ%2bJWlDTd2hxcTGaBN3bHBeYuMq2olo4eGssJXrYKy4hkx4Hnp5LFYi86B6NGBmU5GsKNROnq0%2brYUI%2fpwQ0ju2fXqomwAbKZiy%2bs%2f1MziByq8Cg%3d%3d&fich=CooperacaoXV_json.txt&Inline=true",
+            "filename": "15_cooperacao_parlamentar"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=fFPLxxq8E9A8iK6VX3qN4tF145ebv9gox0%2bSxJ5dTm%2bGKlHD5SkZA0mc8zaXDPk0gvjvRL133Io%2fhOJPlcHpjKbxZ3NnKoTNbswF5G0jShrmFHXzz%2bMnU66BzVO2qUZmsn%2fxBrltUvO0%2fQBL8LNKYdon8JhgG9yQJZrHDVNd%2fDYAufLeP0GIIfzCQ3R9%2foxaTkTIEnBgdivyAwktjcV7fuiarrT3eKnNeqZxFkZNbuB%2bfTDIknXJNlG1%2bDI8hsV9p6LbRR%2fe5rB%2buGBAM%2fE4BNgyJthDwXcTPsfuj8yIKiY5nduwPCiwfFj5zT3hfy7o8O6bNBVQSgvKrmZnTYkeMEBsMrNhVjJLHq75%2f88YMiFnrsb0wLMADcxPoTcjrCt3j2n8PAD6dkoC76FOaaVBVg%3d%3d&fich=DelegacaoEventualXV_json.txt&Inline=true",
+            "filename": "15_delegacoes_eventuais"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=Fzd0d9HDK4BblG5eGtNaYu8nsaNtkOjzgZsCoTffNcpWe27btXP5H7g2WenG7o0i1ARkQj3tGw4oRRJUraqr8hdIVsMyhF%2bDXghQHBjuemO1eIdHSGjv9xp1eMvh1DzaGhePgjBhup4PeUeAzEg%2f7%2f%2b03yIoRw3NLka2v6E%2fhLcgjkTF0HSaq4EQARDn7ul7y6beCn7Xu71aOy62fmGBL9tF%2fiEeqKHyS6hQvtZLaWIpgeZJo%2f7SrqqN7bQx1DoXLhOrSVa1xkesUMuiLyW8K9%2bCQhIqirwEGm5a%2f%2fbTRkcaoylPBIc%2fxtx7K2xnIWlyf2rCUuTzQ%2b08SDH2VlRMdi7L8B2bbe6KUvnBbiWJqOtYSGMU%2fnhiK9W3MabYq5yF&fich=DelegacaoPermanenteXV_json.txt&Inline=true",
+            "filename": "15_delegacoes_permanentes"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=42lJ0YBpq%2fx8nRQmX6TcKYeccQd0y7qTvFHgBb54K%2bpEv%2bD%2b%2bwLDUHzNUxb8yebxSlFGUXKcCv4y26l9vIFUNwyNwtDNYyj0CTelcVR1Md5fMUXlSaFf6vW%2b3tbcviiEk308tiyRoJnmS%2bZWmnyVpT3Ih%2bmlut0dGwaqKmfBZhXLZ8dFQXqiLxBhAuQllg7lqL0%2fyITeadHLgLJ%2f5Xy12qzf%2bldf%2fSYXtyJDfKGiykT621rKD%2bOCtb1wnWnn9tciFOp%2bioVdkePdde9FCtZ9CpZEdcJ%2bqz6gMoeprL3Yh9G2UQ%2b4nHoio3neDKGtlwgnzeYAfx%2bpKygAYo34%2b4eZZjIM2N3zvR6bHWZBMpq3Gsk%3d&fich=DiplomasXV_json.txt&Inline=true",
+            "filename": "15_diplomas_aprovados"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=WFXB4MQRVKg%2fRO6sSXtIxtMqgayF2qv%2bCq9DLnT7uvxjn9yxKfFpE%2bekr37hbvbLUKcnfFT4bGV%2bvPtLovorA2H2d78%2frsPqqRXWoQk1sQsVo0W2XwZyBEerBFln56Ddcq%2fnd%2bPDSD20ZPw11lRedGU1GrSH8xq865oaq3ueMadMHSUlGfJHvMoZhocMqiB2wmJnsH8rPWoRmbvkpTi4y9MamZF9kiEZjoeF8PUTFVqyhR5EtpDFpcutSRc4UbNoGnak5Zdr58zt2apXuz6kJeoxnHZKz1OXtpTm3cUWJ2xpiX56igrJZFH00x%2fZkgPR3Lif8Wctp7m2jM%2fcjs3I53MzrlPyrII1VBdkoyf8hmS%2bGAG9c929HwFv59grGmvKIV%2bn4vGhuKgAjjUTMAPoaNtX9sUATy%2b4TXi0qNPzda%2fM9n2z42yYWltO8qlAqm2j&fich=GrupoDeAmizadeXV_json.txt&Inline=true",
+            "filename": "15_grupos_parlamentares_de_amizade"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=rbw88zDl6ZJWQr4Nob85Z9Zf6IwLZpX765frc9LReLuYJ6bhSdalk%2fK774EZ3fIYx9%2fehQcvpCkrU7gZjiaboQDigC4ws5u7fArbgJjT%2fyQsOvc4Hta1p6drmif3esINhyNZ3f%2buKFbzBecXixDvf1feByjTOxr%2fE6vSqtud9DAzMXZtVU3VPeojFLHWON%2fWL2lytCIyNP6rmH9Y5QqScEMnT7xG%2bLrsxoCKZcz3R0Jj1lF0%2bVx%2f57PVRiM%2fS3ejOAD%2b6M%2bV15SAKjJpBpEwEyaLhzFnZy85onNzp7%2bxu8rWhqq48TxzQL9WDjj3Q0898Fk4yfiVSPnLi3u%2bed6T4ZvjdX5hqmsW5vniC%2bpp8yCHOogeDmY92JRyutzwUxhujwjFlfEE%2bYclm4F30y4XTw%3d%3d&fich=InformacaoBaseXV_json.txt&Inline=true",
+            "filename": "15_informacao_base"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=fvuQcACKjXOQoOzvPsTFPtjXHlhq9jgPWedg423hGPZbeA%2bJIMsOSTnR8X6DmdQ97EuY9jGmDvgBs51ffHulEiYbVaQr1AfSYoFzsVxuxo0lL5CdPIh8DibFHUmFjhujdtkjgLYSy03FZLq8z9gJMs1mmfPwh7Mv0BkjidszDSnPHcwJw53JpcshAFy93QWtWV1n5MfkZ3H34IXtzmACK%2fs6dD9IIBRkwuUAhxdcUpTpdSe03HcdFto9NpR%2fVMYOnRNxWTT1Dz9XcLsnOmkCh70KobkdtPQxwDf6cK1mTCd2LFF%2fxfXKSpf6eBamvZd9ztoqJT043IO9w9QxlmLgjUQCEhygFoKocojSTosuH%2f9VyDiOi4WZJdnmgR9Dio2Z&fich=IniciativasXV_json.txt&Inline=true",
+            "filename": "15_iniciativas"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=2fPkd39qvA3KQHRQG3o76EEUS4TGbHB%2brVS%2ffo%2fSndXdLxAzcpf%2fbEG7QNVPpcqfOb4oF5ifVHsPCyz9XhlWmZQbQ0lqmMTNlVyf84rCmUaz5GY3CeYq%2bp2zR%2bTg4lq1edLxnPkgli28ueyJmKm3lVUSp6OGINzEM%2bH5XHbGhyyVZJGotvDrvx0K2yjjY04yHbFhMV3jiv5z5XZss8uzJZ7NSewEE6Ku8cIBwmdMOUUHBnmMNJe9U0a0o%2bo8BSPRf0dfsQ5sAlXOO07OfgymRNmSm8uh7CyqrDssKijNeCZ3hCtca1ukuCkbmmX829xg6Tmzh7rZHNsHeM8ME0phHq%2b%2bCG8STik6Sa1FeMXvetVoiNDT2W0YGj7LiAGxsijc&fich=IntervencoesXV_json.txt&Inline=true",
+            "filename": "15_intervencoes"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=IjkxTwOnqbluuw8ejhrLhvuJWhsmVAiSmEXV3C8zFB%2bOAXLB%2bv8VfK52d2ov1nXxq%2fW6tiYZQ0Fo4RjWu4WfRxIAu6nUXtwyCHDmtLaKwYxOHV%2bIKjftIC8A%2bKvlZWLdcZSQMlDiAo0axElA6xPEiXAEKK7J9o1On70o%2bft2zZPotkDhHWjDr7M601PPRf4YBGIFXpxqnho98regt7F89VstIuybwdrA6O%2fwoDAMXI9zPUCRqcVyoyXU0T4TiIizCZNZy4q7MFWg3RJIPgJ%2brKOUUngbzyEruGzAN2TWoAIIT3FYRJlVxjd1diDkf38IyAzYhIVfafjAZEFRuOW%2fzrNnxB9%2fjYqcXAtHghc9Dqs%3d&fich=OE2022Or_json.txt&Inline=true",
+            "filename": "15_orcamento_do_estado"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=eDyrmH04XOO%2fDpHeYGETf%2flb5HacrsS8T1mBnJ%2f8ff2e7cH5u8RufLNnzKuSPoncaRlfVIw6LxEUloCUnFH0d0IELwYsEKlFeSj7yTpdKzWWoyIv%2bK3KMvhuUY3OdK5puHLZiBh%2fSSJcS4z%2b0z4%2fd7%2fM%2bZLOf%2fRz7cj06UoiMUj7OxByAmQBEZ4SEYErRaTdVCYSQ8yvdtfMyvur2ogEmfEoBI2xmwxK91MKU2H3OaS2jNxT3wgZ4S46uPfpiFVhutDVCs3P%2bMXSwT1qMARaGnNrhvhgG0GuHl11pe3s91STTH4m%2fkzfumC7mEVPKR%2fe8qDEGE6bocZJeZ2RLGfT2PZfHxkXbC54G2rYruYsV1C8nKzGPgH0nw6Bi1Ibej6PCTdiIbZUoylKZu40%2bb4rUV%2f46XY%2bnqO%2b8lQqs4s2zGoPLayUju5f3mD%2bmjDMrL%2bt&fich=OEPropostasAlteracao2022Or_json.txt&Inline=true",
+            "filename": "15_orcamento_do_estado"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=ruf9jEJFseaIgdPghfvJSOvpcM0bgY6TNihoBtFcoStNogEBqP6Yz5iNKJ%2bOtoCO4EgZE5JLzZR9m2k%2fZDt7m9pmhxrirKK8KzUXlNK1WHYm6JpJpDoB295v2ignJa%2bHe%2bgB6WLi9Jbq6fXDaaYq%2faQAvKayNJE7HqrAv%2brlkoyqkhx2sAJR%2fXD6HzFQsq2fjh138L9W1Jlg5kmBkr71CgggLKqZgsWa8bO64NJjwG5Btxahofqglipn9LJlYUfYUg3ZbRr3nMx7vHg8Zi5vFJ3qjW%2bqho7GTJ%2fBePX%2fJZhNBtgQBBalce%2fy4SDlaF%2feoiv5kbRBt1VUBWFyT%2b9OpexZclIjclPcNMJCf%2fij3u4%3d&fich=OE2023Or_json.txt&Inline=true",
+            "filename": "15_orcamento_do_estado"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=DnPGuZv%2fvsrQrVL2Jt7gK848fMOOM7tV8tEpmOhYqHBKs8JCXNj7skS4xlGdupp1JMYmAlmoQUEw8ylQTfrNk3J0ScmvcH%2fC3LzQ76ZyHVb1ho1Ud6NAKOp%2bgleEPtKUFQ5Mp3r85RREKOzxQSIbQkgFe2GC%2fmFc6Y0Y7qiozvOPgh0mCInPi%2bOoNvc35YiF5Df6GXfLP7mXh9OEE48TCotDNCbCW5rlXeud1tA4TuZWL3g6OV7GPYdFO3xzKx0nVMNHc6UEUPVm9aVSBZ9FDOtUFaCUyD4Tdy9hGvSquKtvfJ4yq92aBNV%2bP1tEFt3l77pgLEXfKBzVfgJw1tT3DTJr8ME3x4e4IoldHKEHoooYD1ZZU48817Ysk2E2iQdzROgUfJZVX6S%2fPvvj%2fA0Dtd3ccSEfB6LH5hihtD9muEs3fMuSIDZWlbiNUdfgAuEf&fich=OEPropostasAlteracao2023Or_json.txt&Inline=true",
+            "filename": "15_orcamento_do_estado"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=w%2fSnVXHh2wGCxQn7hk1%2fcVQ8hf1E4dbvBDPeJKXbKBT6ylQ6QgZAtMEEdD6FuZ2uOq7WfP5Oh4zh154BSEz5%2bjknd1TOd9cPeuCUm%2bOONcyyD6I4ivtPXWOeEjPj967Bdj4FBOo8ouABPfgP9aet8vRsNr%2fJhU%2bfojwQq1bHHLNAy3Crp0MleMKk7yfNTY9ci2H91LSNLElcSjkiZd%2b52Kat7JWK1CLI%2fILgWqqLagUVMs0QSkLeqA3iK0KfcPbyz3hbGR5MewcsRb56pIhjisr1UYz99yTvhXntmK8m78UoCAsgDR3j%2b8Z1SOLnK708A%2bWrurhucGpJVSILVuJHRfzj8sMajslBPgcaZAflUsd7t0aiBu2BxfAlgIED0pzl&fich=OE2024Or_json.txt&Inline=true",
+            "filename": "15_orcamento_do_estado"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=X8KUh1ot7%2bvoh17s2tl6b6q5j1iWqczLpZTJHgeX8o1H0Ibfnk%2bDQchKizRXyzV5I20ckI3BdGrqAA4iajo%2brLl%2bx%2frx1Mx9Ya%2bcHiSC0qZ%2bJ9Ncw6fcpwzoLgOIC2N5NfhnTVBw%2f05kv4h6k%2b7O%2f8x6r%2fQVCG2iO1yrW3PweQfxC6yTq7WPBloAZe7j%2fCWpChIPjE4hsDagjiKOT%2b34jbYSHKmIW7Ce97M4tzg5HjuSzJqGpUg4sNZUICXV%2f4d3WvXLR5huVq4lJFKeTKTDzaO%2bODiON8Ui1wzSVGbiqL4unUG%2fI49aD3bCuNTBlY8CnLVEYIFpfy%2fFLVW7B6X721C5xI%2btXN4Q0JEZk61BcX1DHderOutvY9HDXyOI%2bd4hqMFaXg7ql5s5%2fdgWuWFpQTwdCENHfTbXIOxGBo5Jmxo%3d&fich=OEPropostasAlteracao2024Or_json.txt&Inline=true",
+            "filename": "15_orcamento_do_estado"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=FdovMu5rIg0CCHLylRSgcJn4atadg517rStr692BGCwtERG53lVCY1gyraXCjyKd6lfM0CKaLhHNt%2brhqd%2bhkVobm%2bhvpSYITE5nwX4mNQ1PY7CXDVo5awxK6SV3EpBq6XDqwzNofRlgSMhBRMvLwTp%2fWEL1ZOvDxcU7wyGr3dYXjoF6BwB1AAukMW4gL7rtlDXH3Zf9%2bc%2fxDM0S6khulOkwsW4iaFmP0hqnA9mk3q88PgM7UZfQNHz9IgDJ71iT8Rohd4Dr1HDAG%2bSWgh%2f2n0WcM0BDRNxELJ6d2VOAqnpv6oK8ad%2bv6Z9JdM0UOwpc62qwOwBJrl3Skhne6jJZIrkPxl3mTz65qbRF5kZgIn0XdXXIsb7uJ5S%2bCn%2fN1Bm5ryQuDg6i3iwMQII6QxlfqQ%3d%3d&fich=RequerimentosXV_json.txt&Inline=true",
+            "filename": "15_perguntas_e_requerimentos"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=7nELXbN%2fjLtLOJPI1SG0eLzCVSpSq%2f78YAIBFLnJYH8ZyTtrl6hRGFDRfixpwjCUhHCaueW0WgZ7zup8%2fZ%2bDGlGYJsaLFf%2bP8bLnIIKQ5YKwDmXw6w0T7VdxrnAZ6DxPaOsrbxKaavjr7wtIAXS1gtowH2pFinmQ1NkcfFaM1if5VBt89rifN7C4RUmxbczmIchEV%2bFJAXoTm1tEzoMkrfbNO5PUE7WnWDqJ4iBr99%2fpWVG0aKQI6xChrTIlKS0Ne9jfVsWRYY2Ie%2fjK5e5l1O0V0%2bKyWES3BIdYXsw4%2b8PyyzsRYEKDzScRZaWVze9H29Ictmh6zxiWVrfZwnT0Ul2gKkkyeuMV664Fp8woSzM%3d&fich=PeticoesXV_json.txt&Inline=true",
+            "filename": "15_peticoes"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=OdIUY2BOanmidQaFToXms7tiepFpf8Qw%2bemp4ur%2bJYw7u9n6oi%2bCcOMTgLXv5AdVmQzplL2o0Pfbj9hFQv25d0fjFTy2qFvLMlno4uGEZwjnw%2f%2fAxAtumHw0w3yDECmNI%2bXvOBldi8%2f4CrBnIx3G0xSneCn6mYN9j4NtkKMW6gMzf5vCXNJfHJYHbf%2b0kdXNFpUwEQxhWjyr7YYO85uX2rE%2f1OeTFSbrID5LWS944UqvprYxQNLVx8%2fJ6H%2fKbffxJLV4vPNpzGH9ejYVLXpVv5rnz7VKx12ou3O2mMPn9IKS2eEPIkMxkovEHtvJGFOt19IhzotJjE0EnDGSJ2ww9o3QViiUbolN63C6CwdW6Zs%2bkzAn%2fNhiW8EE6x4qg%2bcjXnPkFvQQGwo1TaqAYkdwuw%3d%3d&fich=ReunioesVisitasXIII_json.txt&Inline=true",
+            "filename": "15_reunioes_e_visitas"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=eQkDaaI5Ha9te0vz4mQF%2bNirgakKwtoSfFJaFKtYJxqUDT9m16lGpboqYQA2ynLSO0kyH9AsPnMFVH8tarrW9y7EMxLalF%2bnJlOcOsvJ0jScrc%2fl2y%2fRrLnq9UUumMt61pWbZxaTCU%2fO4xv8Dc7yXLRl7hGiZJjRNMzZxk3nWNcENOfBtXpIR75NVy34wsEehwGoDqvSD4q4zUVqcSPo1mUR4ly4t6Sc1vI9AyYHBuSTMtivYjSY7AM984MDgMg5y0hlRFgnRNBhnnY4mdk2n6d4NAI6ow6vfYEoHTK9g7bizmgq5nw%2fqh%2fhuzeMI5ppevuTMowOnugNt6kLko247HkRp4q44t38IUCs%2bBDTB3rs73FUvQp00DQYXcL%2bYrsD98BxukIYXX0M6AfvyO017w%3d%3d&fich=AgendaParlamentar_json.txt&Inline=true",
+            "filename": "16_agenda_parlamentar"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=DtAOevhK1ZfQ7CVUbK8nLZuYxFFvciANBbjzAjuJrrk%2fl57OmP05g6PjDUoDH%2fVHTIIw9LOO2LeY20wlSfrAcGwCMiXm4RZOiJc8PmnrIOhEsV702B%2f299jn2C4aZXDcCQcjgyQ2A7Tj4p5mMprdnIljdJeclhuEbSwkrYZzCyPQZu7AMcCypj4n399AjKh1s6wRZVRCg%2fLCVkjlb5jIwGJxcyqw02e3G%2bo7LFnQFQoFhdJ%2bvMH7pTRPU7s334Mo%2bKy6vF%2bpMgIiRN4wo8L6LDr6Xv91J13Ex8njUhikV7yolLq9mFTMJwg9ZkS9L4J7HYhmdy2sHDpxaVI7B6xXoBKbuxPuIDDeieLEgdIirEKu%2f5wLOT%2fQzekvTHT6DkDp1EQRy6JBoGO675tOnFeUWw%3d%3d&fich=AtividadeDeputadoXVI_json.txt&Inline=true",
+            "filename": "16_atividade_dos_deputados"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=q00QPZT%2fnVyC6tWxjTknQaUxAgSxYVpL0OcHib6cSVXMS%2fDXX7oXClKfjuOouAb4rDupFLe8kJM1%2b1%2fQuj0Qko%2fzuIcaZVfc8UUWIFwWnkBwtfI%2bQNf8yTiQ1uGlOayHba3Cw0sA2rVubDscDO7io7fLCiBQnlA5F04GkyGWwbsXzYZC6iqKm26nVs%2bUMJsBBGest6%2bs8hblf9S3NXofZKIBD9pbeA2SmAZwdad%2bNLbEZcfAi7nvo20oKpGHD88kx1F%2fSpSGhx7AbKCHJEN8RgLddLMeBWOlkV4VxubO0ErqdMx42Ow8w%2fjthnF3x5tUvdSStxPo0rUizWn%2f80RK%2bA%3d%3d&fich=AtividadesXVI_json.txt&Inline=true",
+            "filename": "16_atividades"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=9Y%2fnN9Fg7hxMz6LYq8hNaXBNKOYpjX19B2FVmaQKC5hftw8ytCGDoV1891AP2wcvS0Xo8jjT2cQUHkSiOxc7Afl7vantlvCQtgtWHmloH33gq3jc%2fOrsyf81IkKncl8fpkuJvLzh%2fZidb3PIp%2fPeTtmXWacjA09h1GSmXcJyWF2pW2GIHEDMEjcTK2avs0veleTgDakwQ%2f%2fpOx%2fidOIJvS0dPRaxu%2fydwXgJnhL26uA7nTB%2b6z22NPPBlLB91zZTe6ZvRJCH2RyPRo2rFFGQPkqO5zFiIOOOtTvS6NSTOQvLe5WH6imOBD2MuMWElRquccZ9EcK0ZZwpl%2fnCTTu%2fjsNF2mQJ2PnA88XFcQnsL6oy%2bpAy7rVIyOyXISpyp7l0&fich=OrgaoComposicaoXVI_json.txt&Inline=true",
+            "filename": "16_composicao_de_orgaos"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=DA%2fBUJPaVKSWygJXsEhV8jmzxhgziT9Hf6yWiyQmF2qCJnR5Y6QRM8UuvJRy%2fo9FYOnEISOgHviH1jnNA%2fqYfQ9wtcLvruqqZMssDWJL2j3kL43TdtfYdQF1bkh%2fav6UYCjB8WzvfjTC%2fYWdhTTPlHmTQ90t008Rjc0TQIyvljC%2f1kZuSxiSbI84psp8VBG2IjCZ1Ep5uYPDheA5VsNAFyXsY963zOQQnHwq%2bIDLD49bTH0uS3VvNwSySENUaAa65qimZXjPWsa%2fVgxMJPDV%2ftxH3ADdFhfLaGI8lk3jecZX6gC3a6sZ2ZZXomnEaNLAppql%2feS7zBLTvudTBxOcfKplggIC7j%2bcXXVDKtQaJlk42rWzM1jQ1k%2bpwpyhd8uTRwXScItWB7j3Kf71jRG7iQ%3d%3d&fich=CooperacaoXVI_json.txt&Inline=true",
+            "filename": "16_cooperacao_parlamentar"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=PWBFfshDPwCnXP0eIdRh8dQYYoit694RbuEzQoQJIx3t7UuQu%2brlYuxr39gthrWfadT0ydQkcfCrDCrESSsnwYvHDX8I1uHuAa%2fxbmFnfm%2bM766O1DQ218xueZ2E6zk6VedUMxx0yOUEOeoAFLkGIxpmQ553KlgfoMlgd9bspzf%2b%2bcYMO87rlBxvK8tiwKfvPMK6tCBMOe3tWCqcCGOq5RFqZUIbdnlzVVnsv6Yq5DZpEr2TplgFM6OPpxSp41aPjhql14gq9NYegCwIXBao7UBJLoFvF4R9DpQChGb9lbJzewoJl0FO7av04V75wc4sk0W6WGGUzZrbJxPUonE2ZnFIrvTpA24QXJqOClSUZDo%2b5CJmwHhesJTtKlxGFuInWvcb0mgKP%2f7KAN3WL5bZfJqoaRN3H7wS0NL7zqLZuBk%3d&fich=DelegacaoEventualXVI_json.txt&Inline=true",
+            "filename": "16_delegacoes_eventuais"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=TVh1o4fxH0z9jSY%2fUvVuiRjxflWiW0Cu4zsYg7kEkOz%2bvh2EmK50lO3BCNeN%2bzyXoz0boJVcHRw43EcG5kHCIYMohsMbfz8jYmIPChj96YlFaHpg5qIyeMP%2bWX4sTZMHyfbiNPhqQgQiUjeKc8GKbf9TO7TtWN6TdHRCWjBr8K5WFT%2bKY9Xuv3RCMCc2O5xAJlAqzIT4wCQvJoQkhZS6F3wPHP6HhJHilVR3lgL5Xf8RgEQ90hgYK5X4a%2fBXlhpyr%2fXeeo%2f46iz5kDG7bDWZJFJP%2b6p2%2ftb9E%2fsNFZ8pinNemHRiqMymXHfYlOVnZ%2blHo9ZnXSegyw%2baX%2f9ZJt4W1d3OkK2fZvtzwN9Hm1Wcha4hHamIrfEseZvEhRYXRgg3&fich=DelegacaoPermanenteXVI_json.txt&Inline=true",
+            "filename": "16_delegacoes_permanentes"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=0lz8QjItrFuOTYeZMy4%2bdW3Hpudoi1qf1WXDkmTwqyyZyPcGWXMrztdRQlTCAmPo8J7aAZoLXQ73IV%2f1RTpxcNQs0NYoMvoqAEvQtvJi6lWTtwvftf8U7vaL2noPlUtTQsJ%2bCjYpMtFHvTqKM18cG68oeOhiTI198Sm7LZQQaOiX5hOmK09ZmpwerT51MyzYj3oS52Wg7DEgLITNUkDjfM3XRgs4%2famUwaGTHet36gcnmWzldj4%2ftMTWM6tqVAJro1T19Fgd5hZr4jOGDkFaZmpZ71zK9S%2fapJ%2fZoBBJ53TZT9qMRRkGGKYQKnkWScMD4aVkm3t9eiWKNRKIaKwpitIY7ezrps2a5MVax10eXjA%3d&fich=DiplomasXVI_json.txt&Inline=true",
+            "filename": "16_diplomas_aprovados"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=qSSBKJHpyz1DzD3%2fCn5CcgHmhuI0mRESEtzXSY9gY%2b%2bREDmqNXNx2s4c5I7nJIsj%2bMt81aIlkY4UQOsSMD%2fhD2vcIgGmOErzhhgKUNpNHHD2J5V7LJ9in2iCepKG9vPTB7oZQBmsoeKVv596%2bdpg85FMoXcEOYsIfQl0SYmxBCarLv9HiOKkRRKAd4YBFdcrhzRl%2b0A1rq588lrgG8rFQyiL7InAQUlB3znUavZqoDET1AqAEcpHVR853wRM7U4miAqvr12zeFxhVXI5tsqa6vFMW6K%2fAhrmNBENsGzOThqgcu9%2bBGOymeuSKKxdUnahw5UeD4giNLyDCbQF%2fvlaqptNB%2bOijMnbupGWZvg8oFFJHeR5vTK8s0lMj%2fx93Ej9nFaJqJ1R2SzJXnARm%2b8cRhfvxWYH9jHZXTk1bvXjFLI%3d&fich=GrupoDeAmizadeXVI_json.txt&Inline=true",
+            "filename": "16_grupos_parlamentares_de_amizade"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=46c937V7FP1aQWd9Tbu31Ocjx9fwTTdXruImKP83vIOQFNl2pVoNfK9ediFuMjUsUfjNCWKC1v1OxZpGljvOLVbVqAzm5zBA7oly3qEoxXqD2cFCMuviuVtx%2fwGKVe9GWXVpZcjNTR0ITb%2fe0qycUTEajEOsPIbkOWRICMZ%2bJX3Vrfp6ZoJnaTcM3DWlM4XYfY5TTuFt8OkovntJtF%2faG3wLg6x84F3qdOvBQKNxm1HUppdtnkGzbtPcoT%2fOwoiIoXN%2fmVPMotOGcSSKFyp15iFuJRdedA40KuOoAXT8nZnXHjbbmD7CIAihcrcMU3PbRowKy9cMtLMcpUnLx5JPM%2fR4sz95eKi5UPjA0taCgsQJzlCg%2br%2b%2frH%2foAsPKTqJOr11V%2flvq5iiUd%2bPzKId9Ay9T0tcf9z9G2H1sCa9nTBY%3d&fich=InformacaoBaseXVI_json.txt&Inline=true",
+            "filename": "16_informacao_base"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=wM87sGX%2b%2b9hhcUwSSnD%2bwWfry9Pw0b2MG2lWoYCqxoa9hfvjbNX%2fAm3Iwkw71pp2viqc4OxEIzGLqY8BKedQAfZ5QIInnq1HJ0oIh5XojUyAh0nVx0hSEOYL2ZZ44ptJMfV2NEi5mLPPP%2b%2bLuoGH%2b12lG5xocPn6QMRNB3pk9r1orDcRN%2b7DZUN35YE8wfwe7Yh6FkRZHsuay8TwAbZfJqW%2fVdJljjxCDcO%2b6apVsYm%2b03o79PQ9BwOG1MY4v6Hi7%2bcvB1eaivUHx83FHcAdMMBrzg4xwyI8C%2fGCC5rE2ECEtqiZkWBz7Jp8Ge4lEOB%2bt%2fsVwWcVwvUUK7q7c7ACFA%3d%3d&fich=IniciativasXVI_json.txt&Inline=true",
+            "filename": "16_iniciativas"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=znf1UddgmFc1M6uFvBq3IktNpZYw65Fvh%2beIhmhtfg5V6KerKysJhZ3Me0FGfKp%2bhvycQDjB9dCIrkn0VpS5tEOFx5v6liJchbkDkEQDlokP20eV3DhIAYJ8MA5IE48N5AlaNSD4fLToSvsdyH7LDnq%2fMNOKEkOn74aAPR6oIvxLu3RVX8tw8SIZNLzgPrG8wtKKWoiuvrYX%2bNNP7Pdbkt8dUiP%2bEKliMPXIS59inwyPD4lDD3M0m%2b9gsNRn%2bCcVD%2fepW3SLfjTU84eU4mXQaP5dMgh%2bO4YtbR2dkQLg11Rv%2fi1f9b4UFMENfRUop84LhFF2%2f%2fT%2fFEIOm%2bI2iuFN6lmgT9vndZ9qICQJLOju7lg%3d&fich=IntervencoesXVI_json.txt&Inline=true",
+            "filename": "16_intervencoes"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=ZMihp0m1LblMiUN3R3G5Y0cF%2bXsoi6glkm865MXAEpABAXot7Dzxzs71spA%2bB8T%2bShPEMO6PnYWJsbzxw18CRvT7iRU6O%2bEg7drS5ngby9KThL%2fK9Y%2bHcc%2bQszQWKMwGdqOpex3i7EVof12SOVtKT%2fkkpCxqyJQAvEsK8AL%2bGWIKXSTiPslSRXUBZAgVIi29KHRdoXwIE7Eg0JtMkixjF2DW8D8nNo0RLzZi%2b2HVaAJEA%2bd%2bKsx7oZwXgEcS7aQI%2f00ugWUZjuAIzOIi1Ik5e5nkSSNDno7sk%2bEzeOGoow3wxQTzfwGAnRNJYkBvRa4FJtgfVOFeIqrhCJf%2btg8bNywEk9B%2be%2bXQZO65MVt3bgk6SHf6VquBF3QF3k0rKzf5&fich=OE2025Or_json.txt&Inline=true",
+            "filename": "16_orcamento_do_estado"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=UDc4gh1aDZ2ZELX3CJdlTPSw8oONTCjHczWTmE2ZegarAO0YOO9rEK1oD1bAtJ%2bdfv1vYK3j8CEEff8KFV2lpubuXsyA4Gk49ha29fkD%2bDCIoLHvGyFajLlSR06%2be7qp9HsHDmhLWAjl32SKTNlFNnHF4k5sFoYmaHVtsqL7NvM1yGKMPNl%2bt%2bBwePagKxJ14xV%2bJiewag6hk1tii0G2Grmagj7jp7%2fMvE8oq7hXdaU5cqLAXzAP3%2bv1nwjtHpvjFR0Cq98WJCz3%2bilpRB083%2bBRQR2Iow5nFba23Jngj2NQnyIArR21HoT37hxXHDDDbRWoN6FBua0f8R%2f4OqePVWBwD8gxdIp2DNzGRbMDu7siJudc1WpoDESoQRjDvQa8TRM52Xt3Lbm2DKS9EFINWpjfLh3N0ge7duMYYkImcTizNre8oSbafksutDldKc6p&fich=OEPropostasAlteracao2025Or_json.txt&Inline=true",
+            "filename": "16_orcamento_do_estado"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=%2bKAK%2f%2byj5RDgW3SuGsZ1ecEbDDF5xg4coOewmQtllyEQUzFYAM7EoT054gkZVSZ7vGIYO8GC7f4EhUvCfPAh0G1jZd3h1qE0Yq%2blNSJGhEbNyGJa4qdPRr9ca4qxCp4KGU5wcVOwDM4xCTpE%2bC9S%2bXPkr9JwMwVxy2Ful8xCzRIRRCI%2biw0LllrqIvXx7qHNLYxqElNzzkiuw7E%2f%2fDjsZlMJUn3ZfCym1RGQAm%2fb6auEct3YfMkurK%2b5vmlbwBPKJ1Wx%2fL%2bw5ZSemfRlLWTNOuabO615SHd8sil7colWSFjuYe5LCW8u1De1OmuJ3b9DN5Bj0So%2fSfmvfHiRvGJtf0qcZdpesM8l4E%2fhrdTQhmO8z9VW5oQkSTREGnODb2g78VB3CnfIyl94yNZioK%2bwsHfbwM121K8Jnxu1DAU9AKk%3d&fich=RequerimentosXVI_json.txt&Inline=true",
+            "filename": "16_perguntas_e_requerimentos"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=f3xcPrxpK1ZmYT2cZQLmPoJY7uJveFk%2fFlJ4b1BdttIZ8eOns8Mw4ZYumVBSprZZUSy0eOEcDiF%2fmBRxMNg7QdbLJDvtYqWAa2JcZyOs7nueopOleHqgFYi6ueEz2G0C8j6RstLLXjEnsVckCp7flG5axI4GyohI0JSY3VBu2VJrpF6F0mkJ7bpr0HGuvSYdQ3dMwWYWZ%2be0mZya%2fNRBlAPmo%2bT%2frQ8O2LLrK8bGLsnEo2EwZ%2fFnXXzbI9OEyyqkwbIIP8pw7swX3dE0gzv2bThm1RIVODM2S7%2b0iFFpK%2bT9pK8dFOcSzOQ1EAyUson01898o8paMieFrG19XWISd1JqkUWNPutmuDATzxNQJq68OCnlyTHT1%2fi3YF825FCP&fich=PeticoesXVI_json.txt&Inline=true",
+            "filename": "16_peticoes"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=LfCX2osBal0OtvvI6B67NvCZlXO2YlbQfGod2Gm7R82R1q9ITpCr58LinPbyDbglVvP0obDx0FvzjPG8t3RdwmVqNI9pcj04hSVb4S1CninDiJWlbbBbdI%2f3iAeTBQ93SunNsDB5eJ5QMUzrXhVy417t88GBn9jzsgyZMAIUKzyCLlq5PCVGkP28Dp1k0Lht8HdCONtABa%2bpq%2bhOcb2vknPaL%2fuHlwuj4pxa%2fkCGjb34iaOxZ2mu0IoZIU0%2bS8BceMgcqdGCEDH8%2bVDetbbSYpi3w8v9gSjm7BWgtBq1fKUxgMQz9vNKwjeSu2YD6idg8kDU6Es4IkrqF8fotJG1pRVWrDP7JDJiXRezEoxesqU6sx8Qy3l7oT50t8D70k0dCFF03RKPIxYVL%2bXNy6NnVg%3d%3d&fich=ReunioesVisitasXVI_json.txt&Inline=true",
+            "filename": "16_reunioes_e_visitas"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=TxmWXztzV9EorrZ8Z5wEzAerkwFbBd%2fBKyOFC1anJVHmtBG3z%2baf3swXoKff8LI0KDdIYEVk0G965fyrvAFik8RoMfW61o20wPAtx8K2HNMVvukyYzIMR%2bpcpix93jbsY3fgnWMIsVTrDLIkhmfe4XfkwCn2%2fWZt9pIpG5FEMBTSmvip9XJ%2f3Rzsfnqf8iXqLYpDm%2fMxHHi0or%2bJQDW7FvsnmLeoq1X9rCOagx5%2byzfeCqTY2mqvL7%2bwl7xNo0B%2fwZaIHIwt1UeE3n1iGmS6v9GoHcObwI0Ct0Ddkr68u9bLo0tUOE9Cj%2bR49Wq%2fn%2fmXl8RGbpIz1iqILb4DlvnixpHRoOStEpIdpdjAUekTCQvjFIBjjnCg%2fskcvX8vAsgIXfcEcIbeONnacyaJczA9Ug%3d%3d&fich=AgendaParlamentar_json.txt&Inline=true",
+            "filename": "17_agenda_parlamentar"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=Pb%2ft6Tw0KLjYasFquNJRIUGmGxqcmgbMnxBX45qQbPuBy9hpVisW2gZQHUYnOhxehgMjT1Y1PYNKmbkfF4cnNoHc15utH811ITF0PUu12f%2ffi5B8NLq63kIvh84EZAjPKPlrbIp8yhxoD9s1WOjmOA%2bi3y8KMVeP9eiHb4kWFtsdY1a1De2AhRJb220ZtJxqL3nJm98u3qLxbwiQ0e1osoVTIrtOml5Joo6gQXlt7yUkAVGdNV2owSpSaTEkpKJjiaF7Rx%2bfnAoXLCu%2feRlrA818AltSO%2b6mR3PdYEq7MSr5ZqvRdlYiWRB3vMWo5M7b5xUuj0rvWD%2fEJXTOKHA2XbFU5Ft%2f%2bQcMg8Xu%2f7Sb418%3d&fich=AtividadesXVII_json.txt&Inline=true",
+            "filename": "17_atividades"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=bdGSXAY4wF3N3sMXfhz%2bBpxcFbcO3OXN0EumCsUH8uvKhcy0Dam1pqqMek3gAMpuyxpAZ0Dv%2byFZzMmOGd8YU%2fhG7xzbstk%2fdyc1aDWPEdNlv1Sw4UdFZMC9xn9DzSadPxViifSKB6TbnRcARKJsbDKcTr4OTX2GrVNaA9pyQ5NWkyph%2f6HfO4%2bh5HH2TU6cZldk8kbIzllp8Mb3HRflXjH%2fMc0lP2ge4dL8NsR1042Qk8XwWTqWCCgSiWZk38SBlIePz0E5wOK9lJ4LN4n0Q7yta8JWL7odDD%2bjxntCMdotMg4GXKupDmyMHbBswaSN1lguhsExgap9d35XAQT6XMolcRzV46olimNI52fUK0ZKr%2fN09JHQOOdlJ9Fbd5NubtJl1Mh7ErSHt0sqV8YgGkC3%2b6Dksx1u1YnDlKG1wdA%3d&fich=AtividadeDeputadoXVII_json.txt&Inline=true",
+            "filename": "17_atividade_dos_deputados"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=B0HGQUxQtU3%2fYUIYTUT1lgI50wjN9KqbvJGArMQ98DzS%2b513%2fCeQ88DmKielztYFtJ%2bLG51is1uHHnYLJp4Q79YJ1fxWsnvUG2jhxrSlZk8iWn18zBhnUtOOV%2f0CNvpDxWssaocifruf%2fcLQORaFd6R46rQerfvje98sRBFV8VT5ngtBtkmEZp8Jp44uo9iwpsrgnwSXvD9PfY0VZ2jxddLOSaB%2bnUvXMItG8NWNKqDtoBgBGi3IWaWD1vwqnTmlDaeFbAr12065yqGlyONc2BsNBVKfgV0muaNgEJTfM%2fNLjmq%2bXJJMrlHWmT0xKMyDn%2fAOAU0DlsGmZcsHdsp%2fZivq0Qwq5C%2f2tm91onjxgJecyRrj4lzUqlfV2B0dRjrp%2fBC4Et%2bJgCIzMK3Si5tQ%2bZxy0OeLBjQC2dX8PliGqR4%3d&fich=OrgaoComposicaoXVII_json.txt&Inline=true",
+            "filename": "17_composicao_de_orgaos"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=1djGIZbw6n7tzva6WcDi6dDHYWBxcFbvUjqdiQq9tnM1BkZF1%2bpJi5zRWtz9h%2fo6ubVfVgh7WqNBzBABy9kTGmoPmyNfkga8ZTaCcLydF8WW6fXPl39ON35pXCw10nXEghqj%2fRhGJPlucYbLtHoaUdUqVKcuJE%2beZp8N1bCaeKxTKYrlcI2ZIZ3MzoB0JZxW%2bwljIySQ0k%2bJE0mFa2tAOA9uuuQGGIJxB%2fT%2f2hgoJrGiEXrj6K2s84VGsQkGpVrkfMDmFMM%2fjSyVHlGRfdYl65buUw0Ny0gzAwRwkWoloKGBNhndUlY6UKBOxi8f7pl4Ftht8zZkhppZmeHnoimC3YiBFXPwhmcwfYz1Af5DNK9XfmIHLxiHrZP5TL4NPCk2Gy1l8miEuAlNB3hzE9HZ2w%3d%3d&fich=DelegacaoEventualXVII_json.txt&Inline=true",
+            "filename": "17_delegacoes_eventuais"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=iRnsUV44sV0h32f5RnrCsOE6GhjU8j1N0qk3frd%2biX49DTdN5YVh2ta6DTf1MijdwEotwGmDiljswBA9L3sCiOQcXeT3qs8HG5wGOM9EGkFgSnyO90b58TDwLxMS2r1uWIFII%2bK1O9m%2bM168REkhBskkuO58y529%2barw%2boi2gZ2%2fWSiwvSpHNVUnlaPBrcBGE5e3qhA3zKc19mNzjXCiqvwZ4oE6zBaaY%2fKi74UOjtpKbWdkj%2bYg%2bcTlhtGtaJyJwAWV7gRRTOEUbytTsG%2fwaFdtV71FAXLj6sONMGPwKkylYuHx41r8ya7Uk%2bZ4x5ljbcF2%2fEzmYvuF9I57CMajE2oTuN4WFyX%2bjkkYQa8s%2bvat5gjaVN3Vti2r7c7eojRTVLE6Gx8fIeZMLtFdzhq7GOOheSWVWbn%2fDltXFUwX%2bK8%3d&fich=DelegacaoPermanenteXVII_json.txt&Inline=true",
+            "filename": "17_delegacoes_permanentes"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=UgAgVTK0KDnR2Gn%2fTnU0juME23CQ1T1RQ1rTzk1iCsvi0mpBmkE5lQZ%2bf%2fLo%2b0ME%2flyGKVp8%2bXIQM9drFQVfcLtvnDLLyHY1e85%2feRwb3kSP5tgn1l%2bF7AWB3SDVBVbI%2fxCF7IS5xbYiHGDHMOEct6gUJCyvi4O0NSqUVbzF0l8cjqE%2b595iST7CTQoucG3Lkgqnoip7tVg36IUNPPWv45jLZZ%2fERfMSGUqeAEtv1aGD%2fbSoVpnhje1x4cI1gyWaDHljg3PshfaZ3Zw9Pu9n7J9JUeQM2bweosqTksDnWTiQ8aUJ2BQMC2kc8aEa0okjgDNGlgHdqoNbWV3rz4i1xeZA12Ea9GqOCMo8Choy%2bvnqkt%2fGd4X05zyf2D34lQXuJlrFeXvO5Ep8Rr7W7kWEVA%3d%3d&fich=DiplomasXVII_json.txt&Inline=true",
+            "filename": "17_diplomas_aprovados"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=ScxeWGDrGKUpqMpBTGVNU%2bO2hIy8m7EKd%2bIQHtB1p5JrCfa8VlLwTQ%2fAl8S2ZCP2jC1OOEV1vqPrdD7YWg7SXsjxozQRaPyKTUhJOTrEBYL5T1ZFnt6dCwoYFetHKTIEQqbSutn3Vm0FPBbfwriCzRFsjtLwc9r%2bfvI%2bfg%2fXu9nd3r%2fYqf7muSAAorg4Em2%2fFZFvzNMMUQsanxxjeqAr1MXcNDvycS%2bEkHOU7Ia8%2bcvNPWcaRXpCObXB1D7ORje1cRsSzvFDgU43GxfcUWDa5xn1jPzk8Aj%2bvnuG9TpqCZs4DiSmmBxOqyy3iEexVcfPfkhcXs5%2f0FmSM0I1yG4I%2bGJpfexdE%2fjN4SjOkwvFlUL1zh3Njo9RyAaza5mNMScinh36vdOTTOp29RJWXnr%2fpw%3d%3d&fich=GrupoDeAmizadeXVII_json.txt&Inline=true",
+            "filename": "17_grupos_parlamentares_de_amizade"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=WW2QOfe%2fmNwZqMTmDrFyHLSBrebRjH2332OECojlAPFvEwOLgcoPox4o61pOewG8Vf4qNXiGs2wW77gEpU6ZYg0U6jJvhjh5FrCiyEkc%2bmBOTgsT5kzkCicvswAmtueJLiKL8xV4ztr5KRTrKWt%2f5jxeDSAswIohHNWodDgssbN5VszFmmNhYH%2fvxUcXkg4Zw%2bZ6w0Jtw4oq9h%2frjsILjIJp8vTKS33udWLAt2thj8alr%2bIq5r1j%2bsnGfyPvV1QlLeOs0LEOCZquskC%2by2%2fgPjlXJaS161nYw6YNdrtitR26CXrxoX8ZlyYku4gwUAdOzux9z3kCsrtsXYS47gb2qU%2bC4sJ88KJhI4bkEd0UP01E6WTyJjHsY2TISQw5HTbM3Hw7EoJgQIp8vclGOMOauB24U0EHBhJ9D8j%2bNag7nlU%3d&fich=InformacaoBaseXVII_json.txt&Inline=true",
+            "filename": "17_informacao_base"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=aNHKUhEDXIUt%2fW2bYemyQBtp6eimM06ARgtkjuR5PX%2bW%2bpVxn49T2L%2feK%2fe83vlm8deihOM3M8x7kM1MSWDRM%2brT%2fQrvLEq0Z3kihDOa%2flNCmb4Qp4%2fohxEUBRnT2ImPTK98vdyRHuVOMd1EN2cWn4dGQeuh9jpmf40chNiQJWcAK3uDbFmX1j0YyQ0shtnSWw2Q%2fczHOody%2b%2fltHVtheaFe2ltwFrNw6VJG0vOoo4Hhgkf%2b9ExrZ93OAE5213656BWOCD6rx7MnMGLymAOCAFlN7W6jnC15nsGFsSlBbgTFqNSQaAmwLdA4j8b6vI26a1PmZWKAVT8XftmSvKgt%2ffs9B7lCHOW3c%2ftE67xaPp0%3d&fich=IniciativasXVII_json.txt&Inline=true",
+            "filename": "17_iniciativas"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=aNRMNcqWD8oTh7QWHa8dfE3k4jmmnINAWlruODCThEbrcvzVwjyNqDgZWk6zI4mAf8Y0IDgXNfs0iMZgQEys9ReCktZ7iSosZ8ncatnJYbePEkl1fJM02ZuUubP9f9rYmqz%2f3wa63fQbztSXx2oA%2bUW5smr2bgk%2foUaxAHzB9nCgNZerTnvZ5P5RMyfb2sZJjZ7i6pqX3Rf7d2J0DWiN5jUGVDmAX5ESkYs4NOAKTNofbhAw6chMJzWBheO2Kr3GicLT049z3QIg6HW2TyOtL5ooudt5RzIFjMbKSt2VUWjgsVQ9CGbD4o3qwvunl354RenF3W4ixxMKiDKWaHlqwoXy0uROPosO0CQY3sQ2SACxLqufusEKye8bVFSy6krG&fich=IntervencoesXVII_json.txt&Inline=true",
+            "filename": "17_intervencoes"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=C%2bXGN0l15Ekyj6m0wuQ5ZAee%2bHmQEVHC%2byN5nCyq3HpLIqLDjXqC025zuX0xd3WTBoAhQJ1N4VKy8ruRuTEkVA2upiLcaErqq%2fkr%2bH%2fNVUn80LGTk70l%2bpQ2ZVi9hZh%2b3CNvkBgWjuE3s4Lng8c3XFMRTV3cpLMP1g9npK1gZrEcljIKUj5SN7U9%2bxOUqkmv0qNNWNN%2bLS8uCZIIapMxkoFUxZoGzuchUBSnigpJcerHsQx2VDThN2CCD%2bDlT9IaHAdpE%2bzU4SSI6Iqm4yqcZa4CDXmSA3m3LrrVU4P3cSB0PIsWldOQk5vJVNwGOExestRWAayESwvtSK8rkt9%2fmlv8zVaA9WMizlYVrXO%2bIFK%2bDS04IsHfeZmCR2UpUULlTM%2bl5lB2SVlRB0l7x7dhZA%3d%3d&fich=OE2026Or_json.txt&Inline=true",
+            "filename": "17_orcamento_do_estado"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=MzAbwtHtIuRieRGosEje%2bAp6akvy%2feQXvh8IUEE%2bZLrGEjoQXd2s2kySiWUxCgUwVvarQ9fULOZt%2boSx05xX8UfqgsoK6MBtSr%2bpR5bcBGH%2bQQmIWL1B0%2feBwgWZwf%2b1iHOSXYfE5lrV8WtaIM8vWq7JX%2bsKiELskX943x4tbpiicCUw1mDeaxmYxLKFVEjBfWENDVNF0LSJaaxKJ%2fuohn60slhSuPWJi5U4IGqc85TCIw%2bNP%2bzC4K%2b9s%2fAXgTDWUmnYTQNPrWb%2fzf3cma%2bfBGWs4BPojZweE29ivCSPip5uFn12DgfP12whPRZduWbkLwqqZenawRi1%2bJiNvIDNTm44Hf1gtGN06pnIiYuDoH1%2bTKFX9wge8WJYlzNakg3Xw4%2bZ6DOqbOIKHe06JBcHTw%3d%3d&fich=RequerimentosXVII_json.txt&Inline=true",
+            "filename": "17_perguntas_e_requerimentos"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=yH83dFaJ2iJw%2f%2bmAydPjckxCS2nDXOTfiVo0V3JADGZxvJy9uktcE6tdaNstDetz861%2bb890f%2bKieN9tubmNlx2qn2kvRt8SJkIfgRKAjPlRUQnWsc6Qpev0B7eFH66LnXAPfhixzqG2c%2fhQFkGMVMfBqosA39mcVlIaeYUIUUfc8KrjA099wrTgQ7J0QslNHTIy0pD23WgRK01QjLpS4COJzn%2fcKrTA1ypTEYpZ%2bgDHN3WJc3cfEY8B0jQs4gljF0cXOn5ohi%2bwbQKMQFHty%2fgHRmkL8Zm296ruNJgssw2zKw6vcXl%2bviUHbpeoiqte%2bBPxPSfFJiAobeU2y8Mwbxyk0xDBDAI6Xi0%2bN4yQGHQ%3d&fich=PeticoesXVII_json.txt&Inline=true",
+            "filename": "17_peticoes"
+        },
+        {
+            "json": "https://app.parlamento.pt/webutils/docs/doc.txt?path=rEBLFlZYDWGQutX5RI9795zVrOvGpXvuhALkWZUE8ZfLAtowQBvRsseweP8bdDcfu1hcaq%2bIOPbfEBV2DJZcIBKrnoapRj4AgvXRm7iQL%2f4gZntB%2fQ8n2NgJoOIq2iPbq6b%2fuhrtCgpPg%2fqm3lsmX4E4tI%2ftM6qbI40pKE4K8LxW1%2f5fWHyYlHVy0pJuoiFYFJeMWAmfXbOoH2nTm5WN3ESh4aGtebN%2fMTXwd0Q3jM%2bhUpbtg5S1IjyVc3B8N8gvLLvYJtcSwoVNBXG%2fa6uJXAzQlj9CPjW5qUbidm%2fii0Y4VmZZ6Weh8IRWkK9tPoO8eyaoVDVvhWlqOEJ3C1GM50McojopMSPWvsWYq9TNoP1eb0%2bYFQ%2fFyCzW2vt%2bTGaE&fich=ReunioesVisitasXVII_json.txt&Inline=true",
+            "filename": "17_reunioes_e_visitas"
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+# Dados raw (reconstruíveis via scripts/01_download.py)
+data/raw/
+data/schemas/
+data/manifest.json
+
+# Base de dados (reconstruída via scripts/04_load_to_db.py)
+db/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Claude local settings
+.claude/settings.local.json
+
+# Logs
+logs/
+*.log
