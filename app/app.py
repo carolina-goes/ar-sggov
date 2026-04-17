@@ -112,6 +112,22 @@ def color_map(gps):
     return {g: GP_COLORS.get(g, "#a0aec0") for g in gps}
 
 
+def download_button(df: pd.DataFrame, base_name: str, key: str | None = None) -> None:
+    """Botão de descarga CSV para um DataFrame filtrado.
+    Se o DataFrame for vazio, não mostra nada.
+    """
+    if df is None or df.empty:
+        return
+    csv_bytes = df.to_csv(index=False).encode("utf-8-sig")  # BOM para Excel abrir com UTF-8
+    st.download_button(
+        label=f"Descarregar CSV ({len(df):,} linhas)",
+        data=csv_bytes,
+        file_name=f"{base_name}.csv",
+        mime="text/csv",
+        key=key or f"dl_{base_name}",
+    )
+
+
 # --- Sidebar ------------------------------------------------------------
 st.sidebar.markdown("# AR-SGGOV")
 st.sidebar.caption("Plataforma de consulta da Assembleia da República")
@@ -131,6 +147,7 @@ pagina = st.sidebar.radio(
         "Delegações e visitas",
         "Orçamento do Estado",
         "Perfil de deputado",
+        "Descarregar dados",
     ],
     label_visibility="collapsed",
 )
@@ -300,6 +317,7 @@ elif pagina == "Iniciativas":
             "texto": st.column_config.LinkColumn("Texto", display_text="abrir"),
         },
     )
+    download_button(df, f"iniciativas_leg{leg}", key="dl_ini")
 
 
 # =======================================================================
@@ -390,6 +408,7 @@ elif pagina == "Intervenções":
             "video": st.column_config.LinkColumn("Vídeo", display_text="ver"),
         },
     )
+    download_button(df, f"intervencoes_leg{leg}", key="dl_intervencoes")
 
 
 # =======================================================================
@@ -488,6 +507,7 @@ elif pagina == "Perguntas e requerimentos":
             "destinatarios": st.column_config.TextColumn("Destinatários", width="medium"),
         },
     )
+    download_button(df.drop(columns=["id_p"]), f"perguntas_e_requerimentos_leg{leg}", key="dl_perguntas")
 
 
 # =======================================================================
@@ -574,6 +594,7 @@ elif pagina == "Petições":
             "comissoes": st.column_config.TextColumn("Comissões", width="medium"),
         },
     )
+    download_button(df, f"peticoes_leg{leg}", key="dl_peticoes")
 
 
 # =======================================================================
@@ -660,6 +681,7 @@ elif pagina == "Diplomas aprovados":
             "iniciativas_origem": st.column_config.TextColumn("Iniciativa de origem"),
         },
     )
+    download_button(df, f"diplomas_aprovados_leg{leg}", key="dl_diplomas")
 
 
 # =======================================================================
@@ -741,6 +763,7 @@ elif pagina == "Agenda parlamentar":
             "link": st.column_config.LinkColumn("Link", display_text="abrir"),
         },
     )
+    download_button(df, f"agenda_parlamentar_leg{leg}", key="dl_agenda")
 
 
 # =======================================================================
@@ -772,6 +795,7 @@ elif pagina == "Atividades":
                 fig.update_traces(marker_color="#2b6cb0")
                 st.plotly_chart(fig, use_container_width=True)
             st.dataframe(df[cols_show], use_container_width=True, hide_index=True, height=420)
+            download_button(df[cols_show], f"{table_name}_leg{leg}", key=f"dl_{table_name}")
 
     _atividade_view(tab_audic, "atividades_audicoes", "Audições")
     _atividade_view(tab_audien, "atividades_audiencias", "Audiências")
@@ -813,6 +837,7 @@ elif pagina == "Órgãos e comissões":
 
     st.markdown("### Órgãos")
     st.dataframe(detalhe[cols_det], use_container_width=True, hide_index=True, height=300)
+    download_button(detalhe[cols_det], f"orgaos_detalhe_leg{leg}", key="dl_orgaos_det")
 
     st.markdown("### Histórico de composição (membros)")
     where2 = ["_legislatura = ?"]
@@ -827,6 +852,7 @@ elif pagina == "Órgãos e comissões":
     cols_comp = [c for c in comp.columns if not c.startswith("_") and not c.endswith("_json")]
     st.caption(f"{len(comp):,} registos (máximo 2000)")
     st.dataframe(comp[cols_comp], use_container_width=True, hide_index=True, height=420)
+    download_button(comp[cols_comp], f"orgaos_historico_composicao_leg{leg}", key="dl_orgaos_comp")
 
 
 # =======================================================================
@@ -853,6 +879,7 @@ elif pagina == "Delegações e visitas":
                 "Sessao": st.column_config.TextColumn("Sessão"),
             },
         )
+        download_button(df, f"delegacoes_eventuais_leg{leg}", key="dl_del_ev")
         sel_id = st.selectbox("Ver participantes da delegação", [""] + df["Id"].astype(str).tolist())
         if sel_id:
             parts = q("SELECT Nome, Gp, Tipo FROM delegacao_eventual_participantes WHERE _legislatura=? AND Id=?", (leg, sel_id))
@@ -869,6 +896,7 @@ elif pagina == "Delegações e visitas":
                 "Sessao": st.column_config.TextColumn("Sessão"),
             },
         )
+        download_button(df, f"delegacoes_permanentes_leg{leg}", key="dl_del_perm")
 
     with tab_amz:
         df = q("SELECT Id, Nome, data_inicio AS data_criacao, Sessao FROM grupos_parlamentares_de_amizade WHERE _legislatura=? ORDER BY Nome", (leg,))
@@ -881,6 +909,7 @@ elif pagina == "Delegações e visitas":
                 "Sessao": st.column_config.TextColumn("Sessão"),
             },
         )
+        download_button(df, f"grupos_amizade_leg{leg}", key="dl_amz")
         sel_id = st.selectbox("Ver composição do grupo", [""] + df["Id"].astype(str).tolist(), key="amz_sel")
         if sel_id:
             comp = q("SELECT Nome, Gp, Cargo, DataInicio, DataFim FROM grupo_amizade_composicao WHERE _legislatura=? AND Id=? ORDER BY Cargo", (leg, sel_id))
@@ -908,6 +937,7 @@ elif pagina == "Delegações e visitas":
                 "Local": st.column_config.TextColumn("Local"),
             },
         )
+        download_button(df_view, f"reunioes_e_visitas_leg{leg}", key="dl_rev")
 
 
 # =======================================================================
@@ -963,6 +993,7 @@ elif pagina == "Orçamento do Estado":
             "Texto": st.column_config.TextColumn("Texto", width="large"),
         },
     )
+    download_button(df, f"orcamento_do_estado_leg{leg}", key="dl_oe")
 
 
 # =======================================================================
@@ -1026,6 +1057,7 @@ elif pagina == "Perfil de deputado":
                     "texto": st.column_config.LinkColumn("Texto", display_text="abrir"),
                 },
             )
+            download_button(ini, f"deputado_{int(cad_id)}_iniciativas_leg{leg}", key="dl_prof_ini")
 
         with tab2:
             inte = q(
@@ -1048,6 +1080,7 @@ elif pagina == "Perfil de deputado":
                     "video": st.column_config.LinkColumn("Vídeo", display_text="ver"),
                 },
             )
+            download_button(inte, f"deputado_{int(cad_id)}_intervencoes_leg{leg}", key="dl_prof_inte")
 
         with tab3:
             cnt = q(
@@ -1065,3 +1098,75 @@ elif pagina == "Perfil de deputado":
                                   xaxis_title=None, yaxis_title=None)
                 fig.update_traces(marker_color="#2b6cb0")
                 st.plotly_chart(fig, use_container_width=True)
+
+
+# =======================================================================
+# Descarregar dados
+# =======================================================================
+elif pagina == "Descarregar dados":
+    st.title("Descarregar dados")
+    st.caption(
+        "Acesso directo às 142 tabelas da base de dados. "
+        "Cada tabela pode ser filtrada por legislatura e descarregada em CSV (UTF-8 com BOM, compatível com Excel)."
+    )
+
+    @st.cache_data(ttl=3600, show_spinner=False)
+    def _tables_list() -> pd.DataFrame:
+        return q(
+            """
+            SELECT t.table_name
+            FROM information_schema.tables t
+            WHERE t.table_schema = 'main'
+            ORDER BY t.table_name
+            """
+        )
+
+    tabelas = _tables_list()
+    st.markdown(f"### {len(tabelas)} tabelas disponíveis")
+
+    filtro_nome = st.text_input(
+        "Filtrar tabelas por nome",
+        placeholder="ex.: iniciativa, votacao, deputado…",
+        key="dl_filter",
+    )
+
+    tab_view = tabelas.copy()
+    if filtro_nome:
+        tab_view = tab_view[tab_view["table_name"].str.contains(filtro_nome, case=False, na=False)]
+
+    sel_tabela = st.selectbox("Tabela", tab_view["table_name"].tolist(), label_visibility="collapsed")
+
+    if sel_tabela:
+        cols_info = q(
+            "SELECT column_name FROM information_schema.columns WHERE table_name = ? ORDER BY ordinal_position",
+            (sel_tabela,),
+        )
+        tem_legislatura = "_legislatura" in cols_info["column_name"].values
+
+        c1, c2 = st.columns([2, 3])
+        legs_sel: list[str] = []
+        if tem_legislatura:
+            legs_disp = q(f'SELECT DISTINCT _legislatura l FROM "{sel_tabela}" ORDER BY l')["l"].astype(str).tolist()
+            legs_sel = c1.multiselect("Legislaturas", legs_disp, default=legs_disp, key="dl_legs")
+
+        where_sql = ""
+        params_sql: list = []
+        if legs_sel and tem_legislatura:
+            where_sql = " WHERE _legislatura IN (" + ",".join(["?"] * len(legs_sel)) + ")"
+            params_sql.extend(legs_sel)
+
+        total = q(f'SELECT COUNT(*) n FROM "{sel_tabela}"{where_sql}', tuple(params_sql))["n"][0]
+        c2.metric("Linhas", f"{int(total):,}")
+
+        st.markdown("### Pré-visualização (primeiras 100 linhas)")
+        preview = q(f'SELECT * FROM "{sel_tabela}"{where_sql} LIMIT 100', tuple(params_sql))
+        st.dataframe(preview, use_container_width=True, hide_index=True, height=350)
+
+        st.markdown("### Descarregar")
+        full = q(f'SELECT * FROM "{sel_tabela}"{where_sql}', tuple(params_sql))
+        suffix = "_" + "_".join(legs_sel) if legs_sel and tem_legislatura and len(legs_sel) < 17 else ""
+        download_button(full, f"{sel_tabela}{suffix}", key="dl_full")
+        st.caption(
+            "O ficheiro é gerado em memória no browser. "
+            "Para tabelas muito grandes (>500 000 linhas) o navegador pode demorar alguns segundos."
+        )
