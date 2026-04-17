@@ -177,6 +177,49 @@ Exemplos (usar a coluna da direita):
 
 Esta regra aplica-se tambem a documentacao nova escrita em .md. Ficheiros existentes podem ser corrigidos incrementalmente quando forem editados por outra razao.
 
+## Ambientes: branches `main` (producao) e `dev` (desenvolvimento)
+
+O repo em <https://github.com/carolina-goes/ar-sggov> usa duas branches de longa duracao, correspondentes a dois ambientes:
+
+| Branch | Ambiente | App Streamlit | Alteracoes |
+|---|---|---|---|
+| `main` | **Producao** | <https://ar-sg-gov-dssd-upe-v01.streamlit.app> | Apenas via Pull Request (ou bot do cron) |
+| `dev` | **Desenvolvimento** | app de preview (a criar: `ar-sg-gov-dssd-upe-dev.streamlit.app`) | Commits directos OK |
+
+**Regras de ouro**:
+
+1. **Nunca fazer `git push origin main` manualmente**. A branch `main` so recebe:
+   - Commits automaticos do workflow `refresh_xvii.yml` (refresh diario de dados).
+   - Merges via Pull Request a partir de `dev`.
+2. **Trabalhar sempre em `dev`**. Para experiencias de maior risco, criar branches de feature a partir de `dev` (`git checkout -b feat/nova-pagina`), e depois fundir em `dev` via PR ou merge local.
+3. **Puxar dados novos de prod**: quando o cron diario adiciona commits a `main`, fazer `git checkout dev && git merge main` em `dev` para actualizar a referencia a parquet.
+4. **Promover dev a prod**: quando o trabalho em `dev` estiver pronto, abrir PR `dev -> main` no GitHub. O merge do PR dispara redeploy automatico da app de producao. Usar "Squash and merge" ou "Merge commit" conforme preferencia.
+
+**Comandos comuns**:
+
+```bash
+# Trabalhar em dev
+git checkout dev
+git pull
+# ...edicoes...
+git add -A && git commit -m "..."
+git push
+
+# Sincronizar dados frescos de main para dev
+git checkout dev
+git pull
+git merge origin/main
+git push
+
+# Promover dev a producao (via PR)
+gh pr create --base main --head dev --title "Promocao dev -> main" --body "..."
+# revisar no browser, merge
+```
+
+**Porque nao ha protecao tecnica em main?**
+
+Se configurarmos "Require PR" em main, o cron diario (que usa o GITHUB_TOKEN) tambem e bloqueado. Para manter o cron simples, optamos por **convencao + disciplina** em vez de ruleset com bypass actors. Se no futuro for preciso reforcar, adicionar um ruleset com bypass para `github-actions[bot]`.
+
 ## Convencoes de codigo
 
 - Python 3.11+. Type hints e `from __future__ import annotations`.
