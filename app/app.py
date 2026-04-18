@@ -259,6 +259,12 @@ elif pagina == "Iniciativas":
         top_n = f5.slider("Top N", 50, 1000, 200, step=50)
         ordem = f6.selectbox("Ordenar", ["Data desc", "Data asc", "Tipo", "GP"])
 
+        resultados_all = q(
+            "SELECT DISTINCT resultado r FROM iniciativa_eventos_votacao WHERE _legislatura=? AND resultado IS NOT NULL ORDER BY 1",
+            (leg,),
+        )["r"].tolist()
+        res_sel = st.multiselect("Resultado final", resultados_all, placeholder="Todos", key="ini_res")
+
     where = ["i._legislatura = ?"]
     params: list = [leg]
     if d_from and d_to:
@@ -276,6 +282,12 @@ elif pagina == "Iniciativas":
     if texto:
         where.append("i.IniTitulo ILIKE ?")
         params.append(f"%{texto}%")
+    if res_sel:
+        where.append(
+            "EXISTS (SELECT 1 FROM iniciativa_eventos_votacao v "
+            "WHERE v.IniId=i.IniId AND v.resultado IN (" + ",".join(["?"] * len(res_sel)) + "))"
+        )
+        params.extend(res_sel)
 
     order_sql = {"Data desc": "i.data_entrada DESC NULLS LAST",
                  "Data asc":  "i.data_entrada ASC NULLS LAST",
@@ -283,19 +295,32 @@ elif pagina == "Iniciativas":
                  "GP":        "i.IniNr"}[ordem]
 
     sql = f"""
+    WITH ult_vot AS (
+        SELECT IniId, resultado, unanime,
+               ROW_NUMBER() OVER (PARTITION BY IniId ORDER BY CAST(data AS DATE) DESC NULLS LAST, _json_idx DESC) AS rn
+        FROM iniciativa_eventos_votacao
+        WHERE _legislatura = ?
+    )
     SELECT i.IniNr AS nr, i.IniDescTipo AS tipo, i.IniTitulo AS titulo,
-           i.data_entrada AS data_ini, i.IniLinkTexto AS texto
+           i.data_entrada AS data_ini,
+           uv.resultado AS resultado,
+           uv.unanime AS unanime,
+           i.IniLinkTexto AS texto
     FROM iniciativas i
+    LEFT JOIN ult_vot uv ON uv.IniId = i.IniId AND uv.rn = 1
     WHERE {' AND '.join(where)}
     ORDER BY {order_sql}
     LIMIT ?
     """
-    df = q(sql, tuple(params + [top_n]))
+    df = q(sql, tuple([leg] + params + [top_n]))
 
-    k1, k2, k3 = st.columns(3)
+    k1, k2, k3, k4 = st.columns(4)
     k1.metric("Resultados", f"{len(df):,}")
-    k2.metric("Tipos distintos", df["tipo"].nunique() if not df.empty else 0)
-    k3.metric("Com data", int(df["data_ini"].notna().sum()) if not df.empty else 0)
+    aprovadas = int((df["resultado"] == "Aprovado").sum()) if not df.empty else 0
+    rejeitadas = int((df["resultado"] == "Rejeitado").sum()) if not df.empty else 0
+    k2.metric("Aprovadas", f"{aprovadas:,}")
+    k3.metric("Rejeitadas", f"{rejeitadas:,}")
+    k4.metric("Tipos distintos", df["tipo"].nunique() if not df.empty else 0)
 
     if not df.empty and df["data_ini"].notna().any():
         ts = df.copy()
@@ -314,6 +339,8 @@ elif pagina == "Iniciativas":
             "tipo": st.column_config.TextColumn("Tipo"),
             "titulo": st.column_config.TextColumn("Título", width="large"),
             "data_ini": st.column_config.DateColumn("Data", format="YYYY-MM-DD"),
+            "resultado": st.column_config.TextColumn("Resultado"),
+            "unanime": st.column_config.TextColumn("Unânime"),
             "texto": st.column_config.LinkColumn("Texto", display_text="abrir"),
         },
     )
