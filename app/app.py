@@ -1110,19 +1110,85 @@ elif pagina == "Agenda parlamentar":
 # =======================================================================
 elif pagina == "Atividades":
     st.title(f"Atividades — Legislatura {leg}")
-    st.caption("Atividades globais da Assembleia da República agrupadas por tipo.")
+    st.caption("Atividades globais da Assembleia da República agrupadas por tipo. Cada tab tem filtros em cascata.")
 
     tab_audic, tab_audien, tab_deb, tab_desl, tab_evt, tab_ger, tab_rel = st.tabs(
         ["Audições", "Audiências", "Debates", "Deslocações", "Eventos", "Gerais", "Relatórios"]
     )
 
-    def _atividade_view(tab, table_name, label):
+    def _atividade_view(tab, table_name, label, key_prefix, tipo_col=None, sessao_col="Sessao",
+                        texto_cols=("Assunto",), extra_filter=None):
+        """
+        Renderiza uma tab da página de Atividades com cascata Sessão -> Tipo -> pesquisa textual.
+        tipo_col: coluna de tipo/designação (multiselect). None se a tabela não tem Tipo útil.
+        sessao_col: coluna de sessão legislativa ("Sessao" ou "SessaoLegislativa").
+        texto_cols: colunas a pesquisar com ILIKE.
+        extra_filter: dict opcional {label, col, values} para filtro adicional (ex. Concedida).
+        """
         with tab:
-            df = q(
-                f"SELECT * FROM {table_name} WHERE _legislatura=? ORDER BY _data DESC NULLS LAST LIMIT 1000",
+            # Listas para cascata
+            ss_all = q(
+                f'SELECT DISTINCT "{sessao_col}" s FROM {table_name} WHERE _legislatura=? AND "{sessao_col}" IS NOT NULL ORDER BY 1',
                 (leg,),
+            )["s"].tolist()
+
+            cols_count = 3 if tipo_col else 2
+            cols = st.columns([2] * cols_count + [3])
+            ss_sel = cols[0].multiselect(
+                "Sessão legislativa", ss_all, placeholder="Todas", key=f"{key_prefix}_ss"
             )
+
+            tipo_sel: list = []
+            if tipo_col:
+                tipo_params = [leg]
+                tipo_where = f'WHERE _legislatura=? AND "{tipo_col}" IS NOT NULL'
+                if ss_sel:
+                    tipo_where += f' AND "{sessao_col}" IN (' + ",".join(["?"] * len(ss_sel)) + ")"
+                    tipo_params.extend(ss_sel)
+                tipos_all = q(
+                    f'SELECT DISTINCT "{tipo_col}" t FROM {table_name} {tipo_where} ORDER BY 1',
+                    tuple(tipo_params),
+                )["t"].tolist()
+                tipo_sel = cols[1].multiselect(
+                    "Tipo", tipos_all, placeholder="Todos", key=f"{key_prefix}_tipo"
+                )
+
+            extra_sel: list = []
+            if extra_filter:
+                extra_sel = cols[cols_count - 1].multiselect(
+                    extra_filter["label"],
+                    sorted([v for v in q(
+                        f'SELECT DISTINCT "{extra_filter["col"]}" v FROM {table_name} WHERE _legislatura=? AND "{extra_filter["col"]}" IS NOT NULL',
+                        (leg,),
+                    )["v"].tolist()]),
+                    placeholder="Todos",
+                    key=f"{key_prefix}_extra",
+                )
+            texto = cols[-1].text_input(
+                "Pesquisa", placeholder="palavra-chave…", key=f"{key_prefix}_texto"
+            )
+
+            # Construção da query
+            where = ["_legislatura = ?"]
+            params: list = [leg]
+            if ss_sel:
+                where.append(f'"{sessao_col}" IN (' + ",".join(["?"] * len(ss_sel)) + ")")
+                params.extend(ss_sel)
+            if tipo_col and tipo_sel:
+                where.append(f'"{tipo_col}" IN (' + ",".join(["?"] * len(tipo_sel)) + ")")
+                params.extend(tipo_sel)
+            if extra_filter and extra_sel:
+                where.append(f'"{extra_filter["col"]}" IN (' + ",".join(["?"] * len(extra_sel)) + ")")
+                params.extend(extra_sel)
+            if texto and texto_cols:
+                parts = [f'COALESCE("{c}",\'\') ILIKE ?' for c in texto_cols]
+                where.append("(" + " OR ".join(parts) + ")")
+                params.extend([f"%{texto}%"] * len(texto_cols))
+
+            sql = f"SELECT * FROM {table_name} WHERE {' AND '.join(where)} ORDER BY _data DESC NULLS LAST LIMIT 1000"
+            df = q(sql, tuple(params))
             cols_show = [c for c in df.columns if not c.startswith("_") and not c.endswith("_json")]
+
             st.metric(label, f"{len(df):,}")
             if not df.empty and "_data" in df.columns and df["_data"].notna().any():
                 ts = df.copy()
@@ -1136,13 +1202,23 @@ elif pagina == "Atividades":
             st.dataframe(df[cols_show], use_container_width=True, hide_index=True, height=420)
             download_button(df[cols_show], f"{table_name}_leg{leg}", key=f"dl_{table_name}")
 
-    _atividade_view(tab_audic, "atividades_audicoes", "Audições")
-    _atividade_view(tab_audien, "atividades_audiencias", "Audiências")
-    _atividade_view(tab_deb, "atividades_debates", "Debates")
-    _atividade_view(tab_desl, "atividades_deslocacoes", "Deslocações")
-    _atividade_view(tab_evt, "atividades_eventos", "Eventos")
-    _atividade_view(tab_ger, "atividades_gerais", "Atividades gerais")
-    _atividade_view(tab_rel, "atividades_relatorios", "Relatórios")
+    _atividade_view(tab_audic, "atividades_audicoes", "Audições", "at_audic",
+                    sessao_col="SessaoLegislativa")
+    _atividade_view(tab_audien, "atividades_audiencias", "Audiências", "at_audien",
+                    sessao_col="SessaoLegislativa",
+                    extra_filter={"label": "Concedida", "col": "Concedida"})
+    _atividade_view(tab_deb, "atividades_debates", "Debates", "at_deb",
+                    sessao_col="Sessao", texto_cols=("Assunto", "Artigo"))
+    _atividade_view(tab_desl, "atividades_deslocacoes", "Deslocações", "at_desl",
+                    tipo_col="Tipo", sessao_col="SessaoLegislativa",
+                    texto_cols=("Designacao", "LocalEvento"))
+    _atividade_view(tab_evt, "atividades_eventos", "Eventos", "at_evt",
+                    tipo_col="TipoEvento", sessao_col="SessaoLegislativa",
+                    texto_cols=("Designacao", "LocalEvento"))
+    _atividade_view(tab_ger, "atividades_gerais", "Atividades gerais", "at_ger",
+                    tipo_col="Tipo", sessao_col="Sessao", texto_cols=("Assunto",))
+    _atividade_view(tab_rel, "atividades_relatorios", "Relatórios", "at_rel",
+                    tipo_col="Tipo", sessao_col="Sessao", texto_cols=("Assunto",))
 
 
 # =======================================================================
@@ -1152,11 +1228,43 @@ elif pagina == "Órgãos e comissões":
     st.title(f"Órgãos e comissões — Legislatura {leg}")
     st.caption("Composição dos órgãos parlamentares: comissões permanentes, mesa, conferências, conselhos.")
 
+    # Cascata: Tipo -> Sessão -> GP do membro
     tipos_all = q("SELECT DISTINCT tipo_orgao t FROM orgaos_detalhe WHERE _legislatura=? ORDER BY 1", (leg,))["t"].tolist()
-    f1, f2 = st.columns([2, 4])
-    tipo_sel = f1.multiselect("Tipo de órgão", tipos_all, placeholder="Todos")
-    texto = f2.text_input("Pesquisa por nome do órgão", placeholder="palavra-chave…")
 
+    f1, f2, f3, f4 = st.columns([2, 2, 2, 4])
+    tipo_sel = f1.multiselect("Tipo de órgão", tipos_all, placeholder="Todos", key="org_tipo")
+
+    # Sessão (derivada do histórico de composição) cascateia com Tipo
+    ss_params = [leg]
+    ss_where = "WHERE _legislatura=? AND legDes IS NOT NULL"
+    if tipo_sel:
+        ss_where += " AND tipo_orgao IN (" + ",".join(["?"] * len(tipo_sel)) + ")"
+        ss_params.extend(tipo_sel)
+    ss_all = q(
+        f"SELECT DISTINCT legDes s FROM orgaos_historico_composicao {ss_where} ORDER BY 1",
+        tuple(ss_params),
+    )["s"].tolist()
+    ss_sel = f2.multiselect("Sessão legislativa", ss_all, placeholder="Todas", key="org_ss")
+
+    # GP do membro cascateia com Tipo + Sessão
+    gp_params = [leg]
+    gp_where = "WHERE _legislatura=? AND depGP IS NOT NULL"
+    if tipo_sel:
+        gp_where += " AND tipo_orgao IN (" + ",".join(["?"] * len(tipo_sel)) + ")"
+        gp_params.extend(tipo_sel)
+    if ss_sel:
+        gp_where += " AND legDes IN (" + ",".join(["?"] * len(ss_sel)) + ")"
+        gp_params.extend(ss_sel)
+    gps_all = q(
+        f"SELECT DISTINCT depGP g FROM orgaos_historico_composicao {gp_where} ORDER BY 1",
+        tuple(gp_params),
+    )["g"].tolist()
+    gp_sel = f3.multiselect("Grupo parlamentar do membro", gps_all, placeholder="Todos", key="org_gp")
+
+    texto = f4.text_input("Pesquisa por nome do órgão ou cargo", placeholder="palavra-chave…", key="org_texto")
+
+    # Filtros para orgaos_detalhe (fact). Se GP ou Sessão forem usados, restringir a órgãos
+    # que aparecem no histórico com esses atributos (via EXISTS na tabela de composição).
     where = ["_legislatura = ?"]
     params: list = [leg]
     if tipo_sel:
@@ -1165,12 +1273,25 @@ elif pagina == "Órgãos e comissões":
     if texto:
         where.append("(COALESCE(oDes,'') ILIKE ? OR COALESCE(cargoDes,'') ILIKE ?)")
         params.extend([f"%{texto}%", f"%{texto}%"])
+    if ss_sel or gp_sel:
+        sub = ["h._legislatura=? AND h.orgao_id=o.oId"]
+        sub_params: list = [leg]
+        if ss_sel:
+            sub.append("h.legDes IN (" + ",".join(["?"] * len(ss_sel)) + ")")
+            sub_params.extend(ss_sel)
+        if gp_sel:
+            sub.append("h.depGP IN (" + ",".join(["?"] * len(gp_sel)) + ")")
+            sub_params.extend(gp_sel)
+        where.append(
+            "EXISTS (SELECT 1 FROM orgaos_historico_composicao h WHERE " + " AND ".join(sub) + ")"
+        )
+        params.extend(sub_params)
 
-    sql_det = f"SELECT * FROM orgaos_detalhe WHERE {' AND '.join(where)} ORDER BY tipo_orgao"
+    sql_det = f"SELECT o.* FROM orgaos_detalhe o WHERE {' AND '.join(where)} ORDER BY tipo_orgao"
     detalhe = q(sql_det, tuple(params))
     cols_det = [c for c in detalhe.columns if not c.startswith("_") and not c.endswith("_json")]
 
-    k1, k2 = st.columns(2)
+    k1, k2, k3 = st.columns(3)
     k1.metric("Órgãos", f"{len(detalhe):,}")
     k2.metric("Tipos", detalhe["tipo_orgao"].nunique() if not detalhe.empty else 0)
 
@@ -1184,11 +1305,18 @@ elif pagina == "Órgãos e comissões":
     if tipo_sel:
         where2.append("tipo_orgao IN (" + ",".join(["?"] * len(tipo_sel)) + ")")
         params2.extend(tipo_sel)
+    if ss_sel:
+        where2.append("legDes IN (" + ",".join(["?"] * len(ss_sel)) + ")")
+        params2.extend(ss_sel)
+    if gp_sel:
+        where2.append("depGP IN (" + ",".join(["?"] * len(gp_sel)) + ")")
+        params2.extend(gp_sel)
     comp = q(
         f"SELECT * FROM orgaos_historico_composicao WHERE {' AND '.join(where2)} LIMIT 2000",
         tuple(params2),
     )
     cols_comp = [c for c in comp.columns if not c.startswith("_") and not c.endswith("_json")]
+    k3.metric("Membros (filtrado)", f"{len(comp):,}")
     st.caption(f"{len(comp):,} registos (máximo 2000)")
     st.dataframe(comp[cols_comp], use_container_width=True, hide_index=True, height=420)
     download_button(comp[cols_comp], f"orgaos_historico_composicao_leg{leg}", key="dl_orgaos_comp")
@@ -1206,7 +1334,36 @@ elif pagina == "Delegações e visitas":
     )
 
     with tab_dev:
-        df = q("SELECT Id, Nome, Local, data_inicio, data_fim, Sessao FROM delegacoes_eventuais WHERE _legislatura=? ORDER BY data_inicio DESC NULLS LAST", (leg,))
+        # Cascata: Sessão -> Local
+        ss_all = q("SELECT DISTINCT Sessao s FROM delegacoes_eventuais WHERE _legislatura=? AND Sessao IS NOT NULL ORDER BY 1", (leg,))["s"].tolist()
+        f1, f2, f3 = st.columns([2, 2, 3])
+        ss_sel = f1.multiselect("Sessão legislativa", ss_all, placeholder="Todas", key="dev_ss")
+
+        loc_params = [leg]
+        loc_where = "WHERE _legislatura=? AND Local IS NOT NULL"
+        if ss_sel:
+            loc_where += " AND Sessao IN (" + ",".join(["?"] * len(ss_sel)) + ")"
+            loc_params.extend(ss_sel)
+        locais_all = q(f"SELECT DISTINCT Local l FROM delegacoes_eventuais {loc_where} ORDER BY 1", tuple(loc_params))["l"].tolist()
+        loc_sel = f2.multiselect("Local", locais_all, placeholder="Todos", key="dev_loc")
+        texto = f3.text_input("Pesquisa no nome", placeholder="palavra-chave…", key="dev_tx")
+
+        where = ["_legislatura = ?"]
+        params: list = [leg]
+        if ss_sel:
+            where.append("Sessao IN (" + ",".join(["?"] * len(ss_sel)) + ")")
+            params.extend(ss_sel)
+        if loc_sel:
+            where.append("Local IN (" + ",".join(["?"] * len(loc_sel)) + ")")
+            params.extend(loc_sel)
+        if texto:
+            where.append("Nome ILIKE ?")
+            params.append(f"%{texto}%")
+
+        df = q(
+            f"SELECT Id, Nome, Local, data_inicio, data_fim, Sessao FROM delegacoes_eventuais WHERE {' AND '.join(where)} ORDER BY data_inicio DESC NULLS LAST",
+            tuple(params),
+        )
         st.metric("Delegações eventuais", f"{len(df):,}")
         st.dataframe(
             df, use_container_width=True, hide_index=True, height=400,
@@ -1219,13 +1376,31 @@ elif pagina == "Delegações e visitas":
             },
         )
         download_button(df, f"delegacoes_eventuais_leg{leg}", key="dl_del_ev")
-        sel_id = st.selectbox("Ver participantes da delegação", [""] + df["Id"].astype(str).tolist())
+        sel_id = st.selectbox("Ver participantes da delegação", [""] + df["Id"].astype(str).tolist(), key="dev_sel")
         if sel_id:
             parts = q("SELECT Nome, Gp, Tipo FROM delegacao_eventual_participantes WHERE _legislatura=? AND Id=?", (leg, sel_id))
             st.dataframe(parts, use_container_width=True, hide_index=True, height=240)
 
     with tab_dep:
-        df = q("SELECT Id, Nome, data_inicio AS data_eleicao, Sessao FROM delegacoes_permanentes WHERE _legislatura=? ORDER BY Nome", (leg,))
+        # Filtros: Sessão + pesquisa no nome
+        ss_all = q("SELECT DISTINCT Sessao s FROM delegacoes_permanentes WHERE _legislatura=? AND Sessao IS NOT NULL ORDER BY 1", (leg,))["s"].tolist()
+        f1, f2 = st.columns([2, 4])
+        ss_sel = f1.multiselect("Sessão legislativa", ss_all, placeholder="Todas", key="dep_ss")
+        texto = f2.text_input("Pesquisa no nome", placeholder="palavra-chave…", key="dep_tx")
+
+        where = ["_legislatura = ?"]
+        params: list = [leg]
+        if ss_sel:
+            where.append("Sessao IN (" + ",".join(["?"] * len(ss_sel)) + ")")
+            params.extend(ss_sel)
+        if texto:
+            where.append("Nome ILIKE ?")
+            params.append(f"%{texto}%")
+
+        df = q(
+            f"SELECT Id, Nome, data_inicio AS data_eleicao, Sessao FROM delegacoes_permanentes WHERE {' AND '.join(where)} ORDER BY Nome",
+            tuple(params),
+        )
         st.metric("Delegações permanentes", f"{len(df):,}")
         st.dataframe(
             df, use_container_width=True, hide_index=True, height=440,
@@ -1238,7 +1413,25 @@ elif pagina == "Delegações e visitas":
         download_button(df, f"delegacoes_permanentes_leg{leg}", key="dl_del_perm")
 
     with tab_amz:
-        df = q("SELECT Id, Nome, data_inicio AS data_criacao, Sessao FROM grupos_parlamentares_de_amizade WHERE _legislatura=? ORDER BY Nome", (leg,))
+        # Filtros: Sessão + pesquisa no nome (frequentemente país-país)
+        ss_all = q("SELECT DISTINCT Sessao s FROM grupos_parlamentares_de_amizade WHERE _legislatura=? AND Sessao IS NOT NULL ORDER BY 1", (leg,))["s"].tolist()
+        f1, f2 = st.columns([2, 4])
+        ss_sel = f1.multiselect("Sessão legislativa", ss_all, placeholder="Todas", key="amz_ss")
+        texto = f2.text_input("Pesquisa no nome do grupo (ex.: país parceiro)", placeholder="palavra-chave…", key="amz_tx")
+
+        where = ["_legislatura = ?"]
+        params: list = [leg]
+        if ss_sel:
+            where.append("Sessao IN (" + ",".join(["?"] * len(ss_sel)) + ")")
+            params.extend(ss_sel)
+        if texto:
+            where.append("Nome ILIKE ?")
+            params.append(f"%{texto}%")
+
+        df = q(
+            f"SELECT Id, Nome, data_inicio AS data_criacao, Sessao FROM grupos_parlamentares_de_amizade WHERE {' AND '.join(where)} ORDER BY Nome",
+            tuple(params),
+        )
         st.metric("Grupos de amizade", f"{len(df):,}")
         st.dataframe(
             df, use_container_width=True, hide_index=True, height=400,
@@ -1261,13 +1454,42 @@ elif pagina == "Delegações e visitas":
             )
 
     with tab_rev:
-        df = q("SELECT Id, Nome, Tipo, Local, Promotor, data_inicio, data_fim FROM reunioes_e_visitas WHERE _legislatura=? ORDER BY data_inicio DESC NULLS LAST", (leg,))
-        tipos = sorted(df["Tipo"].dropna().unique().tolist()) if not df.empty else []
-        sel_tipo = st.multiselect("Tipo", tipos, placeholder="Todos", key="rev_tipo")
-        df_view = df[df["Tipo"].isin(sel_tipo)] if sel_tipo else df
-        st.metric("Reuniões/visitas", f"{len(df_view):,}")
+        # Cascata: Tipo -> Local + pesquisa
+        tipos_all = q("SELECT DISTINCT Tipo t FROM reunioes_e_visitas WHERE _legislatura=? AND Tipo IS NOT NULL ORDER BY 1", (leg,))["t"].tolist()
+        f1, f2, f3 = st.columns([2, 2, 3])
+        tipo_sel = f1.multiselect("Tipo", tipos_all, placeholder="Todos", key="rev_tipo")
+
+        loc_params = [leg]
+        loc_where = "WHERE _legislatura=? AND Local IS NOT NULL"
+        if tipo_sel:
+            loc_where += " AND Tipo IN (" + ",".join(["?"] * len(tipo_sel)) + ")"
+            loc_params.extend(tipo_sel)
+        locais_all = q(
+            f"SELECT DISTINCT Local l FROM reunioes_e_visitas {loc_where} ORDER BY 1",
+            tuple(loc_params),
+        )["l"].tolist()
+        loc_sel = f2.multiselect("Local", locais_all, placeholder="Todos", key="rev_loc")
+        texto = f3.text_input("Pesquisa no nome ou promotor", placeholder="palavra-chave…", key="rev_tx")
+
+        where = ["_legislatura = ?"]
+        params: list = [leg]
+        if tipo_sel:
+            where.append("Tipo IN (" + ",".join(["?"] * len(tipo_sel)) + ")")
+            params.extend(tipo_sel)
+        if loc_sel:
+            where.append("Local IN (" + ",".join(["?"] * len(loc_sel)) + ")")
+            params.extend(loc_sel)
+        if texto:
+            where.append("(COALESCE(Nome,'') ILIKE ? OR COALESCE(Promotor,'') ILIKE ?)")
+            params.extend([f"%{texto}%", f"%{texto}%"])
+
+        df = q(
+            f"SELECT Id, Nome, Tipo, Local, Promotor, data_inicio, data_fim FROM reunioes_e_visitas WHERE {' AND '.join(where)} ORDER BY data_inicio DESC NULLS LAST",
+            tuple(params),
+        )
+        st.metric("Reuniões/visitas", f"{len(df):,}")
         st.dataframe(
-            df_view, use_container_width=True, hide_index=True, height=440,
+            df, use_container_width=True, hide_index=True, height=440,
             column_config={
                 "data_inicio": st.column_config.DateColumn("Início", format="YYYY-MM-DD"),
                 "data_fim": st.column_config.DateColumn("Fim", format="YYYY-MM-DD"),
@@ -1276,7 +1498,7 @@ elif pagina == "Delegações e visitas":
                 "Local": st.column_config.TextColumn("Local"),
             },
         )
-        download_button(df_view, f"reunioes_e_visitas_leg{leg}", key="dl_rev")
+        download_button(df, f"reunioes_e_visitas_leg{leg}", key="dl_rev")
 
 
 # =======================================================================
@@ -1378,9 +1600,15 @@ elif pagina == "Perfil de deputado":
                 "SELECT COUNT(*) n FROM intervencoes WHERE _legislatura=? AND dep_idCadastro=?",
                 (leg, str(int(cad_id))),
             )["n"][0])
-            c4.metric("Iniciativas / Intervenções", f"{n_ini} / {n_int}")
+            n_perg = int(q(
+                "SELECT COUNT(DISTINCT Id) n FROM pergunta_autores WHERE _legislatura=? AND idCadastro=?",
+                (leg, str(int(cad_id))),
+            )["n"][0])
+            c4.metric("Ini / Int / Perg", f"{n_ini} / {n_int} / {n_perg}")
 
-        tab1, tab2, tab3 = st.tabs(["Iniciativas", "Intervenções", "Atividade"])
+        tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(
+            ["Iniciativas", "Intervenções", "Perguntas", "Audiências", "Trajetória GP", "Atividade"]
+        )
 
         with tab1:
             ini = q(
@@ -1430,6 +1658,125 @@ elif pagina == "Perfil de deputado":
             download_button(inte, f"deputado_{int(cad_id)}_intervencoes_leg{leg}", key="dl_prof_inte")
 
         with tab3:
+            perg = q(
+                """
+                SELECT p.Nr AS nr, p.Tipo AS tipo, p.ReqTipo AS req_tipo,
+                       p.Assunto AS assunto,
+                       TRY_CAST(p.DataEnvio AS DATE) AS data_envio,
+                       p.Ficheiro AS texto
+                FROM perguntas_e_requerimentos p
+                JOIN pergunta_autores a USING(Id)
+                WHERE p._legislatura=? AND a.idCadastro=?
+                ORDER BY p.DataEnvio DESC NULLS LAST
+                """,
+                (leg, str(int(cad_id))),
+            )
+            st.caption(f"{len(perg):,} perguntas/requerimentos subscritos.")
+            st.dataframe(
+                perg, use_container_width=True, hide_index=True, height=440,
+                column_config={
+                    "nr": st.column_config.TextColumn("Nº"),
+                    "tipo": st.column_config.TextColumn("Tipo"),
+                    "req_tipo": st.column_config.TextColumn("Tipo de requerimento"),
+                    "assunto": st.column_config.TextColumn("Assunto", width="large"),
+                    "data_envio": st.column_config.DateColumn("Data de envio", format="YYYY-MM-DD"),
+                    "texto": st.column_config.LinkColumn("Texto", display_text="abrir"),
+                },
+            )
+            download_button(perg, f"deputado_{int(cad_id)}_perguntas_leg{leg}", key="dl_prof_perg")
+
+        with tab4:
+            aud = q(
+                """
+                SELECT ActAs AS assunto,
+                       TRY_CAST(ActDtent AS DATE) AS data_entrada,
+                       ActLoc AS local,
+                       ActTpdesc AS tipo_desc,
+                       ActSl AS sessao
+                FROM deputados_atividade_audiencias
+                WHERE _legislatura=? AND DepCadId=? AND ActAs IS NOT NULL
+                ORDER BY ActDtent DESC NULLS LAST
+                """,
+                (leg, float(cad_id)),
+            )
+            audi = q(
+                """
+                SELECT ActAs AS assunto,
+                       TRY_CAST(ActDtent AS DATE) AS data_entrada,
+                       ActLoc AS local,
+                       ActTpdesc AS tipo_desc,
+                       ActSl AS sessao
+                FROM deputados_atividade_audicoes
+                WHERE _legislatura=? AND DepCadId=? AND ActAs IS NOT NULL
+                ORDER BY ActDtent DESC NULLS LAST
+                """,
+                (leg, float(cad_id)),
+            )
+            c1, c2 = st.columns(2)
+            c1.metric("Audiências", f"{len(aud):,}")
+            c2.metric("Audições", f"{len(audi):,}")
+            st.markdown("### Audiências")
+            st.dataframe(
+                aud, use_container_width=True, hide_index=True, height=280,
+                column_config={
+                    "assunto": st.column_config.TextColumn("Assunto", width="large"),
+                    "data_entrada": st.column_config.DateColumn("Data", format="YYYY-MM-DD"),
+                    "local": st.column_config.TextColumn("Local"),
+                    "tipo_desc": st.column_config.TextColumn("Tipo"),
+                    "sessao": st.column_config.TextColumn("Sessão"),
+                },
+            )
+            download_button(aud, f"deputado_{int(cad_id)}_audiencias_leg{leg}", key="dl_prof_aud")
+            st.markdown("### Audições")
+            st.dataframe(
+                audi, use_container_width=True, hide_index=True, height=280,
+                column_config={
+                    "assunto": st.column_config.TextColumn("Assunto", width="large"),
+                    "data_entrada": st.column_config.DateColumn("Data", format="YYYY-MM-DD"),
+                    "local": st.column_config.TextColumn("Local"),
+                    "tipo_desc": st.column_config.TextColumn("Tipo"),
+                    "sessao": st.column_config.TextColumn("Sessão"),
+                },
+            )
+            download_button(audi, f"deputado_{int(cad_id)}_audicoes_leg{leg}", key="dl_prof_audi")
+
+        with tab5:
+            traj = q(
+                """
+                SELECT GpSigla AS gp,
+                       TRY_CAST(GpDtInicio AS DATE) AS data_inicio,
+                       TRY_CAST(GpDtFim AS DATE) AS data_fim
+                FROM deputados_dep_gp
+                WHERE _legislatura=? AND DepCadId=? AND GpSigla IS NOT NULL
+                ORDER BY GpDtInicio
+                """,
+                (leg, float(cad_id)),
+            )
+            if not traj.empty:
+                st.caption(f"{len(traj):,} períodos de filiação em grupos parlamentares nesta legislatura.")
+                st.dataframe(
+                    traj, use_container_width=True, hide_index=True, height=240,
+                    column_config={
+                        "gp": st.column_config.TextColumn("Grupo parlamentar"),
+                        "data_inicio": st.column_config.DateColumn("Início", format="YYYY-MM-DD"),
+                        "data_fim": st.column_config.DateColumn("Fim", format="YYYY-MM-DD"),
+                    },
+                )
+                # Timeline simples como gráfico Gantt
+                gantt = traj.copy()
+                gantt["data_fim"] = gantt["data_fim"].fillna(pd.Timestamp.today().date())
+                if gantt["data_inicio"].notna().any():
+                    fig = px.timeline(gantt, x_start="data_inicio", x_end="data_fim", y="gp", color="gp",
+                                      color_discrete_map=color_map(gantt["gp"]))
+                    fig.update_layout(height=220, margin=dict(t=10, b=10, l=10, r=10),
+                                      showlegend=False, plot_bgcolor="white",
+                                      xaxis_title=None, yaxis_title=None)
+                    st.plotly_chart(fig, use_container_width=True)
+                download_button(traj, f"deputado_{int(cad_id)}_trajetoria_gp_leg{leg}", key="dl_prof_gp")
+            else:
+                st.info("Sem registos de trajetória de GP para este deputado nesta legislatura.")
+
+        with tab6:
             cnt = q(
                 "SELECT * FROM deputado_atividade_contadores WHERE _legislatura=? AND DepCadId=?",
                 (leg, float(cad_id)),
