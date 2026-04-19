@@ -137,6 +137,7 @@ pagina = st.sidebar.radio(
     [
         "Resumo",
         "Iniciativas",
+        "Votações",
         "Intervenções",
         "Perguntas e requerimentos",
         "Petições",
@@ -237,22 +238,43 @@ elif pagina == "Iniciativas":
     st.title(f"Iniciativas — Legislatura {leg}")
     st.caption("Filtros combináveis. Use a barra lateral para datas e legislatura.")
 
+    # Cascata: GP -> Tipo -> Deputado autor
     gps_all = q("SELECT DISTINCT GP FROM iniciativa_autores_gp WHERE _legislatura=? AND GP IS NOT NULL ORDER BY 1", (leg,))["GP"].tolist()
-    tipos_all = q("SELECT DISTINCT IniDescTipo t FROM iniciativas WHERE _legislatura=? AND IniDescTipo IS NOT NULL ORDER BY 1", (leg,))["t"].tolist()
-    deps_all = q(
-        """
-        SELECT DISTINCT a.nome n FROM iniciativa_autores_deputados a
-        JOIN iniciativas i USING(IniId)
-        WHERE i._legislatura=? AND a.nome IS NOT NULL ORDER BY 1
-        """,
-        (leg,),
-    )["n"].tolist()
 
     with st.container():
         f1, f2, f3 = st.columns([2, 2, 2])
-        gp_sel = f1.multiselect("Grupo parlamentar autor", gps_all, placeholder="Todos")
-        tipo_sel = f2.multiselect("Tipo", tipos_all, placeholder="Todos")
-        dep_sel = f3.multiselect("Deputado autor", deps_all, placeholder="Todos")
+        gp_sel = f1.multiselect("Grupo parlamentar autor", gps_all, placeholder="Todos", key="ini_gp")
+
+        tipo_params = [leg]
+        tipo_where = "WHERE i._legislatura=? AND i.IniDescTipo IS NOT NULL"
+        if gp_sel:
+            tipo_where += (
+                " AND EXISTS (SELECT 1 FROM iniciativa_autores_gp g WHERE g.IniId=i.IniId AND g.GP IN ("
+                + ",".join(["?"] * len(gp_sel)) + "))"
+            )
+            tipo_params.extend(gp_sel)
+        tipos_all = q(f"SELECT DISTINCT i.IniDescTipo t FROM iniciativas i {tipo_where} ORDER BY 1", tuple(tipo_params))["t"].tolist()
+        tipo_sel = f2.multiselect("Tipo", tipos_all, placeholder="Todos", key="ini_tipo")
+
+        dep_params = [leg]
+        dep_where = "WHERE i._legislatura=? AND a.nome IS NOT NULL"
+        if gp_sel:
+            dep_where += " AND a.GP IN (" + ",".join(["?"] * len(gp_sel)) + ")"
+            dep_params.extend(gp_sel)
+        if tipo_sel:
+            dep_where += " AND i.IniDescTipo IN (" + ",".join(["?"] * len(tipo_sel)) + ")"
+            dep_params.extend(tipo_sel)
+        deps_all = q(
+            f"""
+            SELECT DISTINCT a.nome n
+            FROM iniciativa_autores_deputados a
+            JOIN iniciativas i USING(IniId)
+            {dep_where}
+            ORDER BY 1
+            """,
+            tuple(dep_params),
+        )["n"].tolist()
+        dep_sel = f3.multiselect("Deputado autor", deps_all, placeholder="Todos", key="ini_dep")
 
         f4, f5, f6 = st.columns([3, 1, 1])
         texto = f4.text_input("Pesquisa no título", placeholder="palavra-chave…")
@@ -348,22 +370,198 @@ elif pagina == "Iniciativas":
 
 
 # =======================================================================
+# Votações
+# =======================================================================
+elif pagina == "Votações":
+    st.title(f"Votações — Legislatura {leg}")
+    st.caption("Cada linha é um evento de votação de uma iniciativa em plenário. Detalhe mostra a posição de cada GP.")
+
+    # Cascata: Tipo da iniciativa -> Resultado
+    tipos_all = q(
+        """
+        SELECT DISTINCT i.IniDescTipo t
+        FROM iniciativa_eventos_votacao v
+        JOIN iniciativas i ON i.IniId=v.IniId AND i._legislatura=v._legislatura
+        WHERE v._legislatura=? AND i.IniDescTipo IS NOT NULL
+        ORDER BY 1
+        """,
+        (leg,),
+    )["t"].tolist()
+
+    f1, f2, f3, f4 = st.columns([2, 2, 2, 2])
+    tipo_sel = f1.multiselect("Tipo de iniciativa", tipos_all, placeholder="Todos", key="vot_tipo")
+
+    res_params = [leg]
+    res_where = "WHERE v._legislatura=? AND v.resultado IS NOT NULL"
+    if tipo_sel:
+        res_where += (
+            " AND EXISTS (SELECT 1 FROM iniciativas i WHERE i.IniId=v.IniId AND i._legislatura=v._legislatura AND i.IniDescTipo IN ("
+            + ",".join(["?"] * len(tipo_sel)) + "))"
+        )
+        res_params.extend(tipo_sel)
+    resultados_all = q(
+        f"SELECT DISTINCT v.resultado r FROM iniciativa_eventos_votacao v {res_where} ORDER BY 1",
+        tuple(res_params),
+    )["r"].tolist()
+    res_sel = f2.multiselect("Resultado", resultados_all, placeholder="Todos", key="vot_res")
+
+    unanimidade = f3.selectbox("Unanimidade", ["Todas", "Só unânimes", "Sem unânimes"], key="vot_una")
+    tipos_reu = q(
+        "SELECT DISTINCT tipoReuniao t FROM iniciativa_eventos_votacao WHERE _legislatura=? AND tipoReuniao IS NOT NULL ORDER BY 1",
+        (leg,),
+    )["t"].tolist()
+    tipo_reu_sel = f4.multiselect("Tipo de reunião", tipos_reu, placeholder="Todos", key="vot_reu")
+
+    f5, f6 = st.columns([4, 2])
+    texto = f5.text_input("Pesquisa no título da iniciativa", placeholder="palavra-chave…", key="vot_texto")
+    top_n = f6.slider("Top N", 50, 2000, 500, step=50, key="vot_top")
+
+    where = ["v._legislatura = ?"]
+    params: list = [leg]
+    if d_from and d_to:
+        where.append("(v.data IS NULL OR TRY_CAST(v.data AS DATE) BETWEEN ? AND ?)")
+        params.extend([d_from, d_to])
+    if tipo_sel:
+        where.append("i.IniDescTipo IN (" + ",".join(["?"] * len(tipo_sel)) + ")")
+        params.extend(tipo_sel)
+    if res_sel:
+        where.append("v.resultado IN (" + ",".join(["?"] * len(res_sel)) + ")")
+        params.extend(res_sel)
+    if tipo_reu_sel:
+        where.append("v.tipoReuniao IN (" + ",".join(["?"] * len(tipo_reu_sel)) + ")")
+        params.extend(tipo_reu_sel)
+    if unanimidade == "Só unânimes":
+        where.append("v.unanime = 'unanime'")
+    elif unanimidade == "Sem unânimes":
+        where.append("(v.unanime IS NULL OR v.unanime <> 'unanime')")
+    if texto:
+        where.append("i.IniTitulo ILIKE ?")
+        params.append(f"%{texto}%")
+
+    sql = f"""
+    SELECT v.IniId AS ini_id,
+           i.IniNr AS nr,
+           i.IniDescTipo AS tipo,
+           i.IniTitulo AS titulo,
+           TRY_CAST(v.data AS DATE) AS data_vot,
+           v.resultado AS resultado,
+           v.unanime AS unanime,
+           v.tipoReuniao AS tipo_reuniao,
+           v.reuniao AS reuniao,
+           v.descricao AS descricao,
+           v.detalhe AS detalhe,
+           i.IniLinkTexto AS texto
+    FROM iniciativa_eventos_votacao v
+    LEFT JOIN iniciativas i ON i.IniId=v.IniId AND i._legislatura=v._legislatura
+    WHERE {' AND '.join(where)}
+    ORDER BY data_vot DESC NULLS LAST
+    LIMIT ?
+    """
+    df = q(sql, tuple(params + [top_n]))
+
+    # Remove marcação HTML do detalhe para leitura em tabela
+    if not df.empty:
+        df["detalhe"] = (
+            df["detalhe"].fillna("")
+            .str.replace(r"<BR\s*/?>", " | ", regex=True)
+            .str.replace(r"<[^>]+>", "", regex=True)
+            .str.replace(r"\s+", " ", regex=True)
+            .str.strip()
+        )
+
+    k1, k2, k3, k4 = st.columns(4)
+    k1.metric("Votações", f"{len(df):,}")
+    if not df.empty:
+        aprov = int((df["resultado"] == "Aprovado").sum())
+        rejei = int((df["resultado"] == "Rejeitado").sum())
+        unani = int((df["unanime"] == "unanime").sum())
+        k2.metric("Aprovadas", f"{aprov:,}", f"{aprov / len(df):.0%}")
+        k3.metric("Rejeitadas", f"{rejei:,}", f"{rejei / len(df):.0%}")
+        k4.metric("Unânimes", f"{unani:,}", f"{unani / len(df):.0%}")
+    else:
+        k2.metric("Aprovadas", "0")
+        k3.metric("Rejeitadas", "0")
+        k4.metric("Unânimes", "0")
+
+    if not df.empty and df["data_vot"].notna().any():
+        ts = df.copy()
+        ts["mes"] = pd.to_datetime(ts["data_vot"]).dt.to_period("M").astype(str)
+        agg = ts.groupby(["mes", "resultado"]).size().reset_index(name="n")
+        fig = px.bar(agg, x="mes", y="n", color="resultado",
+                     color_discrete_map={"Aprovado": "#2b8a3e", "Rejeitado": "#c92a2a", "Prejudicado": "#868e96"})
+        fig.update_layout(height=220, margin=dict(t=10, b=10, l=10, r=10), plot_bgcolor="white",
+                          xaxis_title=None, yaxis_title=None, legend_title_text="")
+        st.plotly_chart(fig, use_container_width=True)
+
+    st.dataframe(
+        df.drop(columns=["ini_id"]),
+        use_container_width=True, hide_index=True, height=460,
+        column_config={
+            "nr": st.column_config.TextColumn("Nº"),
+            "tipo": st.column_config.TextColumn("Tipo"),
+            "titulo": st.column_config.TextColumn("Título", width="large"),
+            "data_vot": st.column_config.DateColumn("Data", format="YYYY-MM-DD"),
+            "resultado": st.column_config.TextColumn("Resultado"),
+            "unanime": st.column_config.TextColumn("Unânime"),
+            "tipo_reuniao": st.column_config.TextColumn("Tipo reunião"),
+            "reuniao": st.column_config.TextColumn("Reunião"),
+            "descricao": st.column_config.TextColumn("Descrição", width="medium"),
+            "detalhe": st.column_config.TextColumn("Votação por GP", width="large"),
+            "texto": st.column_config.LinkColumn("Texto", display_text="abrir"),
+        },
+    )
+    download_button(df.drop(columns=["ini_id"]), f"votacoes_leg{leg}", key="dl_vot")
+
+
+# =======================================================================
 # Intervenções
 # =======================================================================
 elif pagina == "Intervenções":
     st.title(f"Intervenções — Legislatura {leg}")
     st.caption("Filtros combináveis. Sumários e ligações ao DAR.")
 
+    # Filtros em cascata: cada multiselect recompõe a lista de opções
+    # tendo em conta as selecções dos filtros anteriores.
     gps_all = q("SELECT DISTINCT dep_GP g FROM intervencoes WHERE _legislatura=? AND dep_GP IS NOT NULL ORDER BY 1", (leg,))["g"].tolist()
-    tipos_all = q("SELECT DISTINCT TipoIntervencao t FROM intervencoes WHERE _legislatura=? AND TipoIntervencao IS NOT NULL ORDER BY 1", (leg,))["t"].tolist()
-    deps_all = q("SELECT DISTINCT dep_nome n FROM intervencoes WHERE _legislatura=? AND dep_nome IS NOT NULL ORDER BY 1", (leg,))["n"].tolist()
-    qual_all = q("SELECT DISTINCT Qualidade q FROM intervencoes WHERE _legislatura=? AND Qualidade IS NOT NULL ORDER BY 1", (leg,))["q"].tolist()
 
     f1, f2, f3, f4 = st.columns([2, 2, 2, 2])
-    gp_sel = f1.multiselect("Grupo parlamentar", gps_all, placeholder="Todos")
-    tipo_sel = f2.multiselect("Tipo", tipos_all, placeholder="Todos")
-    dep_sel = f3.multiselect("Deputado", deps_all, placeholder="Todos")
-    qual_sel = f4.multiselect("Qualidade", qual_all, placeholder="Todas")
+    gp_sel = f1.multiselect("Grupo parlamentar", gps_all, placeholder="Todos", key="int_gp")
+
+    # Tipo: restringe-se ao(s) GP(s) seleccionado(s)
+    tipo_params = [leg]
+    tipo_where = "WHERE _legislatura=? AND TipoIntervencao IS NOT NULL"
+    if gp_sel:
+        tipo_where += " AND dep_GP IN (" + ",".join(["?"] * len(gp_sel)) + ")"
+        tipo_params.extend(gp_sel)
+    tipos_all = q(f"SELECT DISTINCT TipoIntervencao t FROM intervencoes {tipo_where} ORDER BY 1", tuple(tipo_params))["t"].tolist()
+    tipo_sel = f2.multiselect("Tipo", tipos_all, placeholder="Todos", key="int_tipo")
+
+    # Deputado: restringe-se a GP + Tipo seleccionados
+    dep_params = [leg]
+    dep_where = "WHERE _legislatura=? AND dep_nome IS NOT NULL"
+    if gp_sel:
+        dep_where += " AND dep_GP IN (" + ",".join(["?"] * len(gp_sel)) + ")"
+        dep_params.extend(gp_sel)
+    if tipo_sel:
+        dep_where += " AND TipoIntervencao IN (" + ",".join(["?"] * len(tipo_sel)) + ")"
+        dep_params.extend(tipo_sel)
+    deps_all = q(f"SELECT DISTINCT dep_nome n FROM intervencoes {dep_where} ORDER BY 1", tuple(dep_params))["n"].tolist()
+    dep_sel = f3.multiselect("Deputado", deps_all, placeholder="Todos", key="int_dep")
+
+    # Qualidade: restringe-se aos filtros acima (inc. deputado)
+    qual_params = [leg]
+    qual_where = "WHERE _legislatura=? AND Qualidade IS NOT NULL"
+    if gp_sel:
+        qual_where += " AND dep_GP IN (" + ",".join(["?"] * len(gp_sel)) + ")"
+        qual_params.extend(gp_sel)
+    if tipo_sel:
+        qual_where += " AND TipoIntervencao IN (" + ",".join(["?"] * len(tipo_sel)) + ")"
+        qual_params.extend(tipo_sel)
+    if dep_sel:
+        qual_where += " AND dep_nome IN (" + ",".join(["?"] * len(dep_sel)) + ")"
+        qual_params.extend(dep_sel)
+    qual_all = q(f"SELECT DISTINCT Qualidade q FROM intervencoes {qual_where} ORDER BY 1", tuple(qual_params))["q"].tolist()
+    qual_sel = f4.multiselect("Qualidade", qual_all, placeholder="Todas", key="int_qual")
 
     f5, f6, f7 = st.columns([3, 1, 1])
     texto = f5.text_input("Pesquisa no sumário/resumo", placeholder="palavra-chave…")
@@ -447,20 +645,92 @@ elif pagina == "Perguntas e requerimentos":
 
     # nota: rótulos de IU em pt-PT com diacríticos; identificadores SQL mantêm-se ASCII.
 
+    # Cascata: GP -> Tipo -> ReqTipo -> Destinatario -> Deputado autor
     gps_all = q("SELECT DISTINCT GP g FROM pergunta_autores WHERE _legislatura=? AND GP IS NOT NULL ORDER BY 1", (leg,))["g"].tolist()
-    tipos_all = q("SELECT DISTINCT Tipo t FROM perguntas_e_requerimentos WHERE _legislatura=? AND Tipo IS NOT NULL ORDER BY 1", (leg,))["t"].tolist()
-    reqtipos_all = q("SELECT DISTINCT ReqTipo t FROM perguntas_e_requerimentos WHERE _legislatura=? AND ReqTipo IS NOT NULL ORDER BY 1", (leg,))["t"].tolist()
-    deps_all = q("SELECT DISTINCT nome n FROM pergunta_autores WHERE _legislatura=? AND nome IS NOT NULL ORDER BY 1", (leg,))["n"].tolist()
-    dest_all = q("SELECT DISTINCT nomeEntidade e FROM pergunta_destinatarios WHERE _legislatura=? AND nomeEntidade IS NOT NULL ORDER BY 1", (leg,))["e"].tolist()
 
     f1, f2, f3, f4 = st.columns([2, 2, 2, 2])
-    gp_sel = f1.multiselect("Grupo parlamentar autor", gps_all, placeholder="Todos")
-    tipo_sel = f2.multiselect("Tipo", tipos_all, placeholder="Todos")
-    req_sel = f3.multiselect("Tipo de requerimento", reqtipos_all, placeholder="Todos")
-    dest_sel = f4.multiselect("Destinatário", dest_all, placeholder="Todos")
+    gp_sel = f1.multiselect("Grupo parlamentar autor", gps_all, placeholder="Todos", key="perg_gp")
+
+    # Tipo (restringido por GP via autores)
+    tipo_params = [leg]
+    tipo_where = "WHERE p._legislatura=? AND p.Tipo IS NOT NULL"
+    if gp_sel:
+        tipo_where += (
+            " AND EXISTS (SELECT 1 FROM pergunta_autores a WHERE a.Id=p.Id AND a.GP IN ("
+            + ",".join(["?"] * len(gp_sel)) + "))"
+        )
+        tipo_params.extend(gp_sel)
+    tipos_all = q(f"SELECT DISTINCT p.Tipo t FROM perguntas_e_requerimentos p {tipo_where} ORDER BY 1", tuple(tipo_params))["t"].tolist()
+    tipo_sel = f2.multiselect("Tipo", tipos_all, placeholder="Todos", key="perg_tipo")
+
+    # ReqTipo (restringido por GP + Tipo)
+    req_params = [leg]
+    req_where = "WHERE p._legislatura=? AND p.ReqTipo IS NOT NULL"
+    if gp_sel:
+        req_where += (
+            " AND EXISTS (SELECT 1 FROM pergunta_autores a WHERE a.Id=p.Id AND a.GP IN ("
+            + ",".join(["?"] * len(gp_sel)) + "))"
+        )
+        req_params.extend(gp_sel)
+    if tipo_sel:
+        req_where += " AND p.Tipo IN (" + ",".join(["?"] * len(tipo_sel)) + ")"
+        req_params.extend(tipo_sel)
+    reqtipos_all = q(f"SELECT DISTINCT p.ReqTipo t FROM perguntas_e_requerimentos p {req_where} ORDER BY 1", tuple(req_params))["t"].tolist()
+    req_sel = f3.multiselect("Tipo de requerimento", reqtipos_all, placeholder="Todos", key="perg_req")
+
+    # Destinatario (restringido por GP + Tipo + ReqTipo)
+    dest_params = [leg]
+    dest_where = "WHERE d._legislatura=? AND d.nomeEntidade IS NOT NULL"
+    if gp_sel or tipo_sel or req_sel:
+        dest_where += " AND EXISTS (SELECT 1 FROM perguntas_e_requerimentos p WHERE p.Id=d.Id"
+        if gp_sel:
+            dest_where += (
+                " AND EXISTS (SELECT 1 FROM pergunta_autores a WHERE a.Id=p.Id AND a.GP IN ("
+                + ",".join(["?"] * len(gp_sel)) + "))"
+            )
+            dest_params.extend(gp_sel)
+        if tipo_sel:
+            dest_where += " AND p.Tipo IN (" + ",".join(["?"] * len(tipo_sel)) + ")"
+            dest_params.extend(tipo_sel)
+        if req_sel:
+            dest_where += " AND p.ReqTipo IN (" + ",".join(["?"] * len(req_sel)) + ")"
+            dest_params.extend(req_sel)
+        dest_where += ")"
+    dest_all = q(f"SELECT DISTINCT d.nomeEntidade e FROM pergunta_destinatarios d {dest_where} ORDER BY 1", tuple(dest_params))["e"].tolist()
+    dest_sel = f4.multiselect("Destinatário", dest_all, placeholder="Todos", key="perg_dest")
 
     f5, f6, f7, f8 = st.columns([3, 2, 1, 1])
-    dep_sel = f5.multiselect("Deputado autor", deps_all, placeholder="Todos")
+
+    # Deputado autor (restringido por GP + Tipo + ReqTipo + Destinatario)
+    dep_params = [leg]
+    dep_where = "WHERE a._legislatura=? AND a.nome IS NOT NULL"
+    if gp_sel:
+        dep_where += " AND a.GP IN (" + ",".join(["?"] * len(gp_sel)) + ")"
+        dep_params.extend(gp_sel)
+    if tipo_sel or req_sel or dest_sel:
+        dep_where += " AND EXISTS (SELECT 1 FROM perguntas_e_requerimentos p WHERE p.Id=a.Id"
+        if tipo_sel:
+            dep_where += " AND p.Tipo IN (" + ",".join(["?"] * len(tipo_sel)) + ")"
+            dep_params.extend(tipo_sel)
+        if req_sel:
+            dep_where += " AND p.ReqTipo IN (" + ",".join(["?"] * len(req_sel)) + ")"
+            dep_params.extend(req_sel)
+        dep_where += ")"
+        if dest_sel:
+            dep_where += (
+                " AND EXISTS (SELECT 1 FROM pergunta_destinatarios d WHERE d.Id=a.Id AND d.nomeEntidade IN ("
+                + ",".join(["?"] * len(dest_sel)) + "))"
+            )
+            dep_params.extend(dest_sel)
+    elif dest_sel:
+        dep_where += (
+            " AND EXISTS (SELECT 1 FROM pergunta_destinatarios d WHERE d.Id=a.Id AND d.nomeEntidade IN ("
+            + ",".join(["?"] * len(dest_sel)) + "))"
+        )
+        dep_params.extend(dest_sel)
+    deps_all = q(f"SELECT DISTINCT a.nome n FROM pergunta_autores a {dep_where} ORDER BY 1", tuple(dep_params))["n"].tolist()
+    dep_sel = f5.multiselect("Deputado autor", deps_all, placeholder="Todos", key="perg_dep")
+
     texto = f6.text_input("Pesquisa no assunto", placeholder="palavra-chave…")
     top_n = f7.slider("Top N", 50, 2000, 300, step=50)
     ordem = f8.selectbox("Ordenar", ["Data desc", "Data asc", "Tipo"])
@@ -544,13 +814,23 @@ elif pagina == "Petições":
     st.title(f"Petições — Legislatura {leg}")
     st.caption("Petições dos cidadãos e respetivo estado de tramitação.")
 
+    # Cascata: Situação -> Comissão
     sit_all = q("SELECT DISTINCT PetSituacao s FROM peticoes WHERE _legislatura=? AND PetSituacao IS NOT NULL ORDER BY 1", (leg,))["s"].tolist()
-    com_all = q("SELECT DISTINCT Nome n FROM peticao_dados_comissao WHERE _legislatura=? AND Nome IS NOT NULL ORDER BY 1", (leg,))["n"].tolist()
 
     f1, f2, f3 = st.columns([2, 3, 2])
-    sit_sel = f1.multiselect("Situação", sit_all, placeholder="Todas")
-    com_sel = f2.multiselect("Comissão", com_all, placeholder="Todas")
-    min_assin = f3.number_input("Mín. assinaturas", min_value=0, value=0, step=100)
+    sit_sel = f1.multiselect("Situação", sit_all, placeholder="Todas", key="pet_sit")
+
+    com_params = [leg]
+    com_where = "WHERE c._legislatura=? AND c.Nome IS NOT NULL"
+    if sit_sel:
+        com_where += (
+            " AND EXISTS (SELECT 1 FROM peticoes p WHERE p.PetId=c.PetId AND p.PetSituacao IN ("
+            + ",".join(["?"] * len(sit_sel)) + "))"
+        )
+        com_params.extend(sit_sel)
+    com_all = q(f"SELECT DISTINCT c.Nome n FROM peticao_dados_comissao c {com_where} ORDER BY 1", tuple(com_params))["n"].tolist()
+    com_sel = f2.multiselect("Comissão", com_all, placeholder="Todas", key="pet_com")
+    min_assin = f3.number_input("Mín. assinaturas", min_value=0, value=0, step=100, key="pet_assin")
 
     f4, f5, f6 = st.columns([3, 1, 1])
     texto = f4.text_input("Pesquisa no assunto ou autor", placeholder="palavra-chave…")
@@ -631,14 +911,30 @@ elif pagina == "Diplomas aprovados":
     st.title(f"Diplomas aprovados — Legislatura {leg}")
     st.caption("Diplomas aprovados em plenário com a respetiva publicação no Diário da República.")
 
+    # Cascata: Tipo -> Ano civil -> Sessao
     tipos_all = q("SELECT DISTINCT Tipo t FROM diplomas_aprovados WHERE _legislatura=? AND Tipo IS NOT NULL ORDER BY 1", (leg,))["t"].tolist()
-    anos_all = q("SELECT DISTINCT AnoCivil a FROM diplomas_aprovados WHERE _legislatura=? AND AnoCivil IS NOT NULL ORDER BY 1", (leg,))["a"].tolist()
-    sessoes_all = q("SELECT DISTINCT Sessao s FROM diplomas_aprovados WHERE _legislatura=? AND Sessao IS NOT NULL ORDER BY 1", (leg,))["s"].tolist()
 
     f1, f2, f3 = st.columns([2, 2, 2])
-    tipo_sel = f1.multiselect("Tipo", tipos_all, placeholder="Todos")
-    ano_sel = f2.multiselect("Ano civil", anos_all, placeholder="Todos")
-    sessao_sel = f3.multiselect("Sessão", sessoes_all, placeholder="Todas")
+    tipo_sel = f1.multiselect("Tipo", tipos_all, placeholder="Todos", key="dip_tipo")
+
+    ano_params = [leg]
+    ano_where = "WHERE _legislatura=? AND AnoCivil IS NOT NULL"
+    if tipo_sel:
+        ano_where += " AND Tipo IN (" + ",".join(["?"] * len(tipo_sel)) + ")"
+        ano_params.extend(tipo_sel)
+    anos_all = q(f"SELECT DISTINCT AnoCivil a FROM diplomas_aprovados {ano_where} ORDER BY 1", tuple(ano_params))["a"].tolist()
+    ano_sel = f2.multiselect("Ano civil", anos_all, placeholder="Todos", key="dip_ano")
+
+    sess_params = [leg]
+    sess_where = "WHERE _legislatura=? AND Sessao IS NOT NULL"
+    if tipo_sel:
+        sess_where += " AND Tipo IN (" + ",".join(["?"] * len(tipo_sel)) + ")"
+        sess_params.extend(tipo_sel)
+    if ano_sel:
+        sess_where += " AND AnoCivil IN (" + ",".join(["?"] * len(ano_sel)) + ")"
+        sess_params.extend(ano_sel)
+    sessoes_all = q(f"SELECT DISTINCT Sessao s FROM diplomas_aprovados {sess_where} ORDER BY 1", tuple(sess_params))["s"].tolist()
+    sessao_sel = f3.multiselect("Sessão", sessoes_all, placeholder="Todas", key="dip_sess")
 
     f4, f5, f6 = st.columns([3, 1, 1])
     texto = f4.text_input("Pesquisa no título", placeholder="palavra-chave…")
@@ -718,14 +1014,30 @@ elif pagina == "Agenda parlamentar":
     st.title(f"Agenda parlamentar — Legislatura {leg}")
     st.caption("Eventos institucionais, reuniões plenárias e atividades agendadas.")
 
+    # Cascata: Secção -> Tema -> Local
     sections_all = q("SELECT DISTINCT Section s FROM agenda_parlamentar WHERE _legislatura=? AND Section IS NOT NULL ORDER BY 1", (leg,))["s"].tolist()
-    themes_all = q("SELECT DISTINCT Theme t FROM agenda_parlamentar WHERE _legislatura=? AND Theme IS NOT NULL ORDER BY 1", (leg,))["t"].tolist()
-    locais_all = q("SELECT DISTINCT Local l FROM agenda_parlamentar WHERE _legislatura=? AND Local IS NOT NULL ORDER BY 1", (leg,))["l"].tolist()
 
     f1, f2, f3 = st.columns([2, 2, 2])
-    sec_sel = f1.multiselect("Secção", sections_all, placeholder="Todas")
-    tema_sel = f2.multiselect("Tema", themes_all, placeholder="Todos")
-    local_sel = f3.multiselect("Local", locais_all, placeholder="Todos")
+    sec_sel = f1.multiselect("Secção", sections_all, placeholder="Todas", key="ag_sec")
+
+    tema_params = [leg]
+    tema_where = "WHERE _legislatura=? AND Theme IS NOT NULL"
+    if sec_sel:
+        tema_where += " AND Section IN (" + ",".join(["?"] * len(sec_sel)) + ")"
+        tema_params.extend(sec_sel)
+    themes_all = q(f"SELECT DISTINCT Theme t FROM agenda_parlamentar {tema_where} ORDER BY 1", tuple(tema_params))["t"].tolist()
+    tema_sel = f2.multiselect("Tema", themes_all, placeholder="Todos", key="ag_tema")
+
+    loc_params = [leg]
+    loc_where = "WHERE _legislatura=? AND Local IS NOT NULL"
+    if sec_sel:
+        loc_where += " AND Section IN (" + ",".join(["?"] * len(sec_sel)) + ")"
+        loc_params.extend(sec_sel)
+    if tema_sel:
+        loc_where += " AND Theme IN (" + ",".join(["?"] * len(tema_sel)) + ")"
+        loc_params.extend(tema_sel)
+    locais_all = q(f"SELECT DISTINCT Local l FROM agenda_parlamentar {loc_where} ORDER BY 1", tuple(loc_params))["l"].tolist()
+    local_sel = f3.multiselect("Local", locais_all, placeholder="Todos", key="ag_local")
 
     f4, f5, f6 = st.columns([3, 1, 1])
     texto = f4.text_input("Pesquisa no título/subtítulo", placeholder="palavra-chave…")
@@ -974,13 +1286,21 @@ elif pagina == "Orçamento do Estado":
     st.title(f"Orçamento do Estado — Legislatura {leg}")
     st.caption("Estrutura hierárquica do articulado do OE em discussão. Hierarquia via ID_Pai.")
 
+    # Cascata: Tipo -> Estado
     tipos_all = q("SELECT DISTINCT Tipo t FROM orcamento_do_estado WHERE _legislatura=? AND Tipo IS NOT NULL ORDER BY 1", (leg,))["t"].tolist()
-    estados_all = q("SELECT DISTINCT Estado e FROM orcamento_do_estado WHERE _legislatura=? AND Estado IS NOT NULL ORDER BY 1", (leg,))["e"].tolist()
 
     f1, f2, f3 = st.columns([2, 2, 4])
-    tipo_sel = f1.multiselect("Tipo", tipos_all, placeholder="Todos")
-    estado_sel = f2.multiselect("Estado", estados_all, placeholder="Todos")
-    texto = f3.text_input("Pesquisa no título ou texto", placeholder="palavra-chave…")
+    tipo_sel = f1.multiselect("Tipo", tipos_all, placeholder="Todos", key="oe_tipo")
+
+    est_params = [leg]
+    est_where = "WHERE _legislatura=? AND Estado IS NOT NULL"
+    if tipo_sel:
+        est_where += " AND Tipo IN (" + ",".join(["?"] * len(tipo_sel)) + ")"
+        est_params.extend(tipo_sel)
+    estados_all = q(f"SELECT DISTINCT Estado e FROM orcamento_do_estado {est_where} ORDER BY 1", tuple(est_params))["e"].tolist()
+    estado_sel = f2.multiselect("Estado", estados_all, placeholder="Todos", key="oe_estado")
+
+    texto = f3.text_input("Pesquisa no título ou texto", placeholder="palavra-chave…", key="oe_texto")
 
     where = ["_legislatura = ?"]
     params: list = [leg]
