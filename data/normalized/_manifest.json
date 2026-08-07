@@ -1909,9 +1909,9 @@
     "rows": 1446,
     "columns": 23,
     "source_file": "data/raw/17/atividade_dos_deputados.json",
-    "source_sha256": "99a444283c9cab6d0bdba3851fcfbc9c24c732c9ed204d6050190ca1326da3de",
+    "source_sha256": "316400412ddfffd3a37b2660eb6bbecfd23fd65d204eba977a9d77b2b7efd078",
     "normalizer": "03_normalize_atividade_dos_deputados.py",
-    "generated_at": "2026-08-06T07:45:29.126717Z"
+    "generated_at": "2026-08-07T06:12:41.512359Z"
   },
   {
     "table": "deputados",
@@ -2096,20 +2096,20 @@
     "rows": 1446,
     "columns": 17,
     "source_file": "data/raw/17/atividade_dos_deputados.json",
-    "source_sha256": "99a444283c9cab6d0bdba3851fcfbc9c24c732c9ed204d6050190ca1326da3de",
+    "source_sha256": "316400412ddfffd3a37b2660eb6bbecfd23fd65d204eba977a9d77b2b7efd078",
     "normalizer": "03_normalize_atividade_dos_deputados.py",
-    "generated_at": "2026-08-06T07:45:29.116258Z"
+    "generated_at": "2026-08-07T06:12:41.499219Z"
   },
   {
     "table": "dim_calendario",
     "legislatura": null,
     "path": "data/normalized/dim_calendario/part.parquet",
-    "rows": 18178,
+    "rows": 18179,
     "columns": 14,
     "source_file": null,
     "source_sha256": null,
     "normalizer": "05_build_dim_calendario.py",
-    "generated_at": "2026-08-06T07:45:32.457676Z"
+    "generated_at": "2026-08-07T06:12:45.654359Z"
   },
   {
     "table": "diploma_iniciativas",
@@ -4128,12 +4128,12 @@
     "table": "iniciativa_anexos",
     "legislatura": "17",
     "path": "data/normalized/iniciativa_anexos/_legislatura=17/part.parquet",
-    "rows": 1231,
+    "rows": 1232,
     "columns": 8,
     "source_file": "data/raw/17/iniciativas.json",
-    "source_sha256": "46cb588c03e717f1eb2457f534a54bd83fe7c21855a605fc684facf8d7e07dde",
+    "source_sha256": "a2adbfce80f40269570e13d05e3426c897cc8c5cfbd64de9142c8bec9b6f2e0b",
     "normalizer": "03_normalize_iniciativas.py",
-    "generated_at": "2026-08-06T07:45:28.052245Z"
+    "generated_at": "2026-08-07T06:12:40.271571Z"
   },
   {
     "table": "iniciativa_autores_deputados",
@@ -4304,12 +4304,12 @@
     "table": "iniciativa_autores_deputados",
     "legislatura": "17",
     "path": "data/normalized/iniciativa_autores_deputados/_legislatura=17/part.parquet",
-    "rows": 28497,
+    "rows": 28569,
     "columns": 9,
     "source_file": "data/raw/17/iniciativas.json",
-    "source_sha256": "46cb588c03e717f1eb2457f534a54bd83fe7c21855a605fc684facf8d7e07dde",
+    "source_sha256": "a2adbfce80f40269570e13d05e3426c897cc8c5cfbd64de9142c8bec9b6f2e0b",
     "normalizer": "03_normalize_iniciativas.py",
-    "generated_at": "2026-08-06T07:45:27.967152Z"
+    "generated_at": "2026-08-07T06:12:40.180583Z"
   },
   {
     "table": "iniciativa_autores_gp",
@@ -4480,12 +4480,12 @@
     "table": "iniciativa_autores_gp",
     "legislatura": "17",
     "path": "data/normalized/iniciativa_autores_gp/_legislatura=17/part.parquet",
-    "rows": 1935,
+    "rows": 1938,
     "columns": 7,
     "source_file": "data/raw/17/iniciativas.json",
-    "source_sha256": "46cb588c03e717f1eb2457f534a54bd83fe7c21855a605fc684facf8d7e07dde",
+    "source_sha256": "a2adbfce80f40269570e13d05e3426c897cc8c5cfbd64de9142c8bec9b6f2e0b",
     "normalizer": "03_normalize_iniciativas.py",
-    "generated_at": "2026-08-06T07:45:27.976390Z"
+    "generated_at": "2026-08-07T06:12:40.192244Z"
   },
   {
     "table": "iniciativa_eventos",
@@ -4656,12 +4656,12 @@
     "table": "iniciativa_eventos",
     "legislatura": "17",
     "path": "data/normalized/iniciativa_eventos/_legislatura=17/part.parquet",
-    "rows": 14699,
+    "rows": 14702,
     "columns": 27,
     "source_file": "data/raw/17/iniciativas.json",
-    "source_sha256": "46cb588c03e717f1eb2457f534a54bd83fe7c21855a605fc684facf8d7e07dde",
+    "source_sha256": "a2adbfce80f40269570e13d05e3426c897cc8c5cfbd64de9142c8bec9b6f2e0b",
     "normalizer": "03_normalize_iniciativas.py",
-    "generated_at": "2026-08-06T07:45:28.042221Z"
+    "generated_at": "2026-08-07T06:12:40.258597Z"
   },
   {
     "table": "iniciativa_peticoes",
@@ -4835,9 +4835,9 @@
     "rows": 194,
     "columns": 14,
     "source_file": "data/raw/17/iniciativas.json",
-    "source_sha256": "46cb588c03e717f1eb2457f534a54bd83fe7c21855a605fc684facf8d7e07dde",
+    "source_sha256": "a2adbfce80f40269570e13d05e3426c897cc8c5cfbd64de9142c8bec9b6f2e0b",
     "normalizer": "03_normalize_iniciativas.py",
-    "generated_at": "2026-08-06T07:45:28.081911Z"
+    "generated_at": "2026-08-07T06:12:40.281826Z"
   },
   {
     "table": "iniciativas",
@@ -5008,12 +5008,12 @@
     "table": "iniciativas",
     "legislatura": "17",
     "path": "data/normalized/iniciativas/_legislatura=17/part.parquet",
-    "rows": 2095,
+    "rows": 2098,
     "columns": 30,
     "source_file": "data/raw/17/iniciativas.json",
-    "source_sha256": "46cb588c03e717f1eb2457f534a54bd83fe7c21855a605fc684facf8d7e07dde",
+    "source_sha256": "a2adbfce80f40269570e13d05e3426c897cc8c5cfbd64de9142c8bec9b6f2e0b",
     "normalizer": "03_normalize_iniciativas.py",
-    "generated_at": "2026-08-06T07:45:27.943982Z"
+    "generated_at": "2026-08-07T06:12:40.152653Z"
   },
   {
     "table": "intervencoes",
@@ -5178,7 +5178,7 @@
     "source_file": "data/raw/17/intervencoes.json",
     "source_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
     "normalizer": "03_normalize_intervencoes.py",
-    "generated_at": "2026-08-06T07:45:26.071504Z"
+    "generated_at": "2026-08-07T06:12:37.750392Z"
   },
   {
     "table": "orcamento_do_estado",
