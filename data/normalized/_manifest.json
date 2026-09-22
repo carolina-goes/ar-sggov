@@ -1911,7 +1911,7 @@
     "source_file": "data/raw/17/atividade_dos_deputados.json",
     "source_sha256": "8e8fd84b200a0779a04a6f0da088d9bcd930484f69b33eb5f77ad1acbc85355f",
     "normalizer": "03_normalize_atividade_dos_deputados.py",
-    "generated_at": "2026-09-21T10:35:37.784538Z"
+    "generated_at": "2026-09-22T09:48:30.643711Z"
   },
   {
     "table": "deputados",
@@ -2098,18 +2098,18 @@
     "source_file": "data/raw/17/atividade_dos_deputados.json",
     "source_sha256": "8e8fd84b200a0779a04a6f0da088d9bcd930484f69b33eb5f77ad1acbc85355f",
     "normalizer": "03_normalize_atividade_dos_deputados.py",
-    "generated_at": "2026-09-21T10:35:37.771406Z"
+    "generated_at": "2026-09-22T09:48:30.584283Z"
   },
   {
     "table": "dim_calendario",
     "legislatura": null,
     "path": "data/normalized/dim_calendario/part.parquet",
-    "rows": 18224,
+    "rows": 18225,
     "columns": 14,
     "source_file": null,
     "source_sha256": null,
     "normalizer": "05_build_dim_calendario.py",
-    "generated_at": "2026-09-21T10:35:41.831130Z"
+    "generated_at": "2026-09-22T09:48:34.657643Z"
   },
   {
     "table": "diploma_iniciativas",
